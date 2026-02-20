@@ -106,11 +106,26 @@ li {
     opacity: 0.85;
 }
 
+/* Il piatto top NON diventa oro: resta bianco */
 li.top-dish {
-    color: #FFD700 !important;
+    color: #FFFFFF !important;
     font-weight: bold;
-    text-shadow: 0 0 6px rgba(255,215,0,0.6);
-    transition: 0.2s ease;
+    text-shadow: none;
+}
+
+/* Nome del piatto: bianco elegante */
+.top-dish .piatto-nome {
+    color: #FFFFFF !important;
+    font-weight: 600;
+}
+
+/* Stelle + Regione: oro elegante */
+.top-dish .piatto-meta {
+    color: #c9a23f !important; /* oro elegante */
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
 }
 
 li.top-dish:hover {
