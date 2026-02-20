@@ -518,7 +518,7 @@ function stelle(n) {
 }
 
 /* ============================
-   EVIDENZIAZIONE PIATTI TOP
+   EVIDENZIAZIONE PIATTI TOP (NUOVA VERSIONE)
 ============================ */
 function evidenziaPiattiTop() {
   const piatti = document.querySelectorAll("section ul li");
@@ -529,18 +529,21 @@ function evidenziaPiattiTop() {
 
     if (datiTop) {
 
-      // Determina l’emoji corretta
+      // Emoji del badge
       let badgeIcon = "⭐";
       if (datiTop.iconico) badgeIcon = "🥇";
       else if (datiTop.top) badgeIcon = "🔥";
 
+      // Categoria gastronomica (nuova)
+      const categoria = categoriaPiatto(datiTop.punteggio);
+
       // Applica stile top
       li.classList.add("top-dish");
 
-      // VERSIONE CORRETTA: emoji separata in <span class="emoji">
+      // HTML aggiornato (senza stelle, senza voti)
       li.innerHTML = `
         <span class="piatto-nome"><span class="emoji">${badgeIcon}</span> ${nomeOriginale}</span>
-        <span class="piatto-meta">${stelle(datiTop.punteggio)} — ${datiTop.regione}</span>
+        <span class="piatto-meta">${categoria} — ${datiTop.regione}</span>
       `;
     }
   });
