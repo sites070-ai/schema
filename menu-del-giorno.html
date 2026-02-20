@@ -191,15 +191,13 @@ li.top-dish:hover {
     border-radius: 6px;
     display: inline-block;
 }
-/* ICONA ACCANTO AL NOME PIATTO: PIÙ PICCOLA E RAFFINATA */
-.top-dish .piatto-nome {
-    font-size: 0.6rem !important;   /* riduce l’emoji */
-    line-height: 1.2;
+/* Riduce SOLO l'emoji accanto al nome, NON il testo */
+.top-dish .piatto-nome .emoji {
+    font-size: 0.8rem !important;
+    vertical-align: middle;
+    margin-right: 4px;
 }
 
-.top-dish .piatto-nome::first-letter {
-    font-size: 0.6rem !important;   /* assicura che l’emoji resti piccola */
-}
 
 </style>
 </head>
@@ -535,11 +533,11 @@ function evidenziaPiattiTop() {
       if (datiTop.iconico) badgeIcon = "🥇";
       else if (datiTop.top) badgeIcon = "🔥";
 
-      li.classList.add("top-dish");
       li.innerHTML = `
-        <span class="piatto-nome">${badgeIcon} ${nomeOriginale}</span>
-        <span class="piatto-meta">${stelle(datiTop.punteggio)} — ${datiTop.regione}</span>
-      `;
+    <span class="piatto-nome">${badge} ${nomeOriginale}</span>
+    <span class="piatto-meta">${stelle(datiTop.punteggio)} — ${datiTop.regione}</span>
+`;
+
     }
   });
 }
