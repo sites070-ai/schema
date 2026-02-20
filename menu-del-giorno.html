@@ -198,7 +198,6 @@ li.top-dish:hover {
     margin-right: 4px;
 }
 
-
 </style>
 </head>
 
@@ -529,18 +528,24 @@ function evidenziaPiattiTop() {
     const datiTop = trovaPiatto(nomeOriginale);
 
     if (datiTop) {
+
+      // Determina l’emoji corretta
       let badgeIcon = "⭐";
       if (datiTop.iconico) badgeIcon = "🥇";
       else if (datiTop.top) badgeIcon = "🔥";
 
-      li.innerHTML = `
-    <span class="piatto-nome">${badge} ${nomeOriginale}</span>
-    <span class="piatto-meta">${stelle(datiTop.punteggio)} — ${datiTop.regione}</span>
-`;
+      // Applica stile top
+      li.classList.add("top-dish");
 
+      // VERSIONE CORRETTA: emoji separata in <span class="emoji">
+      li.innerHTML = `
+        <span class="piatto-nome"><span class="emoji">${badgeIcon}</span> ${nomeOriginale}</span>
+        <span class="piatto-meta">${stelle(datiTop.punteggio)} — ${datiTop.regione}</span>
+      `;
     }
   });
 }
+
 
 /* ============================
    ESTRAZIONE PIATTI DAL DOM
