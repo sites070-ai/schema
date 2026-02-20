@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu del Giorno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contenitore {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* LAVAGNA */
+.lavagna {
+    background: #000 url('https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/blackboard.png') repeat;
+    background-size: 400px;
+    filter: contrast(1.05) brightness(0.95);
+    border: 6px double #FFD700;
+    padding: 25px 15px;
+    width: 100%;
+    box-shadow: 0 0 40px rgba(255,215,0,0.25);
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* DATA + TESTO SU UNA RIGA */
+.intestazione {
+    color: #FFD700;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.data-serviamo {
+    color: rgba(255, 215, 0, 0.85);
+    font-size: 1rem;
+    font-style: normal;
+}
+
+/* TITOLI */
+h2 {
+    color: #FFD700;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: 1px dashed rgba(255, 215, 0, 0.4);
+    display: inline-block;
+    padding: 0 10px 3px 10px;
+    text-shadow: 0 0 4px rgba(255,215,0,0.25);
+    letter-spacing: 1px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    color: #FFFFFF;
+    font-size: 1.15rem;
+    margin: 6px 0;
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+/* PIATTI TOP SU DUE RIGHE */
+.piatto-nome {
+    display: block;
+}
+
+.piatto-meta {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+li.top-dish {
+    color: #FFD700 !important;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(255,215,0,0.6);
+    transition: 0.2s ease;
+}
+
+li.top-dish:hover {
+    text-shadow: 0 0 10px rgba(255,215,0,0.9);
+    transform: scale(1.02);
+}
+
+/* CHIUSURA */
+.chiusura {
+    margin-top: 25px;
+    color: #FFD700;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* WHATSAPP */
+#whatsapp-vertical {
+    position: fixed !important;
+    right: -6px !important;
+    top: 40% !important;
+    background: #FFD700 !important;
+    padding: 8px 6px !important;
+    border-radius: 6px 0 0 6px !important;
+    cursor: pointer !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.whatsapp-icon {
+    width: 22px !important;
+    height: 22px !important;
+    filter: hue-rotate(90deg) saturate(2);
+}
+
+.whatsapp-text {
+    writing-mode: vertical-rl !important;
+    text-orientation: upright !important;
+    color: #0a7c2f !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* LEGENDA */
+.legenda-badges {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.legenda-badges span {
+    background: rgba(255,255,255,0.08);
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- WHATSAPP -->
+<div id="whatsapp-vertical" onclick="condividiWhatsApp()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon">
+    <span class="whatsapp-text">Invia Menu</span>
+</div>
+
+<div class="contenitore">
+
+    <div class="lavagna">
+
+        <!-- DATA + TESTO -->
+        <div class="intestazione">
+            <span id="data-odierna" class="data-serviamo"></span>
+            <span>Oggi vi serviamo...</span>
+        </div>
+
+        <section>
+            <h2>🍝 I Primi</h2>
+            <ul>
+                <li>Spaghetti alla Carbonara</li>
+                <li>Penne al Pomodoro e Basilico</li>
+                <li>Pappardelle al Ragu con Salsiccia e Funghi</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🥩 I Secondi</h2>
+            <ul>
+                <li>Arrosto di Lonza e Coppa di Maiale</li>
+                <li>Fesa di Tacchino Tonnata</li>
+                <li>Coppa alla Griglia</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🥗 I Contorni</h2>
+            <ul>
+                <li>Zucchine Trifolate</li>
+                <li>Finocchi al Burro</li>
+                <li>Mix di Verdure Lessate</li>
+            </ul>
+        </section>
+
+        <div class="chiusura">✦ Grazie e Buon Appetito ✦</div>
+
+        <div class="legenda-badges">
+            <span>🥇 Iconico</span>
+            <span>🔥 Top</span>
+            <span>⭐ Storico</span>
+            <span>★★★★★ Punteggio</span>
+            <span>Regione di origine</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- DATA -->
+<script>
+const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+let data = new Date().toLocaleDateString('it-IT', opzioni);
+data = data.charAt(0).toUpperCase() + data.slice(1);
+
+document.getElementById('data-odierna').textContent = data;
+</script>
+
+<!-- SCRIPT AVANZATO COMPLETO -->
+<script>
+
+/* ============================
+   ALLERGENI AUTOMATICI
+============================ */
+function allergeniAutomatici(nomePiatto) {
+    const t = nomePiatto.toLowerCase();
+    const a = [];
+    if (t.includes("panna") || t.includes("burro") || t.includes("formaggio") || t.includes("zola") || t.includes("mozzarella")) a.push("latte");
+    if (t.includes("uova") || t.includes("carbonara")) a.push("uova");
+    if (t.includes("farina") || t.includes("pasta") || t.includes("penne") || t.includes("spaghetti") || t.includes("pappardelle")) a.push("glutine");
+    if (t.includes("tonno") || t.includes("acciughe") || t.includes("salmone") || t.includes("pesce")) a.push("pesce");
+    if (t.includes("noci") || t.includes("mandorle") || t.includes("nocciole")) a.push("frutta a guscio");
+    return a;
+}
+
+/* ============================
+   DIETA AUTOMATICA
+============================ */
+function dietaAutomatica(nomePiatto) {
+    const t = nomePiatto.toLowerCase();
+    if (t.includes("salmone") || t.includes("tonno") || t.includes("acciughe") || t.includes("pesce")) return "pesce";
+    if (t.includes("arrosto") || t.includes("maiale") || t.includes("tacchino") || t.includes("coppa") || t.includes("salsiccia")) return "carne";
+    if (t.includes("verdure") || t.includes("zucchine") || t.includes("finocchi") || t.includes("insalata")) return "vegetariano";
+    return "non specificato";
+}
+
+/* ============================
+   REGIONALITÀ
+============================ */
+function regionalitaPiatto(nome) {
+    const t = nome.toLowerCase();
+
+    if (t.includes("carbonara") || t.includes("amatriciana") || t.includes("cacio"))
+        return "Lazio";
+
+    if (t.includes("ragù") || t.includes("pappardelle") || t.includes("salsiccia"))
+        return "Toscana / Emilia";
+
+    if (t.includes("coppa") || t.includes("arrosto"))
+        return "Emilia Romagna";
+
+    if (t.includes("zucchine") || t.includes("finocchi") || t.includes("verdure"))
+        return "Italia";
+
+    return "Italia";
+}
+
+/* ============================
+   TRADUZIONI
+============================ */
+function traduci(nomePiatto, lingua) {
+    const diz = {
+        "spaghetti alla carbonara": { en: "Spaghetti Carbonara" },
+        "penne al pomodoro e basilico": { en: "Penne with Tomato and Basil" },
+        "pappardelle al ragu con salsiccia e funghi": { en: "Pappardelle with Meat Sauce and Mushrooms" }
+    };
+    const key = nomePiatto.toLowerCase().trim();
+    return diz[key]?.[lingua] || nomePiatto;
+}
+
+/* ============================
+   QR CODE
+============================ */
+function generaQRCode() {
+    return "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(window.location.href);
+}
+
+/* ============================
+   TOP 100 PIATTI ITALIANI
+============================ */
+const topDishes = {
+    "spaghetti alla carbonara": { score: 5, badge: "Piatto Iconico", region: "Lazio" },
+    "carbonara": { score: 5, badge: "Piatto Iconico", region: "Lazio" },
+    "cacio e pepe": { score: 5, badge: "Piatto Iconico", region: "Lazio" },
+    "amatriciana": { score: 5, badge: "Piatto Iconico", region: "Lazio" },
+    "lasagne": { score: 5, badge: "Piatto Iconico", region: "Emilia Romagna" },
+    "lasagna": { score: 5, badge: "Piatto Iconico", region: "Emilia Romagna" },
+    "risotto alla milanese": { score: 5, badge: "Piatto Iconico", region: "Lombardia" },
+
+    "pappardelle al ragu con salsiccia e funghi": { score: 5, badge: "Top Pasta", region: "Toscana" },
+    "tagliatelle al ragù": { score: 5, badge: "Top Pasta", region: "Emilia Romagna" },
+
+    "parmigiana": { score: 5, badge: "Piatto Iconico", region: "Campania" },
+    "ossobuco": { score: 5, badge: "Piatto Iconico", region: "Lombardia" },
+
+    "vitello tonnato": { score: 4, badge: "Piatto Storico", region: "Piemonte" },
+    "arancini": { score: 5, badge: "Piatto Iconico", region: "Sicilia" },
+    "caponata": { score: 4, badge: "Piatto Storico", region: "Sicilia" },
+    "gnocchi": { score: 4, badge: "Piatto Storico", region: "Italia" },
+    "tiramisù": { score: 5, badge: "Piatto Iconico", region: "Veneto" }
+};
+
+/* ============================
+   FUNZIONI TOP
+============================ */
+function getTopInfo(nome) {
+    const key = nome.toLowerCase().trim();
+    return topDishes[key] || null;
+}
+
+function stelle(n) {
+    return "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+}
+
+/* ============================
+   VISIBILE: PIATTI TOP
+============================ */
+function evidenziaPiattiTop() {
+    const piatti = document.querySelectorAll("section ul li");
+
+    piatti.forEach(li => {
+        const nomeOriginale = li.textContent.trim();
+        const info = getTopInfo(nomeOriginale);
+
+        if (info) {
+            const badge =
+                info.badge.includes("Iconico") ? "🥇" :
+                info.badge.includes("Top") ? "🔥" :
+                "⭐";
+
+            li.classList.add("top-dish");
+
+            li.innerHTML = `
+                <span class="piatto-nome">${badge} ${nomeOriginale}</span>
+                <span class="piatto-meta">${stelle(info.score)} — ${info.region}</span>
+            `;
+        }
+    });
+}
+
+/* ============================
+   JSON-LD
+============================ */
+function generaMenuSection(nome, piatti) {
+    return {
+        "@type": "MenuSection",
+        "name": nome,
+        "hasMenuItem": piatti.map(piatto => {
+            const top = getTopInfo(piatto);
+
+            return {
+                "@type": "MenuItem",
+                "name": piatto,
+                "description": "Piatto del giorno preparato secondo tradizione italiana.",
+                "image": "",
+                "allergen": allergeniAutomatici(piatto),
+                "region": regionalitaPiatto(piatto),
+                "suitableForDiet": dietaAutomatica(piatto),
+                "offers": { "@type": "Offer", "price": "14.00", "priceCurrency": "EUR" },
+                "alternateName": traduci(piatto, "en"),
+                "isTopDish": top ? true : false,
+                "topScore": top ? top.score : null,
+                "topBadge": top ? top.badge : null,
+                "topRegion": top ? top.region : null
+            };
+        })
+    };
+}
+
+function generaJSONLD() {
+    const primi = estraiPiatti("section:nth-of-type(1) ul li");
+    const secondi = estraiPiatti("section:nth-of-type(2) ul li");
+    const contorni = estraiPiatti("section:nth-of-type(3) ul li");
+
+    const jsonLD = {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "Menu del Giorno - Locanda del Contadino",
+        "description": "Menu del giorno con piatti tipici italiani.",
+        "servesCuisine": "Italian",
+        "image": generaQRCode(),
+        "hasMenuSection": [
+            generaMenuSection("Primi", primi),
+            generaMenuSection("Secondi", secondi),
+            generaMenuSection("Contorni", contorni)
+        ]
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(jsonLD, null, 2);
+    document.body.appendChild(script);
+}
+
+/* ============================
+   AVVIO
+============================ */
+window.onload = function() {
+    evidenziaPiattiTop();
+    generaJSONLD();
+};
+
+</script>
+
+</body>
+</html>
