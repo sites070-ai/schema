@@ -1,1 +1,426 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu del Giorno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
+  <style>
+  body {
+      background-color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.8s ease-out;
+      font-family: "Architects Daughter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+
+  .contenitore {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+  }
+
+  .lavagna {
+      background: #000 url('https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/blackboard.png') repeat;
+      background-size: 400px;
+      filter: contrast(1.05) brightness(0.95);
+      border: 6px double #FFD700;
+      padding: 25px 15px;
+      width: 100%;
+      box-shadow: 0 0 40px rgba(255,215,0,0.25);
+      text-align: center;
+      border-radius: 4px;
+      position: relative;
+      box-sizing: border-box;
+  }
+
+  .intestazione {
+      color: #FFD700;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      font-style: italic;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+  }
+
+  .data-serviamo {
+      color: rgba(255, 215, 0, 0.85);
+      font-size: 0.95rem;
+      font-style: normal;
+  }
+
+  h2 {
+      color: #FFD700;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      border-bottom: 1px dashed rgba(255, 215, 0, 0.4);
+      display: inline-block;
+      padding: 0 10px 3px 10px;
+      text-shadow: 0 0 4px rgba(255,215,0,0.25);
+      letter-spacing: 1px;
+  }
+
+  ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  li {
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      margin: 6px 0;
+      line-height: 1.25;
+      word-break: break-word;
+  }
+
+  .piatto-nome {
+      display: block;
+  }
+
+  .piatto-meta {
+      display: block;
+      font-size: 0.9rem;
+      opacity: 0.85;
+  }
+
+  li.top-dish {
+      color: #FFFFFF !important;
+      font-weight: bold;
+      text-shadow: none;
+  }
+
+  .top-dish .piatto-nome {
+      color: #FFFFFF !important;
+      font-weight: 600;
+  }
+
+  .top-dish .piatto-meta {
+      color: #c9a23f !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+  }
+
+  li.top-dish:hover {
+      text-shadow: 0 0 10px rgba(255,215,0,0.9);
+      transform: scale(1.02);
+  }
+
+  .top-dish .piatto-nome .emoji {
+      font-size: 0.8rem !important;
+      vertical-align: middle;
+      margin-right: 4px;
+  }
+
+  .chiusura {
+      margin-top: 25px;
+      color: #FFD700;
+      font-size: 1rem;
+      opacity: 0.7;
+  }
+
+  /* WHATSAPP */
+  #whatsapp-vertical {
+      position: fixed;
+      right: -6px;
+      top: 40%;
+      background: #FFD700;
+      padding: 6px 4px;
+      border-radius: 6px 0 0 6px;
+      cursor: pointer;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+  }
+
+  .whatsapp-icon {
+      width: 20px;
+      height: 20px;
+      filter: hue-rotate(90deg) saturate(2);
+  }
+
+  .whatsapp-text {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      color: #0a7c2f;
+      font-weight: bold;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+  }
+
+  .legenda-badges {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      color: white;
+      font-size: 0.9rem;
+  }
+
+  .legenda-badges span {
+      background: rgba(255,255,255,0.08);
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: inline-block;
+  }
+  </style>
+</head>
+
+<body>
+
+<!-- WHATSAPP -->
+<div id="whatsapp-vertical" onclick="condividiWhatsApp()">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="">
+  <span class="whatsapp-text">Invia Menu</span>
+</div>
+
+<div class="contenitore">
+  <div class="lavagna">
+
+    <div class="intestazione">
+      <span id="data-odierna" class="data-serviamo"></span>
+      <span>Oggi vi serviamo...</span>
+    </div>
+
+    <section>
+      <h2>✦ Primi</h2>
+      <ul>
+        <li>Spaghetti alla Carbonara</li>
+        <li>Risotto ai Funghi Porcini</li>
+        <li>Spaghetti al Pomodoro e Basilico</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>✦ Secondi</h2>
+      <ul>
+        <li>Cotoletta alla Milanese</li>
+        <li>Pollo Arrosto con Patate</li>
+        <li>Branzino al Forno</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>✦ Contorni</h2>
+      <ul>
+        <li>Zucchine Trifolate</li>
+        <li>Finocchi al Burro</li>
+        <li>Mix di Verdure Lessate</li>
+      </ul>
+    </section>
+
+    <div class="chiusura">✦ Grazie e Buon Appetito ✦</div>
+
+    <div class="legenda-badges">
+      <span>🥇 Iconico</span>
+      <span>🔥 Top</span>
+      <span>⭐ Storico</span>
+      <span>✔️ Categoria gastronomica</span>
+      <span>📍 Regione di origine</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- DATA AUTOMATICA -->
+<script>
+const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+let data = new Date().toLocaleDateString('it-IT', opzioni);
+data = data.charAt(0).toUpperCase() + data.slice(1);
+document.getElementById('data-odierna').textContent = data;
+</script>
+
+<!-- SCRIPT AVANZATO -->
+<script>
+const TOP_PIATTI = {
+  "spaghetti alla carbonara": {
+    categoria: "primo",
+    regione: "Lazio",
+    iconico: true,
+    top: true,
+    storico: true,
+    punteggio: 5,
+    sinonimi: ["carbonara", "spaghetti carbonara"],
+    allergeni: ["glutine", "uova", "latte"],
+    dieta: "carne"
+  },
+  "risotto ai funghi porcini": {
+    categoria: "primo",
+    regione: "Lombardia",
+    iconico: false,
+    top: true,
+    storico: true,
+    punteggio: 4,
+    sinonimi: ["risotto ai funghi"],
+    allergeni: ["glutine", "latte"],
+    dieta: "vegetariano"
+  },
+  "spaghetti al pomodoro e basilico": {
+    categoria: "primo",
+    regione: "Italia",
+    iconico: true,
+    top: true,
+    storico: true,
+    punteggio: 4,
+    sinonimi: ["spaghetti al pomodoro", "spaghetti pomodoro e basilico"],
+    allergeni: ["glutine"],
+    dieta: "vegetariano"
+  },
+  "cotoletta alla milanese": {
+    categoria: "secondo",
+    regione: "Lombardia",
+    iconico: true,
+    top: true,
+    storico: true,
+    punteggio: 5,
+    sinonimi: ["cotoletta", "cotoletta di vitello"],
+    allergeni: ["glutine", "uova"],
+    dieta: "carne"
+  },
+  "pollo arrosto con patate": {
+    categoria: "secondo",
+    regione: "Italia",
+    iconico: false,
+    top: true,
+    storico: false,
+    punteggio: 3,
+    sinonimi: ["pollo arrosto", "pollo al forno con patate"],
+    allergeni: [],
+    dieta: "carne"
+  },
+  "branzino al forno": {
+    categoria: "secondo",
+    regione: "Liguria",
+    iconico: false,
+    top: true,
+    storico: true,
+    punteggio: 4,
+    sinonimi: ["spigola al forno"],
+    allergeni: ["pesce"],
+    dieta: "pesce"
+  },
+  "zucchine trifolate": {
+    categoria: "contorno",
+    regione: "Italia",
+    iconico: false,
+    top: true,
+    storico: true,
+    punteggio: 3,
+    sinonimi: ["zucchine in padella"],
+    allergeni: [],
+    dieta: "vegetariano"
+  },
+  "finocchi al burro": {
+    categoria: "contorno",
+    regione: "Italia",
+    iconico: false,
+    top: false,
+    storico: false,
+    punteggio: 2,
+    sinonimi: [],
+    allergeni: ["latte"],
+    dieta: "vegetariano"
+  },
+  "mix di verdure lessate": {
+    categoria: "contorno",
+    regione: "Italia",
+    iconico: false,
+    top: false,
+    storico: false,
+    punteggio: 2,
+    sinonimi: ["verdure bollite"],
+    allergeni: [],
+    dieta: "vegetariano"
+  }
+};
+
+function normalizzaNome(nome) {
+  return nome.toLowerCase().trim().replace(/\s+/g, " ");
+}
+
+function trovaPiatto(nomePiatto) {
+  const n = normalizzaNome(nomePiatto);
+  if (TOP_PIATTI[n]) return TOP_PIATTI[n];
+
+  for (const [nomeBase, dati] of Object.entries(TOP_PIATTI)) {
+    if (dati.sinonimi && dati.sinonimi.some(s => normalizzaNome(s) === n)) {
+      return dati;
+    }
+  }
+  return null;
+}
+
+function categoriaGastronomica(punteggio) {
+  if (punteggio >= 5) return "Specialità";
+  if (punteggio === 4) return "Tradizione";
+  if (punteggio === 3) return "Classico";
+  if (punteggio === 2) return "Leggero";
+  if (punteggio === 1) return "Rustico";
+  return "Autentico";
+}
+
+function badgePiatto(dati) {
+  if (dati.iconico) return "🥇";
+  if (dati.top) return "🔥";
+  if (dati.storico) return "⭐";
+  return "";
+}
+
+function evidenziaPiattiTop() {
+  const piatti = document.querySelectorAll("section ul li");
+
+  piatti.forEach(li => {
+    const nomeOriginale = li.textContent.trim();
+    const datiTop = trovaPiatto(nomeOriginale);
+
+    if (datiTop) {
+      const badgeIcon = badgePiatto(datiTop);
+      const categoria = categoriaGastronomica(datiTop.punteggio);
+      const regione = datiTop.regione || "Italia";
+
+      li.classList.add("top-dish");
+      li.innerHTML = `
+        <span class="piatto-nome"><span class="emoji">${badgeIcon}</span> ${nomeOriginale}</span>
+        <span class="piatto-meta">${categoria} — ${regione}</span>
+      `;
+    }
+  });
+}
+
+function condividiWhatsApp() {
+  const testo = "Ecco il menu del giorno:\n\n" +
+                document.querySelector(".lavagna").innerText.trim();
+  const url = "https://wa.me/?text=" + encodeURIComponent(testo);
+  window.open(url, "_blank");
+}
+
+window.onload = function() {
+  evidenziaPiattiTop();
+};
+</script>
+
+</body>
+</html>
