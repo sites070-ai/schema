@@ -1,7 +1,7 @@
 let TOP_PIATTI = {};
 
 async function caricaDatabase() {
-  const url = "https://TUO-USERNAME.github.io/menu-del-giorno/TOP_PIATTI.js";
+  const url = "https://sites070-ai/.github.io/schema/script.js";
   const risposta = await fetch(url);
   const testo = await risposta.text();
   eval(testo);
