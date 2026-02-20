@@ -1,4 +1,4 @@
-let TOP_PIATTI = {};
+/* ============================ AVVIO ============================ */ window.onload = function() { evidenziaPiattiTop(); generaJSONLD(); };
 
 async function caricaDatabase() {
   const url = "https://sites070-ai.github.io/schema/piatti-menu-pranzo.js";
