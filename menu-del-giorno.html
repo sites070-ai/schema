@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu del Giorno</title>
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
@@ -106,33 +106,43 @@ li {
     opacity: 0.85;
 }
 
-/* Il piatto top NON diventa oro: resta bianco */
+/* PIATTI TOP */
 li.top-dish {
     color: #FFFFFF !important;
     font-weight: bold;
     text-shadow: none;
 }
 
-/* Nome del piatto: bianco elegante */
 .top-dish .piatto-nome {
     color: #FFFFFF !important;
     font-weight: 600;
 }
 
-/* Stelle + Regione: oro elegante */
 .top-dish .piatto-meta {
-    color: #c9a23f !important; /* oro elegante */
+    color: #c9a23f !important;
     font-weight: 500;
     font-size: 0.9rem;
 }
 
-}
-
+/* HOVER */
 li.top-dish:hover {
     text-shadow: 0 0 10px rgba(255,215,0,0.9);
     transform: scale(1.02);
 }
 
+/* LEGENDA COMPATTA */
+.legenda-badges {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #FFD700;
+}
+
+.legenda-badges span {
+    margin-right: 10px;
+}
+
+</style>
+</head>
 /* CHIUSURA */
 .chiusura {
     margin-top: 25px;
@@ -191,7 +201,8 @@ li.top-dish:hover {
     border-radius: 6px;
     display: inline-block;
 }
-/* Riduce SOLO l'emoji accanto al nome, NON il testo */
+
+/* Riduce SOLO l'emoji accanto al nome */
 .top-dish .piatto-nome .emoji {
     font-size: 0.8rem !important;
     vertical-align: middle;
@@ -247,19 +258,18 @@ li.top-dish:hover {
         </section>
 
         <div class="chiusura">✦ Grazie e Buon Appetito ✦</div>
-
         <div class="legenda-badges">
             <span>🥇 Iconico</span>
             <span>🔥 Top</span>
             <span>⭐ Storico</span>
-            <span>Categoria gastronomica</span>
-            <span>Regione di origine</span>
+            <span>✔️ Categoria gastronomica</span>
+            <span>📍 Regione di origine</span>
         </div>
 
     </div>
 </div>
 
-<!-- DATA -->
+<!-- DATA AUTOMATICA -->
 <script>
 const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -276,8 +286,6 @@ document.getElementById('data-odierna').textContent = data;
    (SCALABILE A 3000+ VOCI)
 ============================ */
 
-// Esempio struttura: qui vanno poi inseriti TUTTI i piatti (3000+)
-// Puoi tenerli in un file separato e importarli, ma per ora li lasciamo inline come struttura.
 const TOP_PIATTI = {
   "spaghetti alla carbonara": {
     categoria: "primo",
@@ -290,6 +298,7 @@ const TOP_PIATTI = {
     allergeni: ["glutine", "uova", "latte"],
     dieta: "carne"
   },
+
   "risotto ai funghi porcini": {
     categoria: "primo",
     regione: "Lombardia",
@@ -301,6 +310,7 @@ const TOP_PIATTI = {
     allergeni: ["glutine", "latte"],
     dieta: "vegetariano"
   },
+
   "spaghetti al pomodoro e basilico": {
     categoria: "primo",
     regione: "Italia",
@@ -312,6 +322,7 @@ const TOP_PIATTI = {
     allergeni: ["glutine"],
     dieta: "vegetariano"
   },
+
   "cotoletta alla milanese": {
     categoria: "secondo",
     regione: "Lombardia",
@@ -323,6 +334,7 @@ const TOP_PIATTI = {
     allergeni: ["glutine", "uova"],
     dieta: "carne"
   },
+
   "pollo arrosto con patate": {
     categoria: "secondo",
     regione: "Italia",
@@ -334,115 +346,128 @@ const TOP_PIATTI = {
     allergeni: [],
     dieta: "carne"
   },
+
   "branzino al forno": {
     categoria: "secondo",
     regione: "Liguria",
     iconico: false,
     top: true,
-    storico: true,
+    storico: false,
     punteggio: 4,
     sinonimi: ["spigola al forno"],
     allergeni: ["pesce"],
     dieta: "pesce"
   },
+
   "zucchine trifolate": {
     categoria: "contorno",
     regione: "Italia",
     iconico: false,
     top: true,
-    storico: true,
+    storico: false,
     punteggio: 3,
     sinonimi: ["zucchine in padella"],
     allergeni: [],
     dieta: "vegetariano"
   },
+
   "finocchi al burro": {
     categoria: "contorno",
     regione: "Italia",
     iconico: false,
     top: false,
-    storico: false,
+    storico: true,
     punteggio: 2,
-    sinonimi: [],
+    sinonimi: ["finocchi gratinati"],
     allergeni: ["latte"],
     dieta: "vegetariano"
   },
+
   "mix di verdure lessate": {
     categoria: "contorno",
     regione: "Italia",
     iconico: false,
     top: false,
-    storico: false,
+    storico: true,
     punteggio: 2,
-    sinonimi: ["verdure bollite"],
+    sinonimi: ["verdure bollite", "verdure lesse"],
     allergeni: [],
     dieta: "vegetariano"
   }
-  // QUI SI AGGIUNGONO TUTTI GLI ALTRI PIATTI (FINO A 3000+)
 };
-
+</script>
+<script>
 /* ============================
-   NORMALIZZAZIONE NOME PIATTO
+   CATEGORIA GASTRONOMICA
+   (nuovo sistema senza stelle)
 ============================ */
-function normalizzaNome(nome) {
-  return nome
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, " ");
+function categoriaGastronomica(punteggio) {
+  if (punteggio >= 5) return "Specialità";
+  if (punteggio === 4) return "Tradizione";
+  if (punteggio === 3) return "Classico";
+  if (punteggio === 2) return "Leggero";
+  if (punteggio === 1) return "Rustico";
+  return "Autentico";
 }
 
 /* ============================
-   RICERCA PIATTO NELLA TOP
-   (supporta sinonimi)
+   BADGE (Iconico / Top / Storico)
 ============================ */
-function trovaPiatto(nomePiatto) {
-  const n = normalizzaNome(nomePiatto);
+function badgePiatto(dati) {
+  if (dati.iconico) return "🥇";
+  if (dati.top) return "🔥";
+  if (dati.storico) return "⭐";
+  return "";
+}
 
-  // 1) match diretto
-  if (TOP_PIATTI[n]) return TOP_PIATTI[n];
+/* ============================
+   EVIDENZIAZIONE PIATTI NEL MENU
+============================ */
+function evidenziaPiattiTop() {
+  const piatti = document.querySelectorAll("section ul li");
 
-  // 2) match su sinonimi
-  for (const [nomeBase, dati] of Object.entries(TOP_PIATTI)) {
-    if (dati.sinonimi && dati.sinonimi.some(s => normalizzaNome(s) === n)) {
-      return dati;
+  piatti.forEach(li => {
+    const nomeOriginale = li.textContent.trim();
+    const nomeNormalizzato = normalizzaNome(nomeOriginale);
+    const datiTop = trovaPiatto(nomeNormalizzato);
+
+    if (datiTop) {
+      const badge = badgePiatto(datiTop);
+      const categoria = categoriaGastronomica(datiTop.punteggio);
+      const regione = datiTop.regione || "Italia";
+
+      li.classList.add("top-dish");
+
+      li.innerHTML = `
+        <span class="piatto-nome">
+          <span class="emoji">${badge}</span> ${nomeOriginale}
+        </span>
+        <span class="piatto-meta">
+          ${categoria} — ${regione}
+        </span>
+      `;
     }
-  }
-
-  // 3) nessun match
-  return null;
+  });
 }
 
 /* ============================
-   ALLERGENI AUTOMATICI (fallback)
+   FUNZIONE WHATSAPP
 ============================ */
-function allergeniAutomatici(nomePiatto, datiTop) {
-  // Se il piatto è in TOP_PIATTI e ha allergeni definiti, usiamo quelli
-  if (datiTop && Array.isArray(datiTop.allergeni)) {
-    return datiTop.allergeni;
-  }
+function condividiWhatsApp() {
+  const testo = "Ecco il menu del giorno del Ristorante:\n\n" +
+                document.body.innerText.replace(/Invia Menu/g, "").trim();
 
-  // Fallback semplice basato su parole chiave
-  const t = normalizzaNome(nomePiatto);
-  const a = [];
-
-  if (t.includes("panna") || t.includes("burro") || t.includes("formaggio") || t.includes("zola") || t.includes("mozzarella"))
-    a.push("latte");
-
-  if (t.includes("uova") || t.includes("carbonara") || t.includes("maionese"))
-    a.push("uova");
-
-  if (t.includes("farina") || t.includes("pasta") || t.includes("penne") || t.includes("spaghetti") || t.includes("pappardelle") || t.includes("gnocchi") || t.includes("lasagne"))
-    a.push("glutine");
-
-  if (t.includes("tonno") || t.includes("acciughe") || t.includes("salmone") || t.includes("pesce") || t.includes("branzino") || t.includes("spigola"))
-    a.push("pesce");
-
-  if (t.includes("noci") || t.includes("mandorle") || t.includes("nocciole") || t.includes("pistacchi"))
-    a.push("frutta a guscio");
-
-  return [...new Set(a)];
+  const url = "https://wa.me/?text=" + encodeURIComponent(testo);
+  window.open(url, "_blank");
 }
 
+/* ============================
+   AVVIO AUTOMATICO
+============================ */
+document.addEventListener("DOMContentLoaded", () => {
+  evidenziaPiattiTop();
+});
+</script>
 /* ============================
    DIETA AUTOMATICA (fallback)
 ============================ */
@@ -510,14 +535,6 @@ function generaQRCode() {
 }
 
 /* ============================
-   STELLE
-============================ */
-function stelle(n) {
-  const s = Math.max(0, Math.min(5, n || 0));
-  return "★★★★★".slice(0, s) + "☆☆☆☆☆".slice(0, 5 - s);
-}
-
-/* ============================
    EVIDENZIAZIONE PIATTI TOP (NUOVA VERSIONE)
 ============================ */
 function evidenziaPiattiTop() {
@@ -529,13 +546,13 @@ function evidenziaPiattiTop() {
 
     if (datiTop) {
 
-      // Emoji del badge
+      // Badge (🥇 🔥 ⭐)
       let badgeIcon = "⭐";
       if (datiTop.iconico) badgeIcon = "🥇";
       else if (datiTop.top) badgeIcon = "🔥";
 
       // Categoria gastronomica (nuova)
-      const categoria = categoriaPiatto(datiTop.punteggio);
+      const categoria = categoriaGastronomica(datiTop.punteggio);
 
       // Applica stile top
       li.classList.add("top-dish");
@@ -548,7 +565,6 @@ function evidenziaPiattiTop() {
     }
   });
 }
-
 
 /* ============================
    ESTRAZIONE PIATTI DAL DOM
@@ -573,24 +589,13 @@ function generaMenuSection(nome, piatti) {
         "@type": "MenuItem",
         "name": piatto,
         "description": "Piatto del giorno preparato secondo tradizione italiana.",
-        "image": "",
         "allergen": allergeniAutomatici(piatto, datiTop),
         "region": regionalitaPiatto(piatto, datiTop),
         "suitableForDiet": dietaAutomatica(piatto, datiTop),
-        "offers": {
-          "@type": "Offer",
-          "price": "14.00",
-          "priceCurrency": "EUR"
-        },
         "alternateName": traduci(piatto, "en"),
         "isTopDish": !!datiTop,
-        "topScore": datiTop ? datiTop.punteggio : null,
-        "topIconico": datiTop ? !!datiTop.iconico : null,
-        "topStorico": datiTop ? !!datiTop.storico : null,
-        "topBadge": datiTop
-          ? (datiTop.iconico ? "Piatto Iconico" : datiTop.top ? "Piatto Top" : "Piatto Storico")
-          : null,
-        "topRegion": datiTop ? datiTop.regione : null
+        "categoriaGastronomica": datiTop ? categoriaGastronomica(datiTop.punteggio) : null,
+        "badge": datiTop ? badgePiatto(datiTop) : null
       };
     })
   };
