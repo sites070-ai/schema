@@ -21,6 +21,23 @@ function trovaPiatto(nomePiatto) {
 }
 
 /* ============================
+   DESCRIZIONE BREVE GASTRONOMICA
+============================ */
+function descrizioneBreve(nome) {
+  const t = normalizzaNome(nome);
+
+  if (t.includes("pesto")) return "Fresco e aromatico";
+  if (t.includes("panna") || t.includes("formaggio")) return "Ricco e cremoso";
+  if (t.includes("pomodoro") || t.includes("basilico")) return "Classico intramontabile";
+  if (t.includes("arrosto") || t.includes("forno")) return "Ricetta della tradizione";
+  if (t.includes("griglia")) return "Grigliatura lenta";
+  if (t.includes("zucchine") || t.includes("verdure")) return "Cottura leggera";
+  if (t.includes("insalata")) return "Fresca e semplice";
+
+  return "Specialità del giorno";
+}
+
+/* ============================
    ALLERGENI AUTOMATICI
 ============================ */
 function allergeniAutomatici(nomePiatto, datiTop) {
@@ -107,21 +124,6 @@ function traduci(nomePiatto, lingua) {
 }
 
 /* ============================
-   QR CODE
-============================ */
-function generaQRCode() {
-  return "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(window.location.href);
-}
-
-/* ============================
-   STELLE
-============================ */
-function stelle(n) {
-  const s = Math.max(0, Math.min(5, n || 0));
-  return "★★★★★".slice(0, s) + "☆☆☆☆☆".slice(0, 5 - s);
-}
-
-/* ============================
    EVIDENZIAZIONE PIATTI TOP
 ============================ */
 function evidenziaPiattiTop() {
@@ -141,7 +143,7 @@ function evidenziaPiattiTop() {
 
       li.innerHTML = `
         <span class="piatto-nome"><span class="emoji">${badgeIcon}</span> ${nomeOriginale}</span>
-        <span class="piatto-meta">${stelle(datiTop.punteggio)} — ${datiTop.regione}</span>
+        <span class="piatto-meta">${datiTop.regione} — ${descrizioneBreve(nomeOriginale)}</span>
       `;
     }
   });
@@ -181,7 +183,6 @@ function generaMenuSection(nome, piatti) {
         },
         "alternateName": traduci(piatto, "en"),
         "isTopDish": !!datiTop,
-        "topScore": datiTop ? datiTop.punteggio : null,
         "topIconico": datiTop ? !!datiTop.iconico : null,
         "topStorico": datiTop ? !!datiTop.storico : null,
         "topBadge": datiTop
