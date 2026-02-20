@@ -1,20 +1,4 @@
 /* ============================
-   AVVIO
-============================ */
-window.onload = function() {
-  evidenziaPiattiTop();
-  generaJSONLD();
-};
-
-
-async function caricaDatabase() {
-  const url = "https://sites070-ai.github.io/schema/piatti-menu-pranzo.js";
-  const risposta = await fetch(url);
-  const testo = await risposta.text();
-  eval(testo);
-}
-
-/* ============================
    NORMALIZZAZIONE NOME PIATTO
 ============================ */
 function normalizzaNome(nome) {
@@ -237,8 +221,7 @@ function generaJSONLD() {
 /* ============================
    AVVIO
 ============================ */
-window.onload = async function() {
-  await caricaDatabase();
+window.onload = function() {
   evidenziaPiattiTop();
   generaJSONLD();
 };
