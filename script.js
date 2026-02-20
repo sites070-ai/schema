@@ -135,9 +135,10 @@ function evidenziaPiattiTop() {
 
     if (datiTop) {
 
-      let badgeIcon = "⭐";
+      let badgeIcon = "✨"; // Badge di default: Selezione
       if (datiTop.iconico) badgeIcon = "🥇";
       else if (datiTop.top) badgeIcon = "🔥";
+      else if (datiTop.selezione) badgeIcon = "✨"; // Nuovo flag
 
       li.classList.add("top-dish");
 
@@ -148,6 +149,7 @@ function evidenziaPiattiTop() {
     }
   });
 }
+
 
 /* ============================
    ESTRAZIONE PIATTI
