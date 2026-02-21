@@ -1,12 +1,10 @@
-/* ============================================================
-   SCRIPT.JS - DEFINITIVO
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", function () {
     generaMiglioramentiPiatti();
     generaStoricoRicorrenze();
     generaJSONLD();
+    aggiungiFirmaLocanda(); 
 });
+
 
 /* ============================================================
    1. DESCRIZIONI + REGIONE + BADGE (database)
