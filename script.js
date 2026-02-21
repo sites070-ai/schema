@@ -1,12 +1,12 @@
 /* ============================
-   NORMALIZZAZIONE NOME PIATTO
+   NORMALIZZAZIONE
 ============================ */
 function normalizzaNome(nome) {
   return nome.toLowerCase().trim().replace(/\s+/g, " ");
 }
 
 /* ============================
-   RICERCA PIATTO NELLA TOP
+   TROVA PIATTO NEL DATABASE
 ============================ */
 function trovaPiatto(nomePiatto) {
   const n = normalizzaNome(nomePiatto);
@@ -21,7 +21,7 @@ function trovaPiatto(nomePiatto) {
 }
 
 /* ============================
-   DESCRIZIONE BREVE GASTRONOMICA
+   DESCRIZIONE GASTRONOMICA
 ============================ */
 function descrizioneBreve(nome) {
   const t = normalizzaNome(nome);
@@ -38,54 +38,7 @@ function descrizioneBreve(nome) {
 }
 
 /* ============================
-   ALLERGENI AUTOMATICI
-============================ */
-function allergeniAutomatici(nomePiatto, datiTop) {
-  if (datiTop && Array.isArray(datiTop.allergeni)) return datiTop.allergeni;
-
-  const t = normalizzaNome(nomePiatto);
-  const a = [];
-
-  if (t.includes("panna") || t.includes("burro") || t.includes("formaggio") || t.includes("zola") || t.includes("mozzarella"))
-    a.push("latte");
-
-  if (t.includes("uova") || t.includes("carbonara") || t.includes("maionese"))
-    a.push("uova");
-
-  if (t.includes("farina") || t.includes("pasta") || t.includes("penne") || t.includes("spaghetti") || t.includes("pappardelle") || t.includes("gnocchi") || t.includes("lasagne"))
-    a.push("glutine");
-
-  if (t.includes("tonno") || t.includes("acciughe") || t.includes("salmone") || t.includes("pesce") || t.includes("branzino") || t.includes("spigola"))
-    a.push("pesce");
-
-  if (t.includes("noci") || t.includes("mandorle") || t.includes("nocciole") || t.includes("pistacchi"))
-    a.push("frutta a guscio");
-
-  return [...new Set(a)];
-}
-
-/* ============================
-   DIETA AUTOMATICA
-============================ */
-function dietaAutomatica(nomePiatto, datiTop) {
-  if (datiTop && datiTop.dieta) return datiTop.dieta;
-
-  const t = normalizzaNome(nomePiatto);
-
-  if (t.includes("salmone") || t.includes("tonno") || t.includes("acciughe") || t.includes("pesce") || t.includes("branzino") || t.includes("spigola"))
-    return "pesce";
-
-  if (t.includes("arrosto") || t.includes("maiale") || t.includes("tacchino") || t.includes("coppa") || t.includes("salsiccia") || t.includes("pollo") || t.includes("vitello") || t.includes("manzo"))
-    return "carne";
-
-  if (t.includes("verdure") || t.includes("zucchine") || t.includes("finocchi") || t.includes("insalata") || t.includes("patate") || t.includes("fagioli") || t.includes("lenticchie"))
-    return "vegetariano";
-
-  return "non specificato";
-}
-
-/* ============================
-   REGIONALITÀ
+   REGIONE AUTOMATICA
 ============================ */
 function regionalitaPiatto(nomePiatto, datiTop) {
   if (datiTop && datiTop.regione) return datiTop.regione;
@@ -108,23 +61,7 @@ function regionalitaPiatto(nomePiatto, datiTop) {
 }
 
 /* ============================
-   TRADUZIONI
-============================ */
-function traduci(nomePiatto, lingua) {
-  const diz = {
-    "spaghetti alla carbonara": { en: "Spaghetti Carbonara" },
-    "risotto ai funghi porcini": { en: "Porcini Mushroom Risotto" },
-    "spaghetti al pomodoro e basilico": { en: "Spaghetti with Tomato and Basil" },
-    "cotoletta alla milanese": { en: "Milanese Cutlet" },
-    "pollo arrosto con patate": { en: "Roast Chicken with Potatoes" },
-    "branzino al forno": { en: "Baked Sea Bass" }
-  };
-  const key = normalizzaNome(nomePiatto);
-  return diz[key]?.[lingua] || nomePiatto;
-}
-
-/* ============================
-   EVIDENZIAZIONE PIATTI TOP
+   BADGE + REGIONE + DESCRIZIONE
 ============================ */
 function evidenziaPiattiTop() {
   const piatti = document.querySelectorAll("section ul li");
@@ -134,25 +71,25 @@ function evidenziaPiattiTop() {
     const datiTop = trovaPiatto(nomeOriginale);
 
     if (datiTop) {
-
-      let badgeIcon = "✨"; // Badge di default: Selezione
+      let badgeIcon = "✨";
       if (datiTop.iconico) badgeIcon = "🥇";
       else if (datiTop.top) badgeIcon = "🔥";
-      else if (datiTop.selezione) badgeIcon = "✨"; // Nuovo flag
+      else if (datiTop.selezione) badgeIcon = "✨";
+
+      const regione = regionalitaPiatto(nomeOriginale, datiTop);
+      const descr = descrizioneBreve(nomeOriginale);
 
       li.classList.add("top-dish");
-
       li.innerHTML = `
         <span class="piatto-nome"><span class="emoji">${badgeIcon}</span> ${nomeOriginale}</span>
-        <span class="piatto-meta">${datiTop.regione} — ${descrizioneBreve(nomeOriginale)}</span>
+        <span class="piatto-meta">${regione} — ${descr}</span>
       `;
     }
   });
 }
 
-
 /* ============================
-   ESTRAZIONE PIATTI
+   JSON-LD SERIO PER GOOGLE
 ============================ */
 function estraiPiatti(selector) {
   return Array.from(document.querySelectorAll(selector))
@@ -160,37 +97,24 @@ function estraiPiatti(selector) {
     .filter(t => t.length > 0);
 }
 
-/* ============================
-   JSON-LD
-============================ */
 function generaMenuSection(nome, piatti) {
   return {
     "@type": "MenuSection",
     "name": nome,
     "hasMenuItem": piatti.map(piatto => {
       const datiTop = trovaPiatto(piatto);
+      const regione = regionalitaPiatto(piatto, datiTop);
+      const descr = descrizioneBreve(piatto);
 
       return {
         "@type": "MenuItem",
         "name": piatto,
-        "description": "Piatto del giorno preparato secondo tradizione italiana.",
-        "image": "",
-        "allergen": allergeniAutomatici(piatto, datiTop),
-        "region": regionalitaPiatto(piatto, datiTop),
-        "suitableForDiet": dietaAutomatica(piatto, datiTop),
+        "description": `${regione} — ${descr}`,
         "offers": {
           "@type": "Offer",
           "price": "14.00",
           "priceCurrency": "EUR"
-        },
-        "alternateName": traduci(piatto, "en"),
-        "isTopDish": !!datiTop,
-        "topIconico": datiTop ? !!datiTop.iconico : null,
-        "topStorico": datiTop ? !!datiTop.storico : null,
-        "topBadge": datiTop
-          ? (datiTop.iconico ? "Piatto Iconico" : datiTop.top ? "Piatto Top" : "Piatto Storico")
-          : null,
-        "topRegion": datiTop ? datiTop.regione : null
+        }
       };
     })
   };
@@ -205,9 +129,7 @@ function generaJSONLD() {
     "@context": "https://schema.org",
     "@type": "Menu",
     "name": "Menu del Giorno - Locanda del Contadino",
-    "description": "Menu del giorno con piatti tipici italiani.",
-    "servesCuisine": "Italian",
-    "image": generaQRCode(),
+    "description": "Menu del giorno aggiornato quotidianamente.",
     "hasMenuSection": [
       generaMenuSection("Primi", primi),
       generaMenuSection("Secondi", secondi),
