@@ -1,5 +1,5 @@
 /* ============================================================
-   SCRIPT-3.JS — PRIORITÀ 1 + PRIORITÀ 2 (senza duplicati)
+   SCRIPT.JS - DEFINITIVO
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -215,4 +215,20 @@ function generaJSONLD() {
     if (tag) {
         tag.textContent = JSON.stringify(schema, null, 2);
     }
+}
+/* ============================================================
+   FIRMA AUTOMATICA SOTTO "GRAZIE E BUON APPETITO"
+   ============================================================ */
+function aggiungiFirmaLocanda() {
+    const chiusura = document.querySelector(".chiusura");
+    if (!chiusura) return;
+
+    // Evita doppie firme se lo script viene ricaricato
+    if (document.querySelector(".firma-locanda")) return;
+
+    const firma = document.createElement("div");
+    firma.className = "firma-locanda";
+    firma.textContent = "Locanda del Contadino — dal 1984";
+
+    chiusura.insertAdjacentElement("afterend", firma);
 }
