@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     generaMiglioramentiPiatti();
     generaStoricoRicorrenze();
     generaJSONLD();
-    aggiungiFirmaLocanda(); 
+    aggiungiFirmaLocanda(); // <— ECCO QUI
 });
-
 
 /* ============================================================
    1. DESCRIZIONI + REGIONE + BADGE (database)
