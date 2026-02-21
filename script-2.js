@@ -3,9 +3,9 @@
    - Descrizioni gastronomiche automatiche
    - Regione di origine
    - Badge Iconico / Top / Selezione
+   - Colore ambrato coerente con la lavagna
    ============================================================ */
 
-/* FUNZIONE PRINCIPALE */
 document.addEventListener("DOMContentLoaded", function () {
     generaMiglioramentiPiatti();
 });
@@ -20,7 +20,7 @@ function generaMiglioramentiPiatti() {
     piattiHTML.forEach(li => {
         const nomePiatto = li.textContent.trim().toLowerCase();
 
-        if (!TOP_PIATTI[nomePiatto]) return; // se non è nel database, non tocco nulla
+        if (!TOP_PIATTI[nomePiatto]) return;
 
         const dati = TOP_PIATTI[nomePiatto];
 
@@ -33,7 +33,7 @@ function generaMiglioramentiPiatti() {
         }
 
         /* ============================================================
-           DESCRIZIONE GASTRONOMICA (breve, elegante, da chef)
+           DESCRIZIONE GASTRONOMICA
            ============================================================ */
         const descrizione = generaDescrizione(nomePiatto, dati);
 
@@ -51,6 +51,14 @@ function generaMiglioramentiPiatti() {
         if (dati.selezione) badge += "✨ Selezione ";
 
         /* ============================================================
+           COLORE AMBRATO (coerente con la lavagna)
+           ============================================================ */
+        const colore = "#c9a23f";
+
+        meta.style.color = colore;
+        meta.style.fontWeight = "500";
+
+        /* ============================================================
            COSTRUZIONE TESTO META
            ============================================================ */
         meta.innerHTML = `
@@ -66,15 +74,13 @@ function generaMiglioramentiPiatti() {
    ============================================================ */
 function generaDescrizione(nome, dati) {
 
-    const base = nome.charAt(0).toUpperCase() + nome.slice(1);
-
     const categorie = {
         "primo": [
-            `Piatto di tradizione italiana preparato con cura.`,
             `Ricetta semplice e genuina, perfetta per ogni palato.`,
+            `Un primo piatto che valorizza ingredienti freschi e di qualità.`,
+            `Piatto di tradizione italiana preparato con cura.`,
             `Un classico della cucina casalinga, saporito e confortante.`,
-            `Preparazione equilibrata, dal gusto autentico.`,
-            `Un primo piatto che valorizza ingredienti freschi e di qualità.`
+            `Preparazione equilibrata, dal gusto autentico.`
         ],
         "secondo": [
             `Secondo piatto ricco e gustoso, tipico della cucina italiana.`,
@@ -84,17 +90,15 @@ function generaDescrizione(nome, dati) {
             `Preparazione rustica, dal carattere deciso.`
         ],
         "contorno": [
-            `Contorno leggero e genuino, ideale per accompagnare ogni piatto.`,
+            `Un accompagnamento sano e gustoso.`,
             `Preparazione semplice, fresca e saporita.`,
-            `Un contorno classico della cucina italiana.`,
+            `Contorno leggero e genuino, ideale per ogni piatto.`,
             `Verdure selezionate e cucinate con cura.`,
-            `Un accompagnamento sano e gustoso.`
+            `Un contorno classico della cucina italiana.`
         ]
     };
 
     const lista = categorie[dati.categoria] || ["Piatto preparato con ingredienti freschi."];
 
-    const descrizione = lista[Math.floor(Math.random() * lista.length)];
-
-    return descrizione;
+    return lista[Math.floor(Math.random() * lista.length)];
 }
