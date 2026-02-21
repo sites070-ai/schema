@@ -1,11 +1,5 @@
 /* ============================================================
-   SCRIPT-3.JS — PRIORITÀ 1 + PRIORITÀ 2
-   - Descrizioni gastronomiche automatiche
-   - Regione di origine
-   - Badge Iconico / Top / Selezione
-   - Copia Menu
-   - Storico ricorrenze
-   - JSON-LD automatico
+   SCRIPT-3.JS — PRIORITÀ 1 + PRIORITÀ 2 (senza duplicati)
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ============================================================
-   1. DESCRIZIONI + REGIONE + BADGE
+   1. DESCRIZIONI + REGIONE + BADGE (database)
    ============================================================ */
 function generaMiglioramentiPiatti() {
 
@@ -42,7 +36,7 @@ function generaMiglioramentiPiatti() {
         /* REGIONE */
         const regione = dati.regione ? `📍 ${dati.regione}` : "📍 Italia";
 
-        /* BADGE */
+        /* BADGE DAL DATABASE */
         let badge = "";
         if (dati.iconico) badge += "🥇 Iconico ";
         if (dati.top) badge += "🔥 Top ";
@@ -51,6 +45,9 @@ function generaMiglioramentiPiatti() {
         /* COLORE AMBRATO */
         meta.style.color = "#c9a23f";
         meta.style.fontWeight = "500";
+
+        /* SALVO BADGE DATABASE PER EVITARE DUPLICATI */
+        meta.dataset.badgeDb = badge.trim();
 
         /* OUTPUT */
         meta.innerHTML = `
@@ -62,7 +59,7 @@ function generaMiglioramentiPiatti() {
 }
 
 /* ============================================================
-   2. GENERATORE DESCRIZIONI "DA CHEF"
+   2. DESCRIZIONI "DA CHEF"
    ============================================================ */
 function generaDescrizione(nome, dati) {
 
@@ -96,7 +93,7 @@ function generaDescrizione(nome, dati) {
 }
 
 /* ============================================================
-   3. STORICO RICORRENZE (localStorage)
+   3. STORICO RICORRENZE (senza duplicare badge)
    ============================================================ */
 function generaStoricoRicorrenze() {
 
@@ -106,49 +103,31 @@ function generaStoricoRicorrenze() {
 
     piattiHTML.forEach(li => {
         const nome = li.textContent.trim();
-
-        if (!storico[nome]) storico[nome] = 0;
-        storico[nome]++;
-
-        /* AGGIORNA BADGE AUTOMATICI */
         let meta = li.querySelector(".piatto-meta");
         if (!meta) return;
 
-        if (storico[nome] >= 4) {
-            meta.innerHTML += "<br>🥇 Iconico";
-        } else if (storico[nome] >= 2) {
-            meta.innerHTML += "<br>🔥 Top";
-        } else {
-            meta.innerHTML += "<br>✨ Selezione";
+        /* SE IL DATABASE HA GIÀ BADGE → NON AGGIUNGO NULLA */
+        if (meta.dataset.badgeDb && meta.dataset.badgeDb.length > 0) {
+            storico[nome] = (storico[nome] || 0) + 1;
+            return;
         }
+
+        /* ALTRIMENTI USO LO STORICO */
+        storico[nome] = (storico[nome] || 0) + 1;
+
+        let badge = "";
+        if (storico[nome] >= 4) badge = "🥇 Iconico";
+        else if (storico[nome] >= 2) badge = "🔥 Top";
+        else badge = "✨ Selezione";
+
+        meta.innerHTML += `<br>${badge}`;
     });
 
     localStorage.setItem("storicoPiatti", JSON.stringify(storico));
 }
 
 /* ============================================================
-   4. COPIA MENU (funzione globale)
-   ============================================================ */
-function copiaMenu() {
-    const sezioni = document.querySelectorAll("section");
-    let testo = "Menù del Giorno:\n\n";
-
-    sezioni.forEach(section => {
-        const titolo = section.querySelector("h2").textContent.replace("✦ ", "");
-        testo += titolo + ":\n";
-
-        const piatti = section.querySelectorAll("li");
-        piatti.forEach(p => testo += "- " + p.textContent.trim() + "\n");
-
-        testo += "\n";
-    });
-
-    navigator.clipboard.writeText(testo);
-    alert("Menù copiato negli appunti!");
-}
-
-/* ============================================================
-   5. JSON-LD AUTOMATICO
+   4. JSON-LD AUTOMATICO
    ============================================================ */
 function generaJSONLD() {
 
