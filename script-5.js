@@ -170,3 +170,49 @@ function generaJSONLD() {
 
     document.getElementById("json-ld").textContent = JSON.stringify(schema, null, 2);
 }
+/* ============================================================
+   JSON-LD AUTOMATICO (SEO)
+   ============================================================ */
+function generaJSONLD() {
+
+    const sezioni = document.querySelectorAll("section");
+
+    let piatti = [];
+
+    sezioni.forEach(section => {
+        const categoria = section.querySelector("h2")
+            .textContent
+            .replace("✦", "")
+            .trim();
+
+        const items = section.querySelectorAll("li");
+
+        items.forEach(li => {
+            const nome = li.childNodes[0].textContent.trim(); // solo nome piatto
+
+            piatti.push({
+                "@type": "MenuItem",
+                "name": nome,
+                "category": categoria
+            });
+        });
+    });
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "Menù del Giorno — Pranzo Fisso",
+        "servesCuisine": "Cucina tradizionale italiana",
+        "provider": {
+            "@type": "Restaurant",
+            "name": "Locanda del Contadino"
+        },
+        "url": window.location.href,
+        "hasMenuItem": piatti
+    };
+
+    const tag = document.getElementById("json-ld");
+    if (tag) {
+        tag.textContent = JSON.stringify(schema, null, 2);
+    }
+}
