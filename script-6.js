@@ -191,3 +191,53 @@ function aggiungiFirmaLocanda() {
 
     chiusura.insertAdjacentElement("afterend", firma);
 }
+/* ============================================================
+   BARRA SOCIAL — AZIONI
+   ============================================================ */
+document.addEventListener("click", function(e) {
+    if (!e.target.classList.contains("icona-social")) return;
+
+    const azione = e.target.dataset.azione;
+
+    if (azione === "copia") copiaMenu();
+    if (azione === "whatsapp") condividiWhatsApp();
+    if (azione === "telegram") condividiTelegram();
+    if (azione === "facebook") condividiFacebook();
+});
+
+/* TESTO MENÙ — versione breve e pulita */
+function generaTestoMenu() {
+    const data = document.getElementById("data-odierna").textContent;
+    let testo = `Menù del giorno (${data})\n\n`;
+
+    document.querySelectorAll("section").forEach(section => {
+        const titolo = section.querySelector("h2").textContent.replace("✦ ", "");
+        testo += titolo + ":\n";
+
+        section.querySelectorAll("li").forEach(li => {
+            testo += "- " + li.childNodes[0].textContent.trim() + "\n";
+        });
+
+        testo += "\n";
+    });
+
+    return testo.trim();
+}
+
+/* COPIA */
+function copiaMenu() {
+    navigator.clipboard.writeText(generaTestoMenu());
+    alert("Menù copiato negli appunti!");
+}
+
+/* TELEGRAM */
+function condividiTelegram() {
+    const testo = encodeURIComponent(generaTestoMenu());
+    window.open("https://t.me/share/url?text=" + testo, "_blank");
+}
+
+/* FACEBOOK */
+function condividiFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank");
+}
