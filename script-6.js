@@ -131,43 +131,6 @@ function generaStoricoRicorrenze() {
 }
 
 /* ============================================================
-   4. JSON-LD AUTOMATICO
-   ============================================================ */
-function generaJSONLD() {
-
-    const sezioni = document.querySelectorAll("section");
-
-    let piatti = [];
-
-    sezioni.forEach(section => {
-        const categoria = section.querySelector("h2").textContent.replace("✦ ", "").trim();
-        const items = section.querySelectorAll("li");
-
-        items.forEach(li => {
-            piatti.push({
-                "@type": "MenuItem",
-                "name": li.textContent.trim(),
-                "category": categoria
-            });
-        });
-    });
-
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "Menu",
-        "name": "Menù del Giorno — Pranzo Fisso",
-        "servesCuisine": "Cucina tradizionale italiana",
-        "provider": {
-            "@type": "Restaurant",
-            "name": "Locanda del Contadino"
-        },
-        "url": window.location.href,
-        "hasMenuItem": piatti
-    };
-
-    document.getElementById("json-ld").textContent = JSON.stringify(schema, null, 2);
-}
-/* ============================================================
    JSON-LD AUTOMATICO (SEO)
    ============================================================ */
 function generaJSONLD() {
