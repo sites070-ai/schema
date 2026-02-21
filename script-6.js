@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     generaMiglioramentiPiatti();
     generaStoricoRicorrenze();
     generaJSONLD();
-    aggiungiFirmaLocanda(); // <— ECCO QUI
+    aggiungiFirmaLocanda();
 });
 
 /* ============================================================
@@ -111,7 +111,6 @@ function generaStoricoRicorrenze() {
             testoMeta.includes("🔥") ||
             testoMeta.includes("✨")
         ) {
-            // aggiorno solo il contatore, ma NON aggiungo badge
             storico[nome] = (storico[nome] || 0) + 1;
             return;
         }
@@ -131,7 +130,7 @@ function generaStoricoRicorrenze() {
 }
 
 /* ============================================================
-   JSON-LD AUTOMATICO (SEO)
+   4. JSON-LD AUTOMATICO (versione corretta)
    ============================================================ */
 function generaJSONLD() {
 
@@ -176,14 +175,14 @@ function generaJSONLD() {
         tag.textContent = JSON.stringify(schema, null, 2);
     }
 }
+
 /* ============================================================
-   FIRMA AUTOMATICA SOTTO "GRAZIE E BUON APPETITO"
+   5. FIRMA AUTOMATICA SOTTO "GRAZIE E BUON APPETITO"
    ============================================================ */
 function aggiungiFirmaLocanda() {
     const chiusura = document.querySelector(".chiusura");
     if (!chiusura) return;
 
-    // Evita doppie firme se lo script viene ricaricato
     if (document.querySelector(".firma-locanda")) return;
 
     const firma = document.createElement("div");
