@@ -187,7 +187,7 @@ function aggiungiFirmaLocanda() {
 
     const firma = document.createElement("div");
     firma.className = "firma-locanda";
-    firma.textContent = "Locanda del Contadino — dal 1984";
+    firma.textContent = "Locanda del Contadino — dal 2005";
 
     chiusura.insertAdjacentElement("afterend", firma);
 }
