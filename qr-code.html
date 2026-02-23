@@ -179,7 +179,15 @@ html,body{
   margin-bottom: 15mm;
 }
 
-/* FIX: margini e dimensioni ottimizzate SOLO in orizzontale */
+/* FIX DEFINITIVO: margini verticali gestiti via JS, laterali solo in landscape */
+
+/* Nessun margine verticale fisso: ci pensa il JS */
+#orbit-wrapper {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Fix specifico per orizzontale */
 @media (orientation: landscape) {
 
   /* orbita leggermente più piccola solo in orizzontale */
@@ -193,13 +201,8 @@ html,body{
     padding-left: 4vw;
     padding-right: 4vw;
   }
-
-  /* margine superiore e inferiore SOLO in orizzontale */
-  #orbit-wrapper {
-    margin-top: 15mm;
-    margin-bottom: 15mm;
-  }
 }
+
 
 </style>
 </head>
