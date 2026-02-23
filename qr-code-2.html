@@ -173,6 +173,19 @@ html,body{
   font-weight:bold;
   cursor:pointer;
 }
+  /* FIX: margini in orizzontale per evitare che i QR escano */
+@media (orientation: landscape) {
+  #orbit {
+    width: min(80vw, 80vh);   /* leggermente più piccola solo in orizzontale */
+    height: min(80vw, 80vh);
+  }
+
+  body {
+    padding-left: 4vw;
+    padding-right: 4vw;       /* margini laterali invisibili */
+  }
+}
+
 </style>
 </head>
 
