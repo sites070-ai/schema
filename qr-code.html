@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbita QR - Locanda del Contadino</title>
+
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  background:#000;
+  font-family:'Chalkboard','Comic Sans MS',sans-serif;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* SFONDO */
+#universe{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  background:radial-gradient(circle at center,#050814 0%,#02030a 40%,#000 100%);
+}
+
+.bg-stars{
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 20% 30%,rgba(120,120,255,0.25),transparent 55%),
+    radial-gradient(circle at 80% 70%,rgba(180,90,255,0.25),transparent 55%),
+    radial-gradient(2px 2px at 15% 20%,rgba(255,255,255,0.5),transparent),
+    radial-gradient(2px 2px at 70% 80%,rgba(255,255,255,0.4),transparent),
+    radial-gradient(1.5px 1.5px at 40% 60%,rgba(255,255,255,0.35),transparent),
+    radial-gradient(1.5px 1.5px at 85% 25%,rgba(255,255,255,0.3),transparent);
+  animation:starsMove 40s linear infinite alternate;
+  pointer-events:none;
+}
+
+@keyframes starsMove{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(-20px,10px);}
+}
+
+/* SOLE */
+#sole{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  border:3px solid #f5d46a;
+  box-shadow:0 0 26px rgba(245,212,106,0.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:pulseSun 3.5s ease-in-out infinite alternate;
+  z-index:10;
+}
+
+#sole-text{
+  color:#f5d46a;
+  font-weight:bold;
+  text-align:center;
+  font-size:0.95rem;
+  text-shadow:0 0 6px #000;
+}
+
+@keyframes pulseSun{
+  0%{box-shadow:0 0 18px rgba(255,215,120,0.4);}
+  100%{box-shadow:0 0 40px rgba(255,215,120,0.9);}
+}
+
+/* ORBITA */
+#orbit-wrapper{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:5;
+}
+
+#orbit{
+  width:520px;
+  height:520px;
+  position:relative;
+}
+
+/* QR */
+.planet{
+  width:90px;
+  height:90px;
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.planet-inner{
+  width:64px;
+  height:64px;
+  border-radius:12px;
+  border:2px solid #f5d46a;
+  overflow:hidden;
+  background:#111;
+  box-shadow:0 0 14px rgba(245,212,106,0.6);
+  animation:selfSpin 18s linear infinite;
+}
+
+.planet-inner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.planet span{
+  margin-top:5px;
+  font-size:0.78rem;
+  color:#f5d46a;
+  text-shadow:0 0 6px #000;
+}
+
+@keyframes selfSpin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+/* POPUP */
+#popup-bg{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.88);
+  backdrop-filter:blur(4px);
+  z-index:9999;
+  overflow-y:auto;
+  padding:40px 20px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+#popup-box{
+  background:#05060b;
+  padding:20px;
+  border-radius:16px;
+  border:2px solid #f5d46a;
+  box-shadow:0 0 30px rgba(245,212,106,0.7);
+  text-align:center;
+  max-width:90vw;
+  max-height:90vh;
+}
+
+#popup-title{
+  margin-bottom:10px;
+  font-size:1.1rem;
+  color:#f5d46a;
+}
+
+#popup-box img{
+  width:220px;
+  max-width:70vw;
+  border-radius:12px;
+  border:3px solid #f5d46a;
+}
+
+#close-btn{
+  margin-top:14px;
+  padding:8px 18px;
+  background:#f5d46a;
+  border:none;
+  border-radius:999px;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="universe">
+  <div class="bg-stars"></div>
+
+  <div id="sole">
+    <div id="sole-text">Locanda del Contadino<br>dal 2005</div>
+  </div>
+
+  <div id="orbit-wrapper">
+    <div id="orbit"></div>
+  </div>
+
+  <div id="popup-bg">
+    <div id="popup-box">
+      <div id="popup-title"></div>
+      <img id="popup-img">
+      <button id="close-btn">Chiudi</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* POPUP */
+const popupBg=document.getElementById('popup-bg');
+const popupImg=document.getElementById('popup-img');
+const popupTitle=document.getElementById('popup-title');
+document.getElementById('close-btn').onclick=()=>popupBg.style.display='none';
+popupBg.onclick=e=>{if(e.target===popupBg)popupBg.style.display='none';};
+
+function openPopup(src,title){
+  popupImg.src=src;
+  popupTitle.textContent=title;
+  popupBg.style.display='flex';
+}
+
+/* ORBITA */
+const orbit=document.getElementById("orbit");
+
+const items=[
+  {title:"Classiche",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=CLASSICHE"},
+  {title:"Speciali",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=SPECIALI"},
+  {title:"Bianche",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=BIANCHE"},
+  {title:"Integrali",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=INTEGRALI"},
+  {title:"Menu' Pranzo",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=PRANZO"},
+  {title:"Delivery Cremona",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=DELIVERY"},
+  {title:"Recensioni",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=RECENSIONI"},
+  {title:"Promo / Extra",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=PROMO"},
+  {title:"Menu' Pizze",img:"https://api.qrserver.com/v1/create-qr-code/?size=600x600&data=PIZZE"}
+];
+
+const radius=240, center=260;
+
+items.forEach((item,i)=>{
+  const angle=(i*40)*Math.PI/180;
+  const x=center+radius*Math.cos(angle);
+  const y=center+radius*Math.sin(angle);
+
+  const p=document.createElement("div");
+  p.className="planet";
+  p.style.left=(x-45)+"px";
+  p.style.top=(y-45)+"px";
+
+  p.innerHTML=`
+    <div class="planet-inner"><img src="${item.img}"></div>
+    <span>${item.title}</span>
+  `;
+
+  p.onclick=()=>openPopup(item.img,item.title);
+  orbit.appendChild(p);
+});
+
+/* ROTAZIONE FLUIDA */
+let a=0;
+function rotate(){
+  a+=0.12;
+  orbit.style.transform=`rotate(${a}deg)`;
+  requestAnimationFrame(rotate);
+}
+rotate();
+</script>
+
+</body>
+</html>
