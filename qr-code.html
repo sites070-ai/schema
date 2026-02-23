@@ -125,22 +125,21 @@ html,body{
   text-shadow:0 0 6px #000;
 }
 
+/* POPUP — CHIUSO ALL'INIZIO */
 #popup-bg{
-  display:none;              /* popup CHIUSO all'inizio */
+  display:none; /* popup chiuso */
   position:fixed;
   inset:0;
   background:rgba(0,0,0,0.88);
   backdrop-filter:blur(4px);
   z-index:9999;
-
   overflow-y:auto;
   overflow-x:hidden;
   padding:40px 20px;
-
   align-items:flex-start;
   justify-content:center;
 }
-  
+
 #popup-box{
   background:#05060b;
   padding:20px;
@@ -209,7 +208,7 @@ const closeBtn   = document.getElementById('close-btn');
 function openPopup(src, title){
   popupImg.src = src;
   popupTitle.textContent = title;
-  popupBg.style.display = 'flex';   // SI APRE SOLO QUI
+  popupBg.style.display = 'flex';
 }
 
 closeBtn.onclick = () => popupBg.style.display = 'none';
@@ -259,7 +258,7 @@ function rotate(){
   a += 0.12;
   orbit.style.transform = `rotate(${a}deg)`;
   planets.forEach(p => {
-    p.style.transform = `rotate(${-a}deg)`; // testi sempre dritti
+    p.style.transform = `rotate(${-a}deg)`;
   });
   requestAnimationFrame(rotate);
 }
