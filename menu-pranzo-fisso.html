@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu del Giorno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+  <style>
+  <style>
+
+/* FIX GOOGLE SITES — elimina banda laterale e restringimenti */
+.sites-embed-content,
+.sites-embed-content iframe,
+.sites-embed-content div {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.sites-embed-content {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* --- IL TUO CSS ORIGINALE INIZIA QUI --- */
+
+body {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.8s ease-out;
+    font-family: "Architects Daughter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+body {
+      background-color: transparent; /* così si integra nella pagina Sites */
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.8s ease-out;
+      font-family: "Architects Daughter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+
+  .titolo-pranzo-fisso {
+      font-size: 1.6rem;
+      color: #FFD700;
+      text-align: center;
+      margin: 10px 0 5px 0;
+      text-shadow: 0 0 6px rgba(255,215,0,0.4);
+  }
+
+  .sottotitolo-pranzo-fisso {
+      font-size: 1rem;
+      color: #e6e6e6;
+      text-align: center;
+      margin-bottom: 10px;
+      opacity: 0.85;
+      line-height: 1.35;
+  }
+
+  .contenitore {
+      width: 100%;
+      max-width: 480px; /* leggermente più larga */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+  }
+
+  .lavagna {
+      background: #000 url('https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/blackboard.png') repeat;
+      background-size: 400px;
+      filter: contrast(1.05) brightness(0.95);
+      border: 6px double #FFD700;
+      padding: 25px 15px;
+      width: 100%;
+      box-shadow: 0 0 40px rgba(255,215,0,0.25);
+      text-align: center;
+      border-radius: 4px;
+      position: relative;
+      box-sizing: border-box;
+  }
+
+  .intestazione {
+      color: #FFD700;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      font-style: italic;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+  }
+
+  .data-serviamo {
+      color: rgba(255, 215, 0, 0.85);
+      font-size: 0.95rem;
+      font-style: normal;
+  }
+
+  h2 {
+      color: #FFD700;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      border-bottom: 1px dashed rgba(255, 215, 0, 0.4);
+      display: inline-block;
+      padding: 0 10px 3px 10px;
+      text-shadow: 0 0 4px rgba(255,215,0,0.25);
+      letter-spacing: 1px;
+  }
+
+  ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  li {
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      margin: 6px 0;
+      line-height: 1.25;
+      word-break: break-word;
+  }
+
+  .piatto-nome {
+      display: block;
+  }
+
+  .piatto-meta {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    color: #c9a23f;
+  }
+
+  li.top-dish {
+      color: #FFFFFF !important;
+      font-weight: bold;
+      text-shadow: none;
+  }
+
+  .top-dish .piatto-nome {
+      color: #FFFFFF !important;
+      font-weight: 600;
+  }
+
+  .top-dish .piatto-meta {
+      color: #c9a23f !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+  }
+
+  li.top-dish:hover {
+      text-shadow: 0 0 10px rgba(255,215,0,0.9);
+      transform: scale(1.02);
+  }
+
+  .top-dish .piatto-nome .emoji {
+      font-size: 0.8rem !important;
+      vertical-align: middle;
+      margin-right: 4px;
+  }
+
+  .chiusura {
+    margin-top: 25px;
+    color: #FFD700;
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  /* Firma elegante sotto "Grazie e Buon Appetito" */
+  .firma-locanda {
+    margin-top: 5px;
+    color: #FFD700;
+    font-size: 0.9rem;
+    opacity: 0.65;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  /* WHATSAPP */
+  #whatsapp-vertical {
+      position: fixed !important;
+      right: -6px !important;
+      top: 40% !important;
+      background: #FFD700 !important;
+      padding: 8px 6px !important;
+      border-radius: 6px 0 0 6px !important;
+      cursor: pointer !important;
+      z-index: 9999 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 4px !important;
+  }
+
+  .whatsapp-icon {
+      width: 22px !important;
+      height: 22px !important;
+      filter: hue-rotate(90deg) saturate(2);
+  }
+
+  .whatsapp-text {
+      writing-mode: vertical-rl !important;
+      text-orientation: upright !important;
+      color: #0a7c2f !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      letter-spacing: 0.5px !important;
+  }
+
+  .legenda-badges {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      color: white;
+      font-size: 0.9rem;
+  }
+
+  .legenda-badges span {
+      background: rgba(255,255,255,0.08);
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: inline-block;
+  }
+  </style>
+</head>
+
+<body>
+
+<h2 class="titolo-pranzo-fisso">✦ Menù del Giorno ✦</h2>
+
+<p class="sottotitolo-pranzo-fisso">
+  🍽️ Tre primi, tre secondi e tre contorni a scelta.<br>
+  💧🍷 Mezzo litro d’acqua e mezzo litro di vino inclusi.<br>
+  ☕ Caffè compreso.<br>
+  ✔️ Servizio e coperto inclusi.
+</p>
+
+<!-- WHATSAPP -->
+<div id="whatsapp-vertical" onclick="condividiWhatsApp()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon">
+    <span class="whatsapp-text">Invia Menu</span>
+</div>
+
+<div class="contenitore">
+  <div class="lavagna">
+
+    <div class="intestazione">
+      <span id="data-odierna" class="data-serviamo"></span>
+      <span>Oggi vi serviamo...</span>
+    </div>
+
+    <section>
+      <h2>✦ Primi</h2>
+      <ul>
+        <li>Orecchiette al Pesto</li>
+        <li>Tortelli di Carne Panna e Prosciutto</li>
+        <li>Spaghetti al Pomodoro e Basilico</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>✦ Secondi</h2>
+      <ul>
+        <li>Arrosto di Coppa e Lonza con Patate al forno</li>
+        <li>Bistecche alla Pizzaiola</li>
+        <li>Coppa alla griglia</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>✦ Contorni</h2>
+      <ul>
+        <li>Zucchine Trifolate</li>
+        <li>Insalata mista</li>
+        <li>Mix di Verdure Lessate</li>
+      </ul>
+    </section>
+
+    <div class="chiusura">✦ Grazie e Buon Appetito ✦</div>
+
+    <div class="legenda-badges">
+      <span>🥇 Iconico</span>
+      <span>🔥 Top</span>
+      <span>✨ Selezione</span>
+      <span>📝 Nota di gusto</span>
+      <span>📍 Regione di origine</span>
+    </div>
+
+  </div>
+</div>
+
+<script id="json-ld" type="application/ld+json"></script>
+
+<script>
+const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+let data = new Date().toLocaleDateString('it-IT', opzioni);
+data = data.charAt(0).toUpperCase() + data.slice(1);
+document.getElementById('data-odierna').textContent = data;
+</script>
+
+<script>
+function condividiWhatsApp() {
+    const data = document.getElementById("data-odierna").textContent;
+
+    const sezioni = document.querySelectorAll("section");
+    let testo = `Menu del giorno (${data}):\n\n`;
+
+    sezioni.forEach(section => {
+        const titolo = section.querySelector("h2").textContent.replace("✦ ", "");
+        testo += titolo + ":\n";
+
+        const piatti = section.querySelectorAll("li");
+        piatti.forEach(piatto => {
+            testo += "- " + piatto.textContent.trim() + "\n";
+        });
+
+        testo += "\n";
+    });
+
+    testo += "Buon appetito!";
+    const encoded = encodeURIComponent(testo);
+
+    const scelta = confirm("Vuoi usare WhatsApp Business?\nPremi OK per Business, Annulla per WhatsApp normale.");
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (!isMobile) {
+        window.open("https://wa.me/?text=" + encoded, "_blank");
+        return;
+    }
+
+    if (scelta) {
+        window.location.href =
+            "intent://send?text=" + encoded +
+            "#Intent;scheme=whatsapp-business;package=com.whatsapp.w4b;end";
+    } else {
+        window.location.href =
+            "intent://send?text=" + encoded +
+            "#Intent;scheme=whatsapp;package=com.whatsapp;end";
+    }
+}
+</script>
+
+<!-- DATABASE ESTERNO (per potenziamenti futuri) -->
+<script src="https://sites070-ai.github.io/schema/piatti-menu-pranzo.js"></script>
+<script src="https://sites070-ai.github.io/schema/script-6.js"></script>
+
+<!-- AUTO-ADATTAMENTO JS (stile QR Code) -->
+<script>
+(function() {
+  const lavagna = document.querySelector(".lavagna");
+  if (!lavagna) return;
+
+  const baseWidth = 480; // larghezza di riferimento
+  const scalableSelectors = [
+    ".titolo-pranzo-fisso",
+    ".sottotitolo-pranzo-fisso",
+    ".intestazione",
+    ".lavagna h2",
+    ".lavagna li",
+    ".chiusura",
+    ".legenda-badges span"
+  ];
+
+  const elements = [];
+  scalableSelectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      const style = window.getComputedStyle(el);
+      const baseSize = parseFloat(style.fontSize);
+      el.dataset.baseSize = baseSize;
+      elements.push(el);
+    });
+  });
+
+  function adaptMenu() {
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const effectiveWidth = Math.min(baseWidth, viewportWidth);
+    let scale = effectiveWidth / baseWidth;
+    if (scale > 1) scale = 1;
+
+    lavagna.style.transformOrigin = "top center";
+    lavagna.style.transform = "scale(" + scale + ")";
+
+    elements.forEach(el => {
+      const base = parseFloat(el.dataset.baseSize);
+      el.style.fontSize = (base * scale) + "px";
+    });
+  }
+
+  window.addEventListener("resize", adaptMenu);
+  window.addEventListener("orientationchange", adaptMenu);
+  adaptMenu();
+})();
+</script>
+
+</body>
+</html>
