@@ -173,15 +173,13 @@ html,body{
   font-weight:bold;
   cursor:pointer;
 }
- /* FIX: margini e dimensioni orbita ottimizzati */
-
-/* Margini verticali SEMPRE (sia verticale che orizzontale) */
+/* FIX: nessun margine verticale in portrait (verticale) */
 #orbit-wrapper {
-  margin-top: 5mm;
-  margin-bottom: 5mm;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-/* Fix specifico per orizzontale */
+/* FIX: margini e dimensioni ottimizzate SOLO in orizzontale */
 @media (orientation: landscape) {
 
   /* orbita leggermente più piccola solo in orizzontale */
@@ -194,6 +192,12 @@ html,body{
   body {
     padding-left: 4vw;
     padding-right: 4vw;
+  }
+
+  /* margine superiore e inferiore SOLO in orizzontale */
+  #orbit-wrapper {
+    margin-top: 5mm;
+    margin-bottom: 5mm;
   }
 }
 
