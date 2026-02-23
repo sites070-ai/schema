@@ -128,18 +128,23 @@ html,body{
 
 /* POPUP (CHIUSO DI DEFAULT, USABILE IN ORIZZONTALE) */
 #popup-bg{
-  display:none; /* popup chiuso all'inizio */
+  display:none;
   position:fixed;
   inset:0;
   background:rgba(0,0,0,0.88);
   backdrop-filter:blur(4px);
   z-index:9999;
+
+  /* FIX ORIZZONTALE */
   overflow-y:auto;
+  overflow-x:hidden;
+
   padding:40px 20px;
-  align-items:flex-start;
+
+  display:flex;
+  align-items:flex-start; /* NON center */
   justify-content:center;
 }
-
 
 #popup-box{
   background:#05060b;
