@@ -173,16 +173,27 @@ html,body{
   font-weight:bold;
   cursor:pointer;
 }
-  /* FIX: margini in orizzontale per evitare che i QR escano */
+ /* FIX: margini e dimensioni orbita ottimizzati */
+
+/* Margini verticali SEMPRE (sia verticale che orizzontale) */
+#orbit-wrapper {
+  margin-top: 5mm;
+  margin-bottom: 5mm;
+}
+
+/* Fix specifico per orizzontale */
 @media (orientation: landscape) {
+
+  /* orbita leggermente più piccola solo in orizzontale */
   #orbit {
-    width: min(80vw, 80vh);   /* leggermente più piccola solo in orizzontale */
+    width: min(80vw, 80vh);
     height: min(80vw, 80vh);
   }
 
+  /* margini laterali invisibili */
   body {
     padding-left: 4vw;
-    padding-right: 4vw;       /* margini laterali invisibili */
+    padding-right: 4vw;
   }
 }
 
