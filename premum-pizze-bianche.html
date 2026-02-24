@@ -26,10 +26,24 @@
       margin: 0;
       padding: 24px;
       font-family: "Inter", sans-serif;
+
+      /* DESKTOP — sfondo premium */
       background: radial-gradient(circle at top, #202020 0, #050505 55%, #000 100%);
+
       color: var(--text-main);
       display: flex;
       justify-content: center;
+    }
+
+    /* MOBILE — sfondo uniforme senza macchie */
+    @media (max-width: 720px) {
+      body {
+        background:
+          linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 60%, #000 100%),
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NkYGD4DwABBAEAeJt9WQAAAABJRU5ErkJggg==");
+        background-size: cover;
+        background-repeat: repeat;
+      }
     }
 
     .menu-wrapper {
@@ -386,112 +400,115 @@
       <div class="pizza-name">✦ Rustica</div>
       <div class="pizza-ingredients"><strong><em><u>Mozzarella fiordilatte</u></em></strong>, rucola, bresaola, grana</div>
       <div class="pizza-formats">Piccola 9,00 · Media 10,00 · Tagliere 17,00</div>
-    </div>
+</div>
 
-    <!-- CLASSICHE -->
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Caprese</div>
-      <div class="pizza-ingredients"><strong><em><u>Mozzarella di bufala</u></em></strong>, pomodorini, capperi, origano</div>
-      <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
-    </div>
-
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Tirolese</div>
-      <div class="pizza-ingredients">
-        <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
-        <strong><em><u>panna</u></em></strong>, crema di zucca, speck
-      </div>
-      <div class="pizza-formats">Piccola 9,50 · Media 10,50 · Tagliere 16,00</div>
-    </div>
-
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Francese</div>
-      <div class="pizza-ingredients">
-        <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
-        <strong><em><u>zola</u></em></strong>,
-        <strong><em><u>noci</u></em></strong>
-      </div>
-      <div class="pizza-formats">Piccola 9,00 · Media 10,00 · Tagliere 16,00</div>
-    </div>
-
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Bufala Radicchio Tonno</div>
-      <div class="pizza-ingredients">
-        <strong><em><u>Mozzarella di bufala</u></em></strong>, radicchio, tonno
-      </div>
-      <div class="pizza-formats">Piccola 10,00 · Media 11,00 · Tagliere 17,00</div>
-    </div>
-
-    <!-- SEMPLICI / TRADIZIONALI -->
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Biancaneve</div>
-      <div class="pizza-ingredients">
-        <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crudo
-      </div>
-      <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 17,00</div>
-    </div>
-
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Genovese</div>
-      <div class="pizza-ingredients">
-        <strong><em><u>Mozzarella fiordilatte</u></em></strong>, patate lesse, pesto, salsiccia
-      </div>
-      <div class="pizza-formats">Piccola 8,50 · Media 9,50 · Tagliere 15,00</div>
-    </div>
-
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Mantovana</div>
-      <div class="pizza-ingredients">
-        <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crema di zucca, salsiccia,
-        <strong><em><u>zola</u></em></strong>
-      </div>
-      <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
-    </div>
-
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Carbonara</div>
-      <div class="pizza-ingredients">
-        <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
-        <strong><em><u>panna</u></em></strong>, pancetta, uova
-      </div>
-      <div class="pizza-formats">Piccola 7,50 · Media 8,50</div>
-    </div>
-
-    <div class="pizza-card">
-      <div class="pizza-name">✦ Focaccia Primavera</div>
-      <div class="pizza-ingredients">
-        Pomodorini, <strong><em><u>mozzarella di bufala</u></em></strong>, rucola
-      </div>
-      <div class="pizza-formats">Piccola 8,50 · Media 9,50</div>
-    </div>
-
-  </div> <!-- fine pizza-section -->
-  <!-- PERSONALIZZA IL TUO PIATTO -->
-  <div class="section-title-line">
-    <span class="line"></span>
-    <span>PERSONALIZZA IL TUO PIATTO</span>
-    <span class="line"></span>
+<!-- CLASSICHE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Caprese</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella di bufala</u></em></strong>, pomodorini, capperi, origano
   </div>
-  <div class="section-subline"></div>
+  <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
+</div>
 
-  <table class="personalizza-table">
-    <thead>
-      <tr>
-        <th>Aggiunta / Variante</th>
-        <th>Prezzo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Speck</td><td>2,00</td></tr>
-      <tr><td>Spalla Cotta</td><td>2,00</td></tr>
-      <tr><td>Crudo</td><td>2,00</td></tr>
-      <tr><td>Patatine*</td><td>2,00</td></tr>
-      <tr><td>Doppia Mozzarella</td><td>3,00</td></tr>
-      <tr><td>Doppio Pomodoro</td><td>0,50</td></tr>
-      <tr><td>Verdure / Condimenti extra</td><td>1,00</td></tr>
-    </tbody>
-  </table>
+<div class="pizza-card">
+  <div class="pizza-name">✦ Tirolese</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
+    <strong><em><u>panna</u></em></strong>, crema di zucca, speck
+  </div>
+  <div class="pizza-formats">Piccola 9,50 · Media 10,50 · Tagliere 16,00</div>
+</div>
 
-  <p class="small-note">
-    I prodotti contrassegnati con * sono preparati con materie prime surgelate.
-  </p>
+<div class="pizza-card">
+  <div class="pizza-name">✦ Francese</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
+    <strong><em><u>zola</u></em></strong>,
+    <strong><em><u>noci</u></em></strong>
+  </div>
+  <div class="pizza-formats">Piccola 9,00 · Media 10,00 · Tagliere 16,00</div>
+</div>
+
+<div class="pizza-card">
+  <div class="pizza-name">✦ Bufala Radicchio Tonno</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella di bufala</u></em></strong>, radicchio, tonno
+  </div>
+  <div class="pizza-formats">Piccola 10,00 · Media 11,00 · Tagliere 17,00</div>
+</div>
+
+<!-- SEMPLICI / TRADIZIONALI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Biancaneve</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crudo
+  </div>
+  <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 17,00</div>
+</div>
+
+<div class="pizza-card">
+  <div class="pizza-name">✦ Genovese</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella fiordilatte</u></em></strong>, patate lesse, pesto, salsiccia
+  </div>
+  <div class="pizza-formats">Piccola 8,50 · Media 9,50 · Tagliere 15,00</div>
+</div>
+
+<div class="pizza-card">
+  <div class="pizza-name">✦ Mantovana</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crema di zucca, salsiccia,
+    <strong><em><u>zola</u></em></strong>
+  </div>
+  <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
+</div>
+
+<div class="pizza-card">
+  <div class="pizza-name">✦ Carbonara</div>
+  <div class="pizza-ingredients">
+    <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
+    <strong><em><u>panna</u></em></strong>, pancetta, uova
+  </div>
+  <div class="pizza-formats">Piccola 7,50 · Media 8,50</div>
+</div>
+
+<div class="pizza-card">
+  <div class="pizza-name">✦ Focaccia Primavera</div>
+  <div class="pizza-ingredients">
+    Pomodorini, <strong><em><u>mozzarella di bufala</u></em></strong>, rucola
+  </div>
+  <div class="pizza-formats">Piccola 8,50 · Media 9,50</div>
+</div>
+
+</div> <!-- fine pizza-section -->
+
+<!-- PERSONALIZZA IL TUO PIATTO -->
+<div class="section-title-line">
+  <span class="line"></span>
+  <span>PERSONALIZZA IL TUO PIATTO</span>
+  <span class="line"></span>
+</div>
+<div class="section-subline"></div>
+
+<table class="personalizza-table">
+  <thead>
+    <tr>
+      <th>Aggiunta / Variante</th>
+      <th>Prezzo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Speck</td><td>2,00</td></tr>
+    <tr><td>Spalla Cotta</td><td>2,00</td></tr>
+    <tr><td>Crudo</td><td>2,00</td></tr>
+    <tr><td>Patatine*</td><td>2,00</td></tr>
+    <tr><td>Doppia Mozzarella</td><td>3,00</td></tr>
+    <tr><td>Doppio Pomodoro</td><td>0,50</td></tr>
+    <tr><td>Verdure / Condimenti extra</td><td>1,00</td></tr>
+  </tbody>
+</table>
+
+<p class="small-note">
+  I prodotti contrassegnati con * sono preparati con materie prime surgelate.
+</p>
