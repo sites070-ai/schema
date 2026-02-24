@@ -1,114 +1,562 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizze Classiche - Locanda del Contadino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+  background: #000 !important;
+}
+
+    html, body {
+  background: #000 !important;
+}
+
+.sites-layout-container,
+.site-container,
+#sites-chrome-everything,
+#sites-canvas-main,
+#sites-canvas {
+  background: #000 !important;
+}
+
+:root {
+  --bg-main: #0d0d0d;
+  --bg-panel: #1a1a1a;
+  --bg-panel-soft: #151515;
+  --gold: #e6c463;
+  --text-main: #f2f2f2;
+  --text-soft: #d9d9d9;
+  --line-soft: rgba(255,255,255,0.18);
+  --shadow-soft: 0 18px 40px rgba(0,0,0,0.7);
+}
+
+    :root {
+      --bg-main: #0d0d0d;
+      --bg-panel: #1a1a1a;
+      --bg-panel-soft: #151515;
+      --gold: #e6c463;
+      --text-main: #f2f2f2;
+      --text-soft: #d9d9d9;
+      --line-soft: rgba(255,255,255,0.18);
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.7);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Inter", sans-serif;
+      background: radial-gradient(circle at top, #202020 0, #050505 55%, #000 100%);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        background:
+          linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 60%, #000 100%),
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NkYGD4DwABBAEAeJt9WQAAAABJRU5ErkJggg==");
+        background-size: cover;
+        background-repeat: repeat;
+      }
+    }
+
+    .menu-wrapper {
+      width: 100%;
+      max-width: 900px;
+      background: linear-gradient(145deg, #111 0%, #050505 100%);
+      border-radius: 18px;
+      padding: 26px 22px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .header-title {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 2.1rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .header-subline {
+      margin: 8px auto 26px;
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.7;
+    }
+
+    .delivery-box {
+      margin: 0 auto 30px;
+      padding: 20px;
+      background: radial-gradient(circle at top, #262626 0, #151515 60%, #101010 100%);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: inset 0 0 18px rgba(0,0,0,0.7);
+      border: 1px solid rgba(230,196,99,0.35);
+      max-width: 640px;
+    }
+
+    .delivery-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .delivery-text {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .qr-frame {
+      margin-top: 16px;
+      display: inline-flex;
+      padding: 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(230,196,99,0.7);
+      background: radial-gradient(circle at top, #262626 0, #141414 60%, #101010 100%);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .qr-frame img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+    }
+
+    .section-title-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 30px;
+    }
+
+    .section-title-line span.line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.6;
+    }
+
+    .section-subline {
+      margin: 6px auto 20px;
+      width: 70px;
+      height: 1px;
+      background: var(--line-soft);
+      opacity: 0.7;
+    }
+
+    .two-columns {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .column-box {
+      flex: 1;
+      background: radial-gradient(circle at top, #262626 0, #181818 55%, #101010 100%);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: inset 0 0 16px rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .column-title {
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .column-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+      margin: 4px 0;
+    }
+
+    .column-separator {
+      width: 100%;
+      height: 1px;
+      background: var(--line-soft);
+      margin: 8px 0;
+      opacity: 0.7;
+    }
+
+    .pizza-card {
+      padding: 16px 0 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .pizza-name {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      color: var(--gold);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .pizza-ingredients {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .pizza-formats {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      opacity: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .personalizza-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .personalizza-table th,
+    .personalizza-table td {
+      padding: 6px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .personalizza-table th {
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      font-weight: 500;
+      color: var(--text-main);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .personalizza-table td:last-child {
+      text-align: right;
+      width: 90px;
+      color: var(--text-main);
+    }
+
+    .small-note {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 6px;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 720px) {
+      .two-columns { flex-direction: column; }
+    }
+
+    @media (max-width: 1024px) {
+      .menu-wrapper {
+        padding: 22px 18px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .menu-wrapper {
+        padding: 20px 16px;
+      }
+      .header-title {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .two-columns {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .header-title {
+        font-size: 1.7rem;
+      }
+      .section-title-line {
+        font-size: 1rem;
+      }
+      .delivery-box {
+        padding: 18px 14px;
+      }
+      .delivery-text {
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+      .pizza-card {
+        padding: 14px 0 18px;
+      }
+      .pizza-name {
+        font-size: 1rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.92rem;
+      }
+      .pizza-formats {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-title {
+        font-size: 1.55rem;
+      }
+      .section-title-line {
+        font-size: 0.95rem;
+      }
+      .pizza-name {
+        font-size: 0.95rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.88rem;
+      }
+      .pizza-formats {
+        font-size: 0.88rem;
+      }
+      .delivery-text {
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .header-title {
+        font-size: 1.45rem;
+      }
+      .pizza-name {
+        font-size: 0.9rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.85rem;
+      }
+      .pizza-formats {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="menu-wrapper">
+
+  <div class="header-title">✦ LOCANDA DEL CONTADINO ✦</div>
+  <div class="header-subline"></div>
+
+  <div class="delivery-box">
+    <div class="delivery-title">Pizza Delivery</div>
+    <p class="delivery-text">
+      Il nostro servizio di Pizza Delivery è disponibile<br>
+      dal venerdì alla domenica, dalle 18.30 alle 21.30.<br>
+      Lunedì siamo chiusi.<br><br>
+      Siamo in Via Battaglione 86, Cremona (CR).<br>
+      Per informazioni o richieste: locandadelcontadino@gmail.com<br>
+      Prenotazioni: 0372.451964<br><br>
+      Consegna gratuita a domicilio (min. 2 pizze)<br>
+      per la sola città di Cremona.
+    </p>
+
+    <div class="qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona">
+    </div>
+  </div>
+
+  <div class="section-title-line">
+    <span class="line"></span>
+    <span>PIZZE CLASSICHE</span>
+    <span class="line"></span>
+  </div>
+  <div class="section-subline"></div>
+  
+<div style="height: 12px;"></div>
+
+<div class="two-columns">
+
+  <!-- BOX UNICO: IMPASTO + DESCRIZIONE + FORMATI -->
+  <div class="column-box">
+
+  <h3 class="column-title">Il Nostro Impasto BIOLOGICO</h3>
+
+  <p class="column-text" style="opacity: 0.9;">
+    Un impasto curato nei dettagli, pensato per offrire equilibrio, leggerezza e costanza in ogni preparazione.
+  </p>
+
+  <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 10px;">
+    Ingredienti e lavorazione
+  </p>
+  <div class="column-text">
+    Preparato con <strong>100% Farina Tipo 1 Biologica</strong> macinata a pietra, acqua al <strong>60% di idratazione</strong>, sale, olio extra vergine di oliva e lievito.  
+    La maturazione di <strong>48/72 ore</strong> conferisce leggerezza, fragranza e alta digeribilità.
+  </div>
+
+  <div class="column-separator"></div>
+
+  <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 6px;">
+    Caratteristiche della pizza
+  </p>
+  <div class="column-text">
+    Presenta un <strong>bordo sottile e regolare</strong> e una stesura precisa che assicura una cottura uniforme.
+  </div>
+
+  <div class="column-separator"></div>
+
+  <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 6px;">
+    Formati disponibili
+  </p>
+  <div class="column-text">
+    <strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong>
+  </div>
+
+  <p class="column-text" style="opacity: 0.85; margin-top: 12px;">
+    Un impasto che rappresenta la nostra idea di qualità.
+  </p>
+
+</div>
+
+  <!-- BOX ALLERGENI -->
+  <div class="column-box">
+
+    <h3 class="column-title">Comunicazione Allergeni</h3>
+
+    <p class="column-text">
+      Gli ingredienti che contengono una o più delle 14 sostanze allergizzanti
+      sono evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong>.
+    </p>
+
+    <p class="column-text">Per approfondire:</p>
+
+    <div class="qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare">
+    </div>
+
+  </div>
+
+</div>
+
+  <div class="pizza-section">
 
 
-
-<!-- MARGHERITA -->
 <div class="pizza-card">
   <div class="pizza-name">Margherita</div>
   <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte</div>
   <div class="pizza-formats">Piccola 6,00 – Media 7,00 – Tagliere 10,00</div>
 </div>
 
-<!-- ROMANA -->
-<div class="pizza-card">
-  <div class="pizza-name">Romana</div>
-  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, acciughe, origano</div>
-  <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 13,00</div>
-</div>
-
-<!-- MARINARA -->
 <div class="pizza-card">
   <div class="pizza-name">Marinara</div>
   <div class="pizza-ingredients">Pomodoro, aglio, origano</div>
   <div class="pizza-formats">Piccola 5,00 – Media 6,00 – Tagliere 9,00</div>
 </div>
 
-<!-- NAPOLI -->
-<div class="pizza-card">
-  <div class="pizza-name">Napoli</div>
-  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, olive, capperi, acciughe, origano</div>
-  <div class="pizza-formats">Piccola 8,00 – Media 9,00 – Tagliere 15,00</div>
-</div>
-
-<!-- PROSCIUTTO -->
-<div class="pizza-card">
-  <div class="pizza-name">Prosciutto</div>
-  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto</div>
-  <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 13,00</div>
-</div>
-
-<!-- PROSCIUTTO E FUNGHI -->
-<div class="pizza-card">
-  <div class="pizza-name">Prosciutto e Funghi</div>
-  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi</div>
-  <div class="pizza-formats">Piccola 7,50 – Media 8,50 – Tagliere 14,50</div>
-</div>
-
-<!-- CAPRICCIOSA -->
-<div class="pizza-card">
-  <div class="pizza-name">Capricciosa</div>
-  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi</div>
-  <div class="pizza-formats">Piccola 8,00 – Media 9,00 – Tagliere 15,00</div>
-</div>
-
-<!-- 4 STAGIONI -->
-<div class="pizza-card">
-  <div class="pizza-name">4 Stagioni</div>
-  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi</div>
-  <div class="pizza-formats">Piccola 8,00 – Media 9,00 – Tagliere 15,00</div>
-</div>
-
-<!-- 4 FORMAGGI -->
-<div class="pizza-card">
+    <div class="pizza-card">
   <div class="pizza-name">4 Formaggi</div>
   <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, formaggi misti</div>
   <div class="pizza-formats">Piccola 9,00 – Media 10,00 – Tagliere 17,00</div>
 </div>
 
-<!-- ZOLA -->
 <div class="pizza-card">
   <div class="pizza-name">Zola</div>
   <div class="pizza-ingredients">Pomodoro, zola, mozzarella fiordilatte</div>
   <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 14,00</div>
 </div>
 
-<!-- WÜRSTEL -->
-<div class="pizza-card">
-  <div class="pizza-name">Würstel</div>
-  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, würstel</div>
+    <div class="pizza-card">
+  <div class="pizza-name">Prosciutto</div>
+  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto</div>
   <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 13,00</div>
 </div>
 
-<!-- PUGLIESE -->
+<div class="pizza-card">
+  <div class="pizza-name">Prosciutto e Funghi</div>
+  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi</div>
+  <div class="pizza-formats">Piccola 7,50 – Media 8,50 – Tagliere 14,50</div>
+</div>
+
 <div class="pizza-card">
   <div class="pizza-name">Pugliese</div>
   <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, cipolle</div>
   <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 13,00</div>
 </div>
 
-<!-- DIAVOLA -->
+    <div class="pizza-card">
+  <div class="pizza-name">Capricciosa</div>
+  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi</div>
+  <div class="pizza-formats">Piccola 8,00 – Media 9,00 – Tagliere 15,00</div>
+</div>
+
 <div class="pizza-card">
+  <div class="pizza-name">4 Stagioni</div>
+  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi</div>
+  <div class="pizza-formats">Piccola 8,00 – Media 9,00 – Tagliere 15,00</div>
+</div>
+
+    <div class="pizza-card">
+  <div class="pizza-name">Romana</div>
+  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, acciughe, origano</div>
+  <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 13,00</div>
+</div>
+
+<div class="pizza-card">
+  <div class="pizza-name">Napoli</div>
+  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, olive, capperi, acciughe, origano</div>
+  <div class="pizza-formats">Piccola 8,00 – Media 9,00 – Tagliere 15,00</div>
+</div>
+
+    <div class="pizza-card">
   <div class="pizza-name">Diavola</div>
   <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, cipolle, salamino</div>
   <div class="pizza-formats">Piccola 8,00 – Media 9,00 – Tagliere 14,00</div>
 </div>
 
-<!-- SALAMINO -->
 <div class="pizza-card">
   <div class="pizza-name">Salamino</div>
   <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, salamino</div>
   <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 13,00</div>
 </div>
 
-<!-- CALZONE LISCIO -->
 <div class="pizza-card">
+  <div class="pizza-name">Würstel</div>
+  <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, würstel</div>
+  <div class="pizza-formats">Piccola 7,00 – Media 8,00 – Tagliere 13,00</div>
+</div>
+
+    <div class="pizza-card">
   <div class="pizza-name">Calzone Liscio</div>
   <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto</div>
   <div class="pizza-formats">Piccola 8,00 – Media 9,00</div>
 </div>
 
-<!-- CALZONE FARCITO -->
 <div class="pizza-card">
   <div class="pizza-name">Calzone Farcito</div>
   <div class="pizza-ingredients">Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi</div>
   <div class="pizza-formats">Piccola 9,00 – Media 10,00</div>
 </div>
+
+    
