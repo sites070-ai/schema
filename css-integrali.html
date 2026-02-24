@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizze Integrali Biologiche - Locanda del Contadino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET & BASE */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { background: #000 !important; }
+
+    .sites-layout-container,
+    .site-container,
+    #sites-chrome-everything,
+    #sites-canvas-main,
+    #sites-canvas {
+      background: #000 !important;
+    }
+
+    :root {
+      --bg-main: #0d0d0d;
+      --bg-panel: #1a1a1a;
+      --bg-panel-soft: #151515;
+      --gold: #e6c463;
+      --gold-soft: #d8b85a;
+      --accent: #f08a3d;
+      --text-main: #f2f2f2;
+      --text-soft: #d9d9d9;
+      --line-soft: rgba(255,255,255,0.18);
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.7);
+      --badge-bg: rgba(240,138,61,0.12);
+      --badge-border: rgba(240,138,61,0.7);
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Inter", sans-serif;
+      background: radial-gradient(circle at top, #202020 0, #050505 55%, #000 100%);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+    }
+
+    /* MOBILE BACKGROUND */
+    @media (max-width: 720px) {
+      body {
+        background:
+          linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 60%, #000 100%),
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NkYGD4DwABBAEAeJt9WQAAAABJRU5ErkJggg==");
+        background-size: cover;
+        background-repeat: repeat;
+      }
+    }
+
+    /* WRAPPER */
+    .menu-wrapper {
+      width: 100%;
+      max-width: 900px;
+      background: radial-gradient(circle at top, #181818 0, #050505 60%, #000 100%);
+      border-radius: 20px;
+      padding: 26px 22px 30px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(230,196,99,0.08) 0, transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(240,138,61,0.08) 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .menu-inner { position: relative; z-index: 1; }
+
+    /* HEADER */
+    .header-title {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 2.1rem;
+      color: var(--gold);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .header-subline {
+      margin: 8px auto 10px;
+      width: 140px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.8;
+    }
+
+    .header-tagline {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    /* DELIVERY BOX */
+    .delivery-box {
+      margin: 18px auto 28px;
+      padding: 18px 18px 20px;
+      background: radial-gradient(circle at top, #262626 0, #151515 60%, #101010 100%);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: inset 0 0 18px rgba(0,0,0,0.7);
+      border: 1px solid rgba(230,196,99,0.35);
+      max-width: 640px;
+    }
+
+    .delivery-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .delivery-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .delivery-highlight {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--gold-soft);
+      font-weight: 500;
+    }
+
+    .qr-frame {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      padding: 9px;
+      border-radius: 14px;
+      border: 1px solid rgba(230,196,99,0.7);
+      background: radial-gradient(circle at top, #262626 0, #141414 60%, #101010 100%);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .qr-frame img {
+      width: 110px;
+      height: 110px;
+      border-radius: 10px;
+    }
+
+    /* SEZIONE TITOLI */
+    .section-title-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 40px;
+      text-shadow: 0 0 6px rgba(230,196,99,0.25);
+    }
+
+    .section-title-line span.line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.7;
+    }
+
+    .section-subline {
+      margin: 8px auto 22px;
+      width: 120px;
+      height: 1px;
+      background: var(--line-soft);
+      opacity: 0.9;
+    }
+
+    /* DUE COLONNE */
+    .two-columns {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 24px;
+      margin-top: 6px;
+    }
+
+    .column-box {
+      flex: 1;
+      background: radial-gradient(circle at top, #262626 0, #181818 55%, #101010 100%);
+      border-radius: 14px;
+      padding: 14px 14px 16px;
+      box-shadow: inset 0 0 16px rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .column-title {
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .column-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+      margin: 4px 0;
+    }
+
+    .column-separator {
+      width: 100%;
+      height: 1px;
+      background: var(--line-soft);
+      margin: 8px 0;
+      opacity: 0.7;
+    }
+
+    .formats-line {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-top: 4px;
+    }
+
+    .formats-line strong {
+      color: var(--gold-soft);
+    }
+
+    /* PIZZE */
+    .pizza-section { margin-top: 6px; }
+
+    .pizza-card {
+      padding: 14px 0 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .pizza-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .pizza-name {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      color: var(--gold);
+      font-size: 1.02rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pizza-name::before {
+      content: "✦";
+      font-size: 0.9rem;
+      color: var(--gold-soft);
+    }
+
+    .pizza-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--badge-border);
+      background: var(--badge-bg);
+      color: var(--accent);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .pizza-ingredients {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.55;
+    }
+
+    .pizza-formats {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      opacity: 0.96;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+
+    .small-note {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 6px;
+      color: var(--text-soft);
+    }
+
+    .personalizza-box {
+  margin-top: 18px;
+  padding: 22px 20px;
+  background: radial-gradient(circle at top, #262626 0, #181818 55%, #101010 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: inset 0 0 22px rgba(0,0,0,0.65);
+}
+
+.personalizza-desc {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+  text-align: center;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.personalizza-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.personalizza-item:last-child {
+  border-bottom: none;
+}
+
+.personalizza-name {
+  font-size: 1rem;
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+}
+
+.personalizza-price {
+  font-size: 1rem;
+  color: var(--gold-soft);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+  </style>
+</head>
+
+<body>
+
+<div class="menu-wrapper">
+  <div class="menu-inner">
+
+    <!-- HEADER -->
+    <div class="header-title">✦ LOCANDA DEL CONTADINO ✦</div>
+    <div class="header-subline"></div>
+    <div class="header-tagline">PIZZE INTEGRALI BIOLOGICHE</div>
+
+    <!-- DELIVERY BOX -->
+    <div class="delivery-box">
+      <div class="delivery-title">Pizza Delivery</div>
+      <p class="delivery-text">
+        Il nostro servizio di Pizza Delivery è disponibile<br>
+        dal venerdì alla domenica, dalle 18.30 alle 21.30.<br>
+        Lunedì siamo chiusi.<br><br>
+        Siamo in Via Battaglione 86, Cremona (CR).<br>
+        Per informazioni o richieste: locandadelcontadino@gmail.com<br>
+        Prenotazioni: 0372.451964
+      </p>
+      <div class="delivery-highlight">
+        Consegna gratuita a domicilio (min. 2 pizze) per la città di Cremona.
+      </div>
+
+      <div class="qr-frame">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona" alt="QR Pizza Delivery">
+      </div>
+    </div>
+
+    <!-- TITOLO SEZIONE -->
+    <div class="section-title-line">
+      <span class="line"></span>
+      <span>PIZZE INTEGRALI</span>
+      <span class="line"></span>
+    </div>
+    <div class="section-subline"></div>
+
+    <!-- BOX IMPASTO INTEGRALE -->
+    <div class="two-columns">
+
+      <div class="column-box">
+        <h3 class="column-title">Impasto Integrale Biologico</h3>
+
+        <p class="column-text" style="opacity: 0.9;">
+          Un impasto integrale ricco di fibre, dal profilo aromatico più rustico e naturale.
+        </p>
+
+        <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 8px;">
+          Ingredienti e lavorazione
+        </p>
+        <div class="column-text">
+          Preparato con <strong>Farina Integrale Biologica</strong> macinata a pietra, acqua al
+          <strong>60% di idratazione</strong>, sale, olio extra vergine di oliva e lievito.
+          La maturazione di <strong>48/72 ore</strong> valorizza la fibra naturale e garantisce una struttura leggera e fragrante.
+        </div>
+
+        <div class="column-separator"></div>
+
+        <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 6px;">
+          Caratteristiche della pizza
+        </p>
+        <div class="column-text">
+          Bordi sottili, consistenza più rustica e sapore pieno, ideale per condimenti intensi.
+        </div>
+
+        <div class="column-separator"></div>
+
+        <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 6px;">
+          Formati disponibili
+        </p>
+        <div class="formats-line">
+          <strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong>
+        </div>
+      </div>
+
+      <!-- ALLERGENI -->
+      <div class="column-box">
+        <h3 class="column-title">Comunicazione Allergeni</h3>
+
+        <p class="column-text">
+          Gli ingredienti che contengono una o più delle 14 sostanze allergizzanti
+          sono evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong>.
+        </p>
+
+        <p class="column-text" style="margin-top: 6px;">
+          Scansiona il QR per consultare la scheda completa sugli allergeni:
+        </p>
+
+        <div class="qr-frame">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare" alt="QR Allergeni">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEZIONE PIZZE (ESEMPI) -->
+    <div class="pizza-section">
+
+      <div class="pizza-card">
+        <div class="pizza-header-row">
+          <div class="pizza-name">Margherita Integrale</div>
+          <div class="pizza-badge">Ricetta della Casa</div>
+        </div>
+        <div class="pizza-ingredients">
+          Pomodoro, <strong><em><u>mozzarella fiordilatte</u></em></strong>
+        </div>
+                <div class="pizza-formats">
+          Piccola 10,00 · Media 11,00 · Tagliere 17,00
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-header-row">
+          <div class="pizza-name">Diavola Integrale</div>
+          <div class="pizza-badge">Ricca</div>
+        </div>
+        <div class="pizza-ingredients">
+          Pomodoro, <strong><em><u>mozzarella fiordilatte</u></em></strong>, cipolle, salamino
+        </div>
+        <div class="pizza-formats">
+          Piccola 8,00 · Media 9,00 · Tagliere 14,00
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-header-row">
+          <div class="pizza-name">San Secondo Integrale</div>
+          <div class="pizza-badge">Ingredienti Pregiati</div>
+        </div>
+        <div class="pizza-ingredients">
+          Pomodoro, <strong><em><u>mozzarella fiordilatte</u></em></strong>, zola, spalla di San Secondo
+        </div>
+        <div class="pizza-formats">
+          Piccola 9,00 · Media 10,00 · Tagliere 16,00
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-header-row">
+          <div class="pizza-name">Vegetariana Integrale</div>
+          <div class="pizza-badge">Ricetta della Casa</div>
+        </div>
+        <div class="pizza-ingredients">
+          Pomodoro, <strong><em><u>mozzarella fiordilatte</u></em></strong>, zucchine, peperoni, melanzane, pomodorini
+        </div>
+        <div class="pizza-formats">
+          Piccola 9,50 · Media 10,50 · Tagliere 17,00
+        </div>
+      </div>
+
+    </div> <!-- fine pizza-section -->
+
+ <div class="section-title-line">
+  <span class="line"></span>
+  <span>PERSONALIZZA LA TUA PIZZA</span>
+  <span class="line"></span>
+</div>
+<div class="section-subline"></div>
+
+
+
+  <p class="personalizza-desc">
+    Aggiunte selezionate per completare la tua pizza con un tocco personale.
+  </p>
+
+  <div class="personalizza-item">
+    <span class="personalizza-name">Speck</span>
+    <span class="personalizza-price">2,00</span>
+  </div>
+
+  <div class="personalizza-item">
+    <span class="personalizza-name">Spalla Cotta</span>
+    <span class="personalizza-price">2,00</span>
+  </div>
+
+  <div class="personalizza-item">
+    <span class="personalizza-name">Crudo</span>
+    <span class="personalizza-price">2,00</span>
+  </div>
+
+  <div class="personalizza-item">
+    <span class="personalizza-name">Patatine*</span>
+    <span class="personalizza-price">2,00</span>
+  </div>
+
+  <div class="personalizza-item">
+    <span class="personalizza-name">Doppia Mozzarella</span>
+    <span class="personalizza-price">3,00</span>
+  </div>
+
+  <div class="personalizza-item">
+    <span class="personalizza-name">Doppio Pomodoro</span>
+    <span class="personalizza-price">0,50</span>
+  </div>
+
+  <div class="personalizza-item">
+    <span class="personalizza-name">Verdure / Condimenti Extra</span>
+    <span class="personalizza-price">1,00</span>
+  </div>
+
+</div>
+
+<p class="small-note">
+  I prodotti contrassegnati con * sono preparati con materie prime surgelate.
+</p>
+
+
+
+  </div> <!-- fine menu-inner -->
+</div> <!-- fine menu-wrapper -->
+
+  
+
+</body>
+</html>
+
+
+        
+     
