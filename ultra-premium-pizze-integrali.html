@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Pizze Integrali - Locanda del Contadino</title>
+  <title>Pizze Integrali Biologiche - Locanda del Contadino</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
@@ -30,6 +30,16 @@
       color: var(--text-main);
       display: flex;
       justify-content: center;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        background:
+          linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 60%, #000 100%),
+          url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NkYGD4DwABBAEAeJt9WQAAAABJRU5ErkJggg==");
+        background-size: cover;
+        background-repeat: repeat;
+      }
     }
 
     .menu-wrapper {
@@ -177,11 +187,9 @@
 
 <div class="menu-wrapper">
 
-  <!-- HEADER -->
   <div class="header-title">✦ LOCANDA DEL CONTADINO ✦</div>
   <div class="header-subline"></div>
 
-  <!-- DELIVERY -->
   <div class="delivery-box">
     <div class="delivery-title">Pizza Delivery</div>
     <p class="delivery-text">
@@ -200,24 +208,24 @@
     </div>
   </div>
 
-  <!-- TITOLO PRINCIPALE -->
   <div class="section-title-line">
     <span class="line"></span>
-    <span>PIZZE INTEGRALI</span>
+    <span>PIZZE INTEGRALI BIOLOGICHE</span>
     <span class="line"></span>
   </div>
   <div class="section-subline"></div>
 
   <div style="height: 12px;"></div>
 
-  <!-- IMPASTO + ALLERGENI -->
   <div class="two-columns">
 
+    <!-- IMPASTO INTEGRALE -->
     <div class="column-box">
-      <h3 class="column-title">Il Nostro Impasto INTEGRALE</h3>
+
+      <h3 class="column-title">Il Nostro Impasto INTEGRALE BIOLOGICO</h3>
 
       <p class="column-text" style="opacity: 0.9;">
-        Un impasto integrale pensato per offrire equilibrio, leggerezza e un profilo aromatico più ricco e naturale.
+        Un impasto integrale biologico pensato per offrire equilibrio, leggerezza e un profilo aromatico più ricco e naturale.
       </p>
 
       <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 10px;">
@@ -249,9 +257,12 @@
       <p class="column-text" style="opacity: 0.85; margin-top: 12px;">
         Un impasto integrale che esprime la nostra idea di qualità naturale.
       </p>
+
     </div>
 
+    <!-- ALLERGENI -->
     <div class="column-box">
+
       <h3 class="column-title">Comunicazione Allergeni</h3>
 
       <p class="column-text">
@@ -264,19 +275,13 @@
       <div class="qr-frame">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare">
       </div>
+
     </div>
 
   </div>
-  <!-- SEZIONE ROSSE -->
-  <div class="section-title-line">
-    <span class="line"></span>
-    <span>PIZZE INTEGRALI ROSSE</span>
-    <span class="line"></span>
-  </div>
-  <div class="section-subline"></div>
-
   <div class="pizza-section">
 
+    <!-- PIZZE INTEGRALI ROSSE -->
     <div class="pizza-card">
       <div class="pizza-name">✦ Margherita</div>
       <div class="pizza-ingredients">
@@ -376,19 +381,8 @@
       <div class="pizza-formats">Piccola 9,50 · Media 10,50 · Tagliere 17,00</div>
     </div>
 
-  </div> <!-- CHIUSURA SEZIONE ROSSE -->
 
-
-  <!-- SEZIONE BIANCHE -->
-  <div class="section-title-line">
-    <span class="line"></span>
-    <span>PIZZE INTEGRALI BIANCHE</span>
-    <span class="line"></span>
-  </div>
-  <div class="section-subline"></div>
-
-  <div class="pizza-section">
-
+    <!-- PIZZE INTEGRALI BIANCHE -->
     <div class="pizza-card">
       <div class="pizza-name">✦ Caprese</div>
       <div class="pizza-ingredients">
@@ -423,9 +417,7 @@
       <div class="pizza-formats">Piccola 11,00 · Media 12,00 · Tagliere 19,00</div>
     </div>
 
-  </div> 
-
-    <!-- PERSONALIZZA -->
+  </div> <!-- CHIUSURA pizza-section -->
   <div class="section-title-line">
     <span class="line"></span>
     <span>PERSONALIZZA IL TUO PIATTO</span>
@@ -455,8 +447,7 @@
     I prodotti contrassegnati con * sono preparati con materie prime surgelate.
   </p>
 
-</div> <!-- CHIUSURA menu-wrapper -->
+</div>
 
 </body>
 </html>
-
