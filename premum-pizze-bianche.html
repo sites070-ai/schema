@@ -257,9 +257,68 @@
       color: var(--text-soft);
     }
 
-    @media (max-width: 720px) {
+        @media (max-width: 720px) {
       .two-columns { flex-direction: column; }
     }
+
+    /* RESPONSIVE FIX — LOCANDA DEL CONTADINO */
+
+    /* Layout generale */
+    @media (max-width: 900px) {
+      .menu-wrapper {
+        padding: 20px 16px;
+      }
+    }
+
+    /* Mobile layout */
+    @media (max-width: 720px) {
+
+      /* Colonne */
+      .two-columns {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      /* Titoli */
+      .header-title {
+        font-size: 1.7rem;
+      }
+
+      .section-title-line {
+        font-size: 1rem;
+      }
+
+      /* Box Delivery */
+      .delivery-box {
+        padding: 18px 14px;
+      }
+
+      .delivery-text {
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+
+      /* Pizze */
+      .pizza-card {
+        padding: 14px 0 18px;
+      }
+
+      .pizza-name {
+        font-size: 1rem;
+      }
+
+      .pizza-ingredients {
+        font-size: 0.92rem;
+      }
+
+      .pizza-formats {
+        font-size: 0.9rem;
+      }
+    }
+
+</style>
+
+    
   </style>
 </head>
 <body>
