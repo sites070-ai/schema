@@ -180,9 +180,162 @@
       margin: 8px 0;
       opacity: 0.7;
     }
+
+    .pizza-card {
+      padding: 16px 0 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .pizza-name {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      color: var(--gold);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .pizza-ingredients {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .pizza-formats {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      opacity: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .personalizza-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .personalizza-table th,
+    .personalizza-table td {
+      padding: 6px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .personalizza-table th {
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      font-weight: 500;
+      color: var(--text-main);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .personalizza-table td:last-child {
+      text-align: right;
+      width: 90px;
+      color: var(--text-main);
+    }
+
+    .small-note {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 6px;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 720px) {
+      .two-columns { flex-direction: column; }
+    }
+
+    @media (max-width: 1024px) {
+      .menu-wrapper {
+        padding: 22px 18px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .menu-wrapper {
+        padding: 20px 16px;
+      }
+      .header-title {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .two-columns {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .header-title {
+        font-size: 1.7rem;
+      }
+      .section-title-line {
+        font-size: 1rem;
+      }
+      .delivery-box {
+        padding: 18px 14px;
+      }
+      .delivery-text {
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+      .pizza-card {
+        padding: 14px 0 18px;
+      }
+      .pizza-name {
+        font-size: 1rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.92rem;
+      }
+      .pizza-formats {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-title {
+        font-size: 1.55rem;
+      }
+      .section-title-line {
+        font-size: 0.95rem;
+      }
+      .pizza-name {
+        font-size: 0.95rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.88rem;
+      }
+      .pizza-formats {
+        font-size: 0.88rem;
+      }
+      .delivery-text {
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .header-title {
+        font-size: 1.45rem;
+      }
+      .pizza-name {
+        font-size: 0.9rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.85rem;
+      }
+      .pizza-formats {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
-
 <body>
 
 <div class="menu-wrapper">
@@ -214,12 +367,12 @@
     <span class="line"></span>
   </div>
   <div class="section-subline"></div>
-
+  
   <div style="height: 12px;"></div>
 
   <div class="two-columns">
 
-    <!-- IMPASTO INTEGRALE -->
+    <!-- BOX UNICO: IMPASTO INTEGRALE + DESCRIZIONE + FORMATI -->
     <div class="column-box">
 
       <h3 class="column-title">Il Nostro Impasto INTEGRALE BIOLOGICO</h3>
@@ -260,7 +413,7 @@
 
     </div>
 
-    <!-- ALLERGENI -->
+    <!-- BOX ALLERGENI -->
     <div class="column-box">
 
       <h3 class="column-title">Comunicazione Allergeni</h3>
@@ -279,6 +432,7 @@
     </div>
 
   </div>
+
   <div class="pizza-section">
 
     <!-- PIZZE INTEGRALI ROSSE -->
@@ -381,7 +535,6 @@
       <div class="pizza-formats">Piccola 9,50 · Media 10,50 · Tagliere 17,00</div>
     </div>
 
-
     <!-- PIZZE INTEGRALI BIANCHE -->
     <div class="pizza-card">
       <div class="pizza-name">✦ Caprese</div>
@@ -417,7 +570,8 @@
       <div class="pizza-formats">Piccola 11,00 · Media 12,00 · Tagliere 19,00</div>
     </div>
 
-  </div> <!-- CHIUSURA pizza-section -->
+  </div>
+
   <div class="section-title-line">
     <span class="line"></span>
     <span>PERSONALIZZA IL TUO PIATTO</span>
