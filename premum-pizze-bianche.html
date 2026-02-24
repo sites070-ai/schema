@@ -26,16 +26,12 @@
       margin: 0;
       padding: 24px;
       font-family: "Inter", sans-serif;
-
-      /* DESKTOP — sfondo premium */
       background: radial-gradient(circle at top, #202020 0, #050505 55%, #000 100%);
-
       color: var(--text-main);
       display: flex;
       justify-content: center;
     }
 
-    /* MOBILE — sfondo uniforme senza macchie */
     @media (max-width: 720px) {
       body {
         background:
@@ -74,7 +70,6 @@
       opacity: 0.7;
     }
 
-    /* DELIVERY BOX */
     .delivery-box {
       margin: 0 auto 30px;
       padding: 20px;
@@ -118,7 +113,6 @@
       border-radius: 10px;
     }
 
-    /* SECTION TITLES */
     .section-title-line {
       display: flex;
       align-items: center;
@@ -147,7 +141,6 @@
       opacity: 0.7;
     }
 
-    /* TWO COLUMNS */
     .two-columns {
       display: flex;
       gap: 18px;
@@ -188,7 +181,6 @@
       opacity: 0.7;
     }
 
-    /* PIZZA CARDS — VERSIONE MIGLIORATA */
     .pizza-card {
       padding: 16px 0 20px;
       border-bottom: 1px solid rgba(255,255,255,0.10);
@@ -220,7 +212,6 @@
       font-weight: 500;
     }
 
-    /* PERSONALIZZA */
     .personalizza-table {
       width: 100%;
       border-collapse: collapse;
@@ -257,137 +248,101 @@
       color: var(--text-soft);
     }
 
-        @media (max-width: 720px) {
+    @media (max-width: 720px) {
       .two-columns { flex-direction: column; }
     }
 
-    /* RESPONSIVE FIX — LOCANDA DEL CONTADINO */
+    @media (max-width: 1024px) {
+      .menu-wrapper {
+        padding: 22px 18px;
+      }
+    }
 
-/* Tablet verticali e telefoni grandi */
-@media (max-width: 1024px) {
-  .menu-wrapper {
-    padding: 22px 18px;
-  }
-}
+    @media (max-width: 820px) {
+      .menu-wrapper {
+        padding: 20px 16px;
+      }
+      .header-title {
+        font-size: 1.9rem;
+      }
+    }
 
-/* Tablet piccoli e telefoni medi */
-@media (max-width: 820px) {
-  .menu-wrapper {
-    padding: 20px 16px;
-  }
+    @media (max-width: 720px) {
+      .two-columns {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .header-title {
+        font-size: 1.7rem;
+      }
+      .section-title-line {
+        font-size: 1rem;
+      }
+      .delivery-box {
+        padding: 18px 14px;
+      }
+      .delivery-text {
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+      .pizza-card {
+        padding: 14px 0 18px;
+      }
+      .pizza-name {
+        font-size: 1rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.92rem;
+      }
+      .pizza-formats {
+        font-size: 0.9rem;
+      }
+    }
 
-  .header-title {
-    font-size: 1.9rem;
-  }
-}
+    @media (max-width: 480px) {
+      .header-title {
+        font-size: 1.55rem;
+      }
+      .section-title-line {
+        font-size: 0.95rem;
+      }
+      .pizza-name {
+        font-size: 0.95rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.88rem;
+      }
+      .pizza-formats {
+        font-size: 0.88rem;
+      }
+      .delivery-text {
+        font-size: 0.88rem;
+      }
+    }
 
-/* Telefono standard */
-@media (max-width: 720px) {
-
-  /* Colonne */
-  .two-columns {
-    flex-direction: column;
-    gap: 22px;
-  }
-
-  /* Titoli */
-  .header-title {
-    font-size: 1.7rem;
-  }
-
-  .section-title-line {
-    font-size: 1rem;
-  }
-
-  /* Box Delivery */
-  .delivery-box {
-    padding: 18px 14px;
-  }
-
-  .delivery-text {
-    font-size: 0.92rem;
-    line-height: 1.45;
-  }
-
-  /* Pizze */
-  .pizza-card {
-    padding: 14px 0 18px;
-  }
-
-  .pizza-name {
-    font-size: 1rem;
-  }
-
-  .pizza-ingredients {
-    font-size: 0.92rem;
-  }
-
-  .pizza-formats {
-    font-size: 0.9rem;
-  }
-}
-
-/* Telefono piccolo (iPhone SE, Android mini) */
-@media (max-width: 480px) {
-
-  .header-title {
-    font-size: 1.55rem;
-  }
-
-  .section-title-line {
-    font-size: 0.95rem;
-  }
-
-  .pizza-name {
-    font-size: 0.95rem;
-  }
-
-  .pizza-ingredients {
-    font-size: 0.88rem;
-  }
-
-  .pizza-formats {
-    font-size: 0.88rem;
-  }
-
-  .delivery-text {
-    font-size: 0.88rem;
-  }
-}
-
-/* Telefono molto piccolo (vecchi Android, iPhone 5) */
-@media (max-width: 380px) {
-
-  .header-title {
-    font-size: 1.45rem;
-  }
-
-  .pizza-name {
-    font-size: 0.9rem;
-  }
-
-  .pizza-ingredients {
-    font-size: 0.85rem;
-  }
-
-  .pizza-formats {
-    font-size: 0.85rem;
-  }
-}
-
-</style>
-
-    
+    @media (max-width: 380px) {
+      .header-title {
+        font-size: 1.45rem;
+      }
+      .pizza-name {
+        font-size: 0.9rem;
+      }
+      .pizza-ingredients {
+        font-size: 0.85rem;
+      }
+      .pizza-formats {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <div class="menu-wrapper">
 
-  <!-- HEADER -->
   <div class="header-title">✦ LOCANDA DEL CONTADINO ✦</div>
   <div class="header-subline"></div>
 
-  <!-- DELIVERY BOX -->
   <div class="delivery-box">
     <div class="delivery-title">Pizza Delivery</div>
     <p class="delivery-text">
@@ -406,7 +361,6 @@
     </div>
   </div>
 
-  <!-- SEZIONE PIZZE BIANCHE -->
   <div class="section-title-line">
     <span class="line"></span>
     <span>PIZZE BIANCHE</span>
@@ -414,10 +368,7 @@
   </div>
   <div class="section-subline"></div>
 
-  <!-- IMPASTO + ALLERGENI -->
-  <div class="two-columns">
-
-    <div class="section-title-line">
+  <div class="section-title-line">
   <span class="line"></span>
   <span>IL NOSTRO IMPASTO BIOLOGICO</span>
   <span class="line"></span>
@@ -426,22 +377,41 @@
 
 <div class="two-columns">
 
+  <!-- BOX UNICO: IMPASTO + DESCRIZIONE + FORMATI -->
   <div class="column-box">
 
-    <h3 class="column-title">Il Nostro Impasto</h3>
+  <h3 class="column-title">Il Nostro Impasto</h3>
 
-    <div class="column-text">
-      Impasto realizzato con <strong>100% Farina Tipo 1 Biologica</strong> macinata a pietra, acqua al <strong>60% di idratazione</strong>, sale, olio extra vergine di oliva e lievito.  
-      Maturazione e lievitazione <strong>48/72 ore</strong> per garantire leggerezza e alta digeribilità.
-    </div>
-    <div class="column-separator"></div>
-
-    <div class="column-text">
-      La nostra pizza ha un <strong>bordo sottile e regolare</strong> con una stesura precisa che garantisce una cottura uniforme; è disponibile nei formati <strong>Piccola 32 cm</strong>, <strong>Media 36 cm</strong> e <strong>Tagliere 50 cm</strong>.
-    </div>
-
+  <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 6px;">
+    Ingredienti e lavorazione
+  </p>
+  <div class="column-text">
+    Preparato con <strong>100% Farina Tipo 1 Biologica</strong> macinata a pietra, acqua al <strong>60% di idratazione</strong>, sale, olio extra vergine di oliva e lievito.  
+    La maturazione di <strong>48/72 ore</strong> conferisce leggerezza, fragranza e alta digeribilità.
   </div>
 
+  <div class="column-separator"></div>
+
+  <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 6px;">
+    Caratteristiche della pizza
+  </p>
+  <div class="column-text">
+    Presenta un <strong>bordo sottile e regolare</strong> e una stesura precisa che assicura una cottura uniforme.
+  </div>
+
+  <div class="column-separator"></div>
+
+  <p class="column-text" style="color: var(--gold); font-weight: 500; margin-top: 6px;">
+    Formati disponibili
+  </p>
+  <div class="column-text">
+    <strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong>
+  </div>
+
+</div>
+
+
+  <!-- BOX ALLERGENI -->
   <div class="column-box">
 
     <h3 class="column-title">Comunicazione Allergeni</h3>
@@ -461,11 +431,8 @@
 
 </div>
 
-
-  <!-- PIZZE (TUTTE, VERSIONE MIGLIORATA) -->
   <div class="pizza-section">
 
-    <!-- GOURMET -->
     <div class="pizza-card">
       <div class="pizza-name">✦ Tartufata</div>
       <div class="pizza-ingredients"><strong><em><u>Mozzarella fiordilatte</u></em></strong>, crema di tartufo, bresaola, rucola, grana</div>
@@ -502,7 +469,6 @@
       <div class="pizza-formats">Piccola 10,00 · Media 11,00 · Tagliere 19,00</div>
     </div>
 
-    <!-- ICONICHE -->
     <div class="pizza-card">
       <div class="pizza-name">✦ Mediterranea</div>
       <div class="pizza-ingredients"><strong><em><u>Mozzarella di bufala</u></em></strong>, pomodorini, crudo, rucola</div>
@@ -525,115 +491,117 @@
       <div class="pizza-name">✦ Rustica</div>
       <div class="pizza-ingredients"><strong><em><u>Mozzarella fiordilatte</u></em></strong>, rucola, bresaola, grana</div>
       <div class="pizza-formats">Piccola 9,00 · Media 10,00 · Tagliere 17,00</div>
-</div>
+    </div>
 
-<!-- CLASSICHE -->
-<div class="pizza-card">
-  <div class="pizza-name">✦ Caprese</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella di bufala</u></em></strong>, pomodorini, capperi, origano
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Caprese</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella di bufala</u></em></strong>, pomodorini, capperi, origano
+      </div>
+      <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Tirolese</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
+        <strong><em><u>panna</u></em></strong>, crema di zucca, speck
+      </div>
+      <div class="pizza-formats">Piccola 9,50 · Media 10,50 · Tagliere 16,00</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Francese</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
+        <strong><em><u>zola</u></em></strong>,
+        <strong><em><u>noci</u></em></strong>
+      </div>
+      <div class="pizza-formats">Piccola 9,00 · Media 10,00 · Tagliere 16,00</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Bufala Radicchio Tonno</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella di bufala</u></em></strong>, radicchio, tonno
+      </div>
+      <div class="pizza-formats">Piccola 10,00 · Media 11,00 · Tagliere 17,00</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Biancaneve</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crudo
+      </div>
+      <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 17,00</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Genovese</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella fiordilatte</u></em></strong>, patate lesse, pesto, salsiccia
+      </div>
+      <div class="pizza-formats">Piccola 8,50 · Media 9,50 · Tagliere 15,00</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Mantovana</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crema di zucca, salsiccia,
+        <strong><em><u>zola</u></em></strong>
+      </div>
+      <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Carbonara</div>
+      <div class="pizza-ingredients">
+        <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
+        <strong><em><u>panna</u></em></strong>, pancetta, uova
+      </div>
+      <div class="pizza-formats">Piccola 7,50 · Media 8,50</div>
+    </div>
+
+    <div class="pizza-card">
+      <div class="pizza-name">✦ Focaccia Primavera</div>
+      <div class="pizza-ingredients">
+        Pomodorini, <strong><em><u>mozzarella di bufala</u></em></strong>, rucola
+      </div>
+      <div class="pizza-formats">Piccola 8,50 · Media 9,50</div>
+    </div>
+
   </div>
-  <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
-</div>
 
-<div class="pizza-card">
-  <div class="pizza-name">✦ Tirolese</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
-    <strong><em><u>panna</u></em></strong>, crema di zucca, speck
+  <div class="section-title-line">
+    <span class="line"></span>
+    <span>PERSONALIZZA IL TUO PIATTO</span>
+    <span class="line"></span>
   </div>
-  <div class="pizza-formats">Piccola 9,50 · Media 10,50 · Tagliere 16,00</div>
+  <div class="section-subline"></div>
+
+  <table class="personalizza-table">
+    <thead>
+      <tr>
+        <th>Aggiunta / Variante</th>
+        <th>Prezzo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Speck</td><td>2,00</td></tr>
+      <tr><td>Spalla Cotta</td><td>2,00</td></tr>
+      <tr><td>Crudo</td><td>2,00</td></tr>
+      <tr><td>Patatine*</td><td>2,00</td></tr>
+      <tr><td>Doppia Mozzarella</td><td>3,00</td></tr>
+      <tr><td>Doppio Pomodoro</td><td>0,50</td></tr>
+      <tr><td>Verdure / Condimenti extra</td><td>1,00</td></tr>
+    </tbody>
+  </table>
+
+  <p class="small-note">
+    I prodotti contrassegnati con * sono preparati con materie prime surgelate.
+  </p>
+
 </div>
 
-<div class="pizza-card">
-  <div class="pizza-name">✦ Francese</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
-    <strong><em><u>zola</u></em></strong>,
-    <strong><em><u>noci</u></em></strong>
-  </div>
-  <div class="pizza-formats">Piccola 9,00 · Media 10,00 · Tagliere 16,00</div>
-</div>
-
-<div class="pizza-card">
-  <div class="pizza-name">✦ Bufala Radicchio Tonno</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella di bufala</u></em></strong>, radicchio, tonno
-  </div>
-  <div class="pizza-formats">Piccola 10,00 · Media 11,00 · Tagliere 17,00</div>
-</div>
-
-<!-- SEMPLICI / TRADIZIONALI -->
-<div class="pizza-card">
-  <div class="pizza-name">✦ Biancaneve</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crudo
-  </div>
-  <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 17,00</div>
-</div>
-
-<div class="pizza-card">
-  <div class="pizza-name">✦ Genovese</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella fiordilatte</u></em></strong>, patate lesse, pesto, salsiccia
-  </div>
-  <div class="pizza-formats">Piccola 8,50 · Media 9,50 · Tagliere 15,00</div>
-</div>
-
-<div class="pizza-card">
-  <div class="pizza-name">✦ Mantovana</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella fiordilatte</u></em></strong>, crema di zucca, salsiccia,
-    <strong><em><u>zola</u></em></strong>
-  </div>
-  <div class="pizza-formats">Piccola 8,00 · Media 9,00 · Tagliere 15,00</div>
-</div>
-
-<div class="pizza-card">
-  <div class="pizza-name">✦ Carbonara</div>
-  <div class="pizza-ingredients">
-    <strong><em><u>Mozzarella fiordilatte</u></em></strong>,
-    <strong><em><u>panna</u></em></strong>, pancetta, uova
-  </div>
-  <div class="pizza-formats">Piccola 7,50 · Media 8,50</div>
-</div>
-
-<div class="pizza-card">
-  <div class="pizza-name">✦ Focaccia Primavera</div>
-  <div class="pizza-ingredients">
-    Pomodorini, <strong><em><u>mozzarella di bufala</u></em></strong>, rucola
-  </div>
-  <div class="pizza-formats">Piccola 8,50 · Media 9,50</div>
-</div>
-
-</div> <!-- fine pizza-section -->
-
-<!-- PERSONALIZZA IL TUO PIATTO -->
-<div class="section-title-line">
-  <span class="line"></span>
-  <span>PERSONALIZZA IL TUO PIATTO</span>
-  <span class="line"></span>
-</div>
-<div class="section-subline"></div>
-
-<table class="personalizza-table">
-  <thead>
-    <tr>
-      <th>Aggiunta / Variante</th>
-      <th>Prezzo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>Speck</td><td>2,00</td></tr>
-    <tr><td>Spalla Cotta</td><td>2,00</td></tr>
-    <tr><td>Crudo</td><td>2,00</td></tr>
-    <tr><td>Patatine*</td><td>2,00</td></tr>
-    <tr><td>Doppia Mozzarella</td><td>3,00</td></tr>
-    <tr><td>Doppio Pomodoro</td><td>0,50</td></tr>
-    <tr><td>Verdure / Condimenti extra</td><td>1,00</td></tr>
-  </tbody>
-</table>
-
-<p class="small-note">
-  I prodotti contrassegnati con * sono preparati con materie prime surgelate.
-</p>
+</body>
+</html>
