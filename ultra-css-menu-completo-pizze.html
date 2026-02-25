@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Menù Completo Pizze - Locanda del Contadino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ———— STESSO CSS DEL MENU INTEGRALI (IDENTICO) ———— */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #000 !important; }
+    .sites-layout-container, .site-container, #sites-chrome-everything, #sites-canvas-main, #sites-canvas { background: #000 !important; }
+
+    :root {
+      --bg-main: #0d0d0d;
+      --bg-panel: #1a1a1a;
+      --bg-panel-soft: #151515;
+      --gold: #e6c463;
+      --gold-soft: #d8b85a;
+      --accent: #f08a3d;
+      --text-main: #f2f2f2;
+      --text-soft: #d9d9d9;
+      --line-soft: rgba(255,255,255,0.18);
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.7);
+      --badge-bg: rgba(240,138,61,0.12);
+      --badge-border: rgba(240,138,61,0.7);
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Inter", sans-serif;
+      background: radial-gradient(circle at top, #202020 0, #050505 55%, #000 100%);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu-wrapper {
+      width: 100%;
+      max-width: 900px;
+      background: radial-gradient(circle at top, #181818 0, #050505 60%, #000 100%);
+      border-radius: 20px;
+      padding: 26px 22px 30px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(230,196,99,0.08) 0, transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(240,138,61,0.08) 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .menu-inner { position: relative; z-index: 1; }
+
+    .header-title {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 2.1rem;
+      color: var(--gold);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .header-subline {
+      margin: 8px auto 10px;
+      width: 140px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.8;
+    }
+
+    .header-tagline {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .section-title-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 40px;
+      text-shadow: 0 0 6px rgba(230,196,99,0.25);
+    }
+
+    .section-title-line span.line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.7;
+    }
+
+    .section-subline {
+      margin: 8px auto 22px;
+      width: 120px;
+      height: 1px;
+      background: var(--line-soft);
+      opacity: 0.9;
+    }
+
+    .two-columns {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 24px;
+      margin-top: 6px;
+    }
+
+    .column-box {
+      flex: 1;
+      background: radial-gradient(circle at top, #262626 0, #181818 55%, #101010 100%);
+      border-radius: 14px;
+      padding: 14px 14px 16px;
+      box-shadow: inset 0 0 16px rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .column-title {
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .column-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+      margin: 4px 0;
+    }
+
+    .column-separator {
+      width: 100%;
+      height: 1px;
+      background: var(--line-soft);
+      margin: 8px 0;
+      opacity: 0.7;
+    }
+
+    .formats-line {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-top: 4px;
+    }
+
+    .formats-line strong {
+      color: var(--gold-soft);
+    }
+
+    .personalizza-box {
+      margin-top: 18px;
+      padding: 22px 20px;
+      background: radial-gradient(circle at top, #262626 0, #181818 55%, #101010 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 0 22px rgba(0,0,0,0.65);
+    }
+
+    .personalizza-desc {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      text-align: center;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .personalizza-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .personalizza-item:last-child {
+      border-bottom: none;
+    }
+
+    .personalizza-name {
+      font-size: 1rem;
+      color: var(--text-main);
+      letter-spacing: 0.02em;
+    }
+
+    .personalizza-price {
+      font-size: 1rem;
+      color: var(--gold-soft);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .small-note {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 6px;
+      color: var(--text-soft);
+    }
+
+    .qr-frame {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      padding: 9px;
+      border-radius: 14px;
+      border: 1px solid rgba(230,196,99,0.7);
+      background: radial-gradient(circle at top, #262626 0, #141414 60%, #101010 100%);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .qr-frame img {
+      width: 110px;
+      height: 110px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 720px) {
+      .two-columns { flex-direction: column; gap: 16px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="menu-wrapper">
+  <div class="menu-inner">
+
+    <!-- HEADER -->
+    <div class="header-title">✦ LOCANDA DEL CONTADINO ✦</div>
+    <div class="header-subline"></div>
+    <div class="header-tagline">IMPASTI & PERSONALIZZA</div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- IMPASTO CLASSICO -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="section-title-line">
+      <span class="line"></span>
+      <span>IMPASTO CLASSICO</span>
+      <span class="line"></span>
+    </div>
+    <div class="section-subline"></div>
+
+    <div class="column-box">
+      <h3 class="column-title">Impasto Tipo 1 Biologico</h3>
+      <p class="column-text" style="opacity:0.9;">
+        Un impasto curato nei dettagli, pensato per offrire equilibrio, leggerezza e costanza.
+      </p>
+      <p class="column-text" style="color:var(--gold);font-weight:500;margin-top:8px;">
+        Ingredienti e lavorazione
+      </p>
+      <div class="column-text">
+        Preparato con <strong><em><u>Farina Tipo 1 Biologica (glutine)</u></em></strong> macinata a pietra,
+        acqua al <strong>60% di idratazione</strong>, sale, olio EVO e lievito.
+        Maturazione <strong>48/72 ore</strong> per leggerezza e fragranza.
+      </div>
+      <div class="column-separator"></div>
+      <p class="column-text" style="color:var(--gold);font-weight:500;margin-top:6px;">
+        Caratteristiche della pizza
+      </p>
+      <div class="column-text">
+        Bordi sottili, cottura uniforme, alta digeribilità.
+      </div>
+      <div class="column-separator"></div>
+      <p class="column-text" style="color:var(--gold);font-weight:500;margin-top:6px;">
+        Formati disponibili
+      </p>
+      <div class="formats-line">
+        <strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- IMPASTO INTEGRALE -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="section-title-line">
+      <span class="line"></span>
+      <span>IMPASTO INTEGRALE</span>
+      <span class="line"></span>
+    </div>
+    <div class="section-subline"></div>
+
+    <div class="column-box">
+      <h3 class="column-title">Impasto Integrale Biologico</h3>
+      <p class="column-text" style="opacity:0.9;">
+        Un impasto integrale ricco di fibre, dal profilo aromatico più rustico e naturale.
+      </p>
+      <p class="column-text" style="color:var(--gold);font-weight:500;margin-top:8px;">
+        Ingredienti e lavorazione
+      </p>
+      <div class="column-text">
+        Preparato con <strong><em><u>Farina Integrale Biologica (glutine)</u></em></strong> macinata a pietra,
+        acqua al <strong>60% di idratazione</strong>, sale, olio EVO e lievito.
+        Maturazione <strong>48/72 ore</strong> per struttura fragrante e naturale.
+      </div>
+      <div class="column-separator"></div>
+      <p class="column-text" style="color:var(--gold);font-weight:500;margin-top:6px;">
+        Caratteristiche della pizza
+      </p>
+      <div class="column-text">
+        Bordi sottili, consistenza rustica, sapore pieno.
+      </div>
+      <div class="column-separator"></div>
+      <p class="column-text" style="color:var(--gold);font-weight:500;margin-top:6px;">
+        Formati disponibili
+      </p>
+      <div class="formats-line">
+        <strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ALLERGENI -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="section-title-line">
+      <span class="line"></span>
+      <span>ALLERGENI</span>
+      <span class="line"></span>
+    </div>
+    <div class="section-subline"></div>
+
+    <div class="column-box">
+      <h3 class="column-title">Comunicazione Allergeni</h3>
+      <p class="column-text">
+        Gli ingredienti che contengono una o più delle 14 sostanze allergizzanti
+        sono evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong>.
+      </p>
+      <p class="column-text" style="margin-top:8px;">
+        Tutti gli impasti contengono <strong><em><u>glutine</u></em></strong>.
+      </p>
+      <p class="column-text" style="margin-top:6px;">
+        Consulta la scheda completa tramite QR:
+      </p>
+      <div class="qr-frame">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare">
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PERSONALIZZA -->
+    <!-- ═══════════════════════════════════════════ -->
+
+    <div class="section-title-line">
+      <span class="line"></span>
+      <span>PERSONALIZZA LA TUA PIZZA</span>
+      <span class="line"></span>
+    </div>
+    <div class="section-subline"></div>
+
+    <div class="personalizza-box">
+
+      <p class="personalizza-desc">
+        Aggiunte selezionate per completare la tua pizza con un tocco personale.
+      </p>
+
+      <div class="personalizza-item"><span class="personalizza-name">Speck</span><span class="personalizza-price">€ 2,00</span></div>
+      <div class="personalizza-item"><span class="personalizza-name">Spalla Cotta</span><span class="personalizza-price">€ 2,00</span></div>
+      <div class="personalizza-item"><span class="personalizza-name">Crudo</span><span class="personalizza-price">€ 2,00</span></div>
+      <div class="personalizza-item"><span class="personalizza-name">Patatine*</span><span class="personalizza-price">€ 2,00</span></div>
+      <div class="personalizza-item"><span class="personalizza-name"><strong><em><u>Doppia Mozzarella (latte)</u></em></strong></span><span class="personalizza-price">€ 3,00</span></div>
+            <div class="personalizza-item">
+        <span class="personalizza-name">Doppio Pomodoro</span>
+        <span class="personalizza-price">€ 0,50</span>
+      </div>
+
+      <div class="personalizza-item">
+        <span class="personalizza-name">Verdure / Extra</span>
+        <span class="personalizza-price">€ 1,00</span>
+      </div>
+
+    </div> <!-- personalizza-box -->
+
+    <p class="small-note">
+      I prodotti contrassegnati con * possono essere surgelati.<br>
+      Tutti gli impasti contengono <strong><em><u>glutine</u></em></strong>.
+    </p>
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- QUI INCOLLI TUTTE LE PIZZE -->
+    <!-- (classiche, speciali, bianche, integrali) -->
+    <!-- ═══════════════════════════════════════════ -->
+
+   <div class="menu-master-classiche">
+
+<style>
+.menu-master-classiche *{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",sans-serif;}
+.menu-master-classiche{background:#000;color:#f2f2f2;padding:24px;max-width:900px;margin:auto;border-radius:20px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 18px 40px rgba(0,0,0,0.7);}
+.menu-master-classiche .title{font-family:"Playfair Display",serif;text-align:center;font-size:2rem;color:#e6c463;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;}
+.menu-master-classiche .subline{width:140px;height:1px;background:linear-gradient(90deg,transparent,#e6c463,transparent);margin:10px auto 30px;opacity:.8;}
+
+.menu-master-classiche .pizza-card{background:linear-gradient(145deg,#1c1c1c,#0e0e0e);border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.06);border-left:3px solid rgba(230,196,99,0.5);box-shadow:0 4px 18px rgba(0,0,0,0.45);}
+.menu-master-classiche .pizza-card:hover{transform:translateY(-3px);transition:.3s;border-left-color:#e6c463;box-shadow:0 10px 32px rgba(0,0,0,0.65);}
+.menu-master-classiche .pizza-name{font-family:"Playfair Display",serif;font-size:1.15rem;color:#e6c463;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.menu-master-classiche .ingredients{font-size:.92rem;color:#d9d9d9;line-height:1.55;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px;}
+.menu-master-classiche .prices{display:flex;gap:10px;}
+.menu-master-classiche .price{flex:1;text-align:center;background:rgba(255,255,255,0.03);border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.05);}
+.menu-master-classiche .label{font-size:.7rem;opacity:.7;letter-spacing:.1em;text-transform:uppercase;}
+.menu-master-classiche .value{font-size:1rem;color:#d8b85a;font-weight:600;margin-top:4px;}
+</style>
+
+<div class="title">✦ PIZZE CLASSICHE ✦</div>
+<div class="subline"></div>
+
+<!-- MARGHERITA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Margherita</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 6,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 10,00</div></div>
+  </div>
+</div>
+
+<!-- MARINARA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Marinara</div>
+  <div class="ingredients">Pomodoro, aglio, origano</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 5,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 6,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 9,00</div></div>
+  </div>
+</div>
+
+<!-- 4 FORMAGGI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ 4 Formaggi</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>formaggi misti (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- ZOLA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Zola</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>gorgonzola (latte)</u></em></strong>, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- PROSCIUTTO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Prosciutto</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, prosciutto cotto</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- PROSCIUTTO E FUNGHI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Prosciutto e Funghi</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, prosciutto cotto, funghi</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,50</div></div>
+  </div>
+</div>
+
+<!-- PUGLIESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Pugliese</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, cipolle</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- CAPRICCIOSA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Capricciosa</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, prosciutto cotto, funghi, carciofi</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- 4 STAGIONI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ 4 Stagioni</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, prosciutto cotto, funghi, carciofi</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- ROMANA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Romana</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>acciughe (pesce)</u></em></strong>, origano</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- NAPOLI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Napoli</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, olive, capperi, <strong><em><u>acciughe (pesce)</u></em></strong>, origano</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- DIAVOLA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Diavola</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, cipolle, salamino</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- SALAMINO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Salamino</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, salamino</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- WÜRSTEL -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Würstel</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, würstel</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+</div>
+<div class="menu-master-speciali">
+
+<style>
+.menu-master-speciali *{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",sans-serif;}
+.menu-master-speciali{background:#000;color:#f2f2f2;padding:24px;max-width:900px;margin:auto;border-radius:20px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 18px 40px rgba(0,0,0,0.7);}
+.menu-master-speciali .title{font-family:"Playfair Display",serif;text-align:center;font-size:2rem;color:#e6c463;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;}
+.menu-master-speciali .subline{width:140px;height:1px;background:linear-gradient(90deg,transparent,#e6c463,transparent);margin:10px auto 30px;opacity:.8;}
+
+.menu-master-speciali .pizza-card{background:linear-gradient(145deg,#1c1c1c,#0e0e0e);border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.06);border-left:3px solid rgba(230,196,99,0.5);box-shadow:0 4px 18px rgba(0,0,0,0.45);}
+.menu-master-speciali .pizza-card:hover{transform:translateY(-3px);transition:.3s;border-left-color:#e6c463;box-shadow:0 10px 32px rgba(0,0,0,0.65);}
+.menu-master-speciali .pizza-name{font-family:"Playfair Display",serif;font-size:1.15rem;color:#e6c463;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.menu-master-speciali .ingredients{font-size:.92rem;color:#d9d9d9;line-height:1.55;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px;}
+.menu-master-speciali .prices{display:flex;gap:10px;}
+.menu-master-speciali .price{flex:1;text-align:center;background:rgba(255,255,255,0.03);border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.05);}
+.menu-master-speciali .label{font-size:.7rem;opacity:.7;letter-spacing:.1em;text-transform:uppercase;}
+.menu-master-speciali .value{font-size:1rem;color:#d8b85a;font-weight:600;margin-top:4px;}
+</style>
+
+<div class="title">✦ PIZZE SPECIALI ✦</div>
+<div class="subline"></div>
+
+<!-- MORTADELLA SPECIAL -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Mortadella Special</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, mortadella, <strong><em><u>grana (latte)</u></em></strong>, <strong><em><u>burrata (latte)</u></em></strong>, <strong><em><u>granella di pistacchio (frutta a guscio)</u></em></strong>, glassa di aceto balsamico</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 14,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- PIZZA ROSA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Pizza Rosa</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>, porcini, <strong><em><u>panna (latte)</u></em></strong>, prosciutto crudo</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- FRUTTI DI MARE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Frutti di Mare</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>frutti di mare* (molluschi, crostacei)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- SUPREMA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Suprema</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>salmone (pesce)</u></em></strong>, <strong><em><u>gamberetti* (crostacei)</u></em></strong>, <strong><em><u>polpa di granchio (crostacei)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- STRADIVARI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Stradivari</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, finferli, bresaola, rucola, <strong><em><u>grana (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- PARIGINA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Parigina</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>, rucola, <strong><em><u>grana (latte)</u></em></strong>, tonno (pesce), maionese</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- MANTOVANA SPECIAL -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Mantovana Special</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, crema di zucca, funghi, salsiccia, <strong><em><u>gorgonzola (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- BURRATA CRUDO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Burrata Crudo</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>burrata (latte)</u></em></strong>, prosciutto crudo</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- ROMAGNOLA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Romagnola</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>, <strong><em><u>stracchino (latte)</u></em></strong>, prosciutto crudo, rucola, <strong><em><u>grana (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- FRUTTI DI BOSCO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Frutti di Bosco</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, porcini, prosciutto crudo</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- CAMPAGNOLA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Campagnola</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>brie (latte)</u></em></strong>, funghi, speck</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- DELIZIA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Delizia</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, fiocchetto, carciofi alla romana</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- MICOLINA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Micolina</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, pancetta, patate lesse, cipolle, rosmarino</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FRIARIELLI E SALSICCIA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Friarielli e Salsiccia</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, friarielli, salsiccia</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- MILANESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Milanese</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>gorgonzola (latte)</u></em></strong>, <strong><em><u>stracchino (latte)</u></em></strong>, patatine*, salsiccia</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- SALAME DOLCE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Pizza Salame Dolce</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, salame dolce</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- BOLOGNESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Bolognese</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, mortadella
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- SALTIMBOCCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Saltimbocca</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, carciofi, salamino
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- PROVOLINA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Provolina</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>,
+    <strong><em><u>scamorza (latte)</u></em></strong>, prosciutto crudo, origano
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- PIEMONTESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Piemontese</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>,
+    <strong><em><u>scamorza (latte)</u></em></strong>, porcini
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- EMILIANA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Emiliana</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi, salsiccia, <strong><em><u>gorgonzola (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- BOSCAIOLA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Boscaiola</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    porcini, champignon, finferli, prezzemolo
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- AL RADICCHIO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Al Radicchio</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>, porcini, radicchio
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- PORCINI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Porcini</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, porcini, prezzemolo
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- ALTEA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Altea</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>acciughe (pesce)</u></em></strong>, speck, olive
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- MARE E MONTI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Mare e Monti</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    porcini, <strong><em><u>gamberetti* (crostacei)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- CALAMARI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Calamari</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>calamari* (molluschi)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- TONNO E GAMBERETTI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Tonno e Gamberetti</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>tonno (pesce)</u></em></strong>,
+    <strong><em><u>gamberetti* (crostacei)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- ZUCCHINE E GAMBERETTI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Zucchine e Gamberetti</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    zucchine, <strong><em><u>gamberetti* (crostacei)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- TONNO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Tonno</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>tonno (pesce)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- TONNO E CIPOLLE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Tonno e Cipolle</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>tonno (pesce)</u></em></strong>, cipolle
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- PIZZA TROPEA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Pizza Tropea</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>tonno (pesce)</u></em></strong>, cipolle, pomodori freschi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- REGINA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Regina</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, porcini, rucola
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- SARDA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Sarda</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>,
+    pomodorini, rucola, salsiccia, funghi,
+    <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- VERDE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Verde</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    pancetta, carciofi alla romana
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- INCONTRO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Incontro</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    pancetta, rucola, <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- ALLA PAESANA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Alla Paesana</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    cipolla, pancetta
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- PRIMAVERA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Primavera</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>tonno (pesce)</u></em></strong>, cipolle, pomodorini
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- Pizza Yami -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Pizza Yami</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>, salamino, funghi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- Patatina -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Patatina</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, patatine fritte*
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- Marinara Speciale -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Marinara Speciale</div>
+  <div class="ingredients">
+    Pomodoro, aglio, origano, salame, <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,50</div></div>
+  </div>
+</div>
+
+<!-- San Secondo -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ San Secondo</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>, spalla di San Secondo
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- Porcella -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Porcella</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    würstel, salsiccia, salamino, funghi, patatine*
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- Maialina -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Maialina</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    würstel, salsiccia, salamino
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- Del Bersagliere -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Del Bersagliere</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    salame, funghi, radicchio, pancetta
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- Calabrese -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Calabrese</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>, speck, salamino
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- Africana -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Africana</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>, salamino, olive
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- Peccato di Gola -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Peccato di Gola</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>, salamino, cipolle, olive nere, würstel, peperoni
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- Zingara -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Zingara</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    prosciutto cotto, funghi, carciofi, salamino, würstel,
+    <strong><em><u>acciughe (pesce)</u></em></strong>, olive, capperi, origano
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- Rucolina -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Rucolina</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>,
+    rucola, <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,50</div></div>
+  </div>
+</div>
+
+<!-- Del Contadino -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Del Contadino</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>,
+    insalata, pomodorini, olive nere
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- Vegetariana -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Vegetariana</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    zucchine, peperoni, melanzane, pomodorini
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- Light -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Light</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>ricotta (latte)</u></em></strong>, verdure miste
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- Uova e Asparagi -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Uova e Asparagi</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>uova (uova)</u></em></strong>, asparagi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- Bufalina -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Bufalina</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- Calzone del Pizzaiolo -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Calzone del Pizzaiolo</div>
+  <div class="ingredients">
+    Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>,
+    prosciutto cotto, salamino, <strong><em><u>ricotta (latte)</u></em></strong>, olio piccante
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+  </div>
+</div>
+
+<!-- FINE BLOCCO SPECIALI -->
+<div class="menu-bianche">
+
+<style>
+.menu-bianche *{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",sans-serif;}
+.menu-bianche{background:#000;color:#f2f2f2;padding:24px;max-width:900px;margin:auto;border-radius:20px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 18px 40px rgba(0,0,0,0.7);}
+.menu-bianche .title{font-family:"Playfair Display",serif;text-align:center;font-size:2rem;color:#e6c463;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;}
+.menu-bianche .subline{width:140px;height:1px;background:linear-gradient(90deg,transparent,#e6c463,transparent);margin:10px auto 30px;opacity:.8;}
+
+.menu-bianche .pizza-card{background:linear-gradient(145deg,#1c1c1c,#0e0e0e);border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.06);border-left:3px solid rgba(230,196,99,0.5);box-shadow:0 4px 18px rgba(0,0,0,0.45);}
+.menu-bianche .pizza-card:hover{transform:translateY(-3px);transition:.3s;border-left-color:#e6c463;box-shadow:0 10px 32px rgba(0,0,0,0.65);}
+.menu-bianche .pizza-name{font-family:"Playfair Display",serif;font-size:1.15rem;color:#e6c463;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.menu-bianche .ingredients{font-size:.92rem;color:#d9d9d9;line-height:1.55;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px;}
+.menu-bianche .prices{display:flex;gap:10px;}
+.menu-bianche .price{flex:1;text-align:center;background:rgba(255,255,255,0.03);border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.05);}
+.menu-bianche .label{font-size:.7rem;opacity:.7;letter-spacing:.1em;text-transform:uppercase;}
+.menu-bianche .value{font-size:1rem;color:#d8b85a;font-weight:600;margin-top:4px;}
+</style>
+
+<div class="title">✦ PIZZE BIANCHE ✦</div>
+<div class="subline"></div>
+
+<!-- TARTUFATA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Tartufata</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, crema di tartufo, bresaola, rucola,
+    <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- CRUDO TARTUFO BASILICO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Crudo Tartufo Basilico</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, crema di tartufo, crudo, basilico
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- AL TARTUFO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Al Tartufo</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, crema di tartufo, porcini,
+    <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- PROFUMO D'AUTUNNO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Profumo d'Autunno</div>
+  <div class="ingredients">
+    <strong><em><u>Provola (latte)</u></em></strong>, crema di zucca, salsiccia,
+    <strong><em><u>pecorino (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- PHILADELPHIA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Philadelphia</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>Philadelphia (latte)</u></em></strong>,
+    <strong><em><u>salmone (pesce)</u></em></strong>, zucchine
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- ROTOLO ESTIVO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Rotolo Estivo</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, speck, olio d'oliva, rucola,
+    <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- MEDITERRANEA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Mediterranea</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, pomodorini, crudo, rucola
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- SINFONIA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Sinfonia</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, asparagi,
+    <strong><em><u>uova (uova)</u></em></strong>,
+    <strong><em><u>salmone (pesce)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- DELICATA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Delicata</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, zucchine,
+    <strong><em><u>tonno (pesce)</u></em></strong>, cipolle,
+    <strong><em><u>panna (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- RUSTICA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Rustica</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, rucola, bresaola,
+    <strong><em><u>grana (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- CAPRESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Caprese</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, pomodorini, capperi, origano
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- TIROLESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Tirolese</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>panna (latte)</u></em></strong>, crema di zucca, speck
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FRANCESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Francese</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>,
+    <strong><em><u>noci (frutta a guscio)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- BUFALA RADICCHIO TONNO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Bufala Radicchio Tonno</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, radicchio,
+    <strong><em><u>tonno (pesce)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- BIANCANEVE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Biancaneve</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, crudo
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- GENOVESE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Genovese</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, patate lesse,
+    <strong><em><u>pesto (frutta a guscio, latte)</u></em></strong>, salsiccia
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- MANTOVANA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Mantovana</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    crema di zucca, salsiccia,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E ZOLA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Zola</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi,
+    <strong><em><u>gorgonzola (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E SALSICCIA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Salsiccia</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi, salsiccia
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E PORCINI -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Porcini</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi, porcini
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E SPECK -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Speck</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi, speck
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E BUFALA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Bufala</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>,
+    funghi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E BURRATA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Burrata</div>
+  <div class="ingredients">
+    <strong><em><u>Burrata (latte)</u></em></strong>,
+    funghi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 18,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E CRUDO -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Crudo</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi, prosciutto crudo
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E SALAME DOLCE -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Salame Dolce</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi, salame dolce
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E WÜRSTEL -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Würstel</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
+    funghi, würstel
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- FINE BLOCCO BIANCHE -->
+<div class="menu-integrali-rosse">
+
+<style>
+.menu-integrali-rosse *{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",sans-serif;}
+.menu-integrali-rosse{background:#000;color:#f2f2f2;padding:24px;max-width:900px;margin:auto;border-radius:20px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 18px 40px rgba(0,0,0,0.7);}
+.menu-integrali-rosse .title{font-family:"Playfair Display",serif;text-align:center;font-size:2rem;color:#e6c463;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;}
+.menu-integrali-rosse .subline{width:140px;height:1px;background:linear-gradient(90deg,transparent,#e6c463,transparent);margin:10px auto 30px;opacity:.8;}
+
+.menu-integrali-rosse .pizza-card{background:linear-gradient(145deg,#1c1c1c,#0e0e0e);border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.06);border-left:3px solid rgba(230,196,99,0.5);box-shadow:0 4px 18px rgba(0,0,0,0.45);}
+.menu-integrali-rosse .pizza-card:hover{transform:translateY(-3px);transition:.3s;border-left-color:#e6c463;box-shadow:0 10px 32px rgba(0,0,0,0.65);}
+.menu-integrali-rosse .pizza-name{font-family:"Playfair Display",serif;font-size:1.15rem;color:#e6c463;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.menu-integrali-rosse .ingredients{font-size:.92rem;color:#d9d9d9;line-height:1.55;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px;}
+.menu-integrali-rosse .prices{display:flex;gap:10px;}
+.menu-integrali-rosse .price{flex:1;text-align:center;background:rgba(255,255,255,0.03);border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.05);}
+.menu-integrali-rosse .label{font-size:.7rem;opacity:.7;letter-spacing:.1em;text-transform:uppercase;}
+.menu-integrali-rosse .value{font-size:1rem;color:#d8b85a;font-weight:600;margin-top:4px;}
+</style>
+
+<div class="title">✦ PIZZE INTEGRALI ROSSE ✦</div>
+<div class="subline"></div>
+
+<!-- Margherita -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Margherita</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 6,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 10,00</div></div>
+  </div>
+</div>
+
+<!-- Romana -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Romana</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>acciughe (pesce)</u></em></strong>, origano</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- Diavola -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Diavola</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, cipolle, salamino</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,00</div></div>
+  </div>
+</div>
+
+<!-- Napoli -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Napoli</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, olive, capperi, <strong><em><u>acciughe (pesce)</u></em></strong>, origano</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- Prosciutto -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Prosciutto</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, prosciutto cotto</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 13,00</div></div>
+  </div>
+</div>
+
+<!-- Prosciutto e Funghi -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Prosciutto e Funghi</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, prosciutto cotto, funghi</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 7,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 14,50</div></div>
+  </div>
+</div>
+
+<!-- Capricciosa -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Capricciosa</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, prosciutto cotto, funghi, carciofi</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- San Secondo -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ San Secondo</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>gorgonzola (latte)</u></em></strong>, spalla di San Secondo</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- 4 Formaggi -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ 4 Formaggi</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>formaggi misti (latte)</u></em></strong></div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- Campagnola -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Campagnola</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>brie (latte)</u></em></strong>, funghi, speck</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 19,00</div></div>
+  </div>
+</div>
+
+<!-- Piemontese -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Piemontese</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>gorgonzola (latte)</u></em></strong>, <strong><em><u>scamorza (latte)</u></em></strong>, porcini</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- Vegetariana -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Vegetariana</div>
+  <div class="ingredients">Pomodoro, <strong><em><u>mozzarella fiordilatte (latte)</u></em></strong>, zucchine, peperoni, melanzane, pomodorini</div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+
+<!-- FINE BLOCCO INTEGRALI ROSSE -->
+<div class="menu-integrali-bianche">
+
+<style>
+.menu-integrali-bianche *{box-sizing:border-box;margin:0;padding:0;font-family:"Inter",sans-serif;}
+.menu-integrali-bianche{background:#000;color:#f2f2f2;padding:24px;max-width:900px;margin:auto;border-radius:20px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 18px 40px rgba(0,0,0,0.7);}
+.menu-integrali-bianche .title{font-family:"Playfair Display",serif;text-align:center;font-size:2rem;color:#e6c463;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:10px;}
+.menu-integrali-bianche .subline{width:140px;height:1px;background:linear-gradient(90deg,transparent,#e6c463,transparent);margin:10px auto 30px;opacity:.8;}
+
+.menu-integrali-bianche .pizza-card{background:linear-gradient(145deg,#1c1c1c,#0e0e0e);border-radius:14px;padding:20px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.06);border-left:3px solid rgba(230,196,99,0.5);box-shadow:0 4px 18px rgba(0,0,0,0.45);}
+.menu-integrali-bianche .pizza-card:hover{transform:translateY(-3px);transition:.3s;border-left-color:#e6c463;box-shadow:0 10px 32px rgba(0,0,0,0.65);}
+.menu-integrali-bianche .pizza-name{font-family:"Playfair Display",serif;font-size:1.15rem;color:#e6c463;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+.menu-integrali-bianche .ingredients{font-size:.92rem;color:#d9d9d9;line-height:1.55;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px;}
+.menu-integrali-bianche .prices{display:flex;gap:10px;}
+.menu-integrali-bianche .price{flex:1;text-align:center;background:rgba(255,255,255,0.03);border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.05);}
+.menu-integrali-bianche .label{font-size:.7rem;opacity:.7;letter-spacing:.1em;text-transform:uppercase;}
+.menu-integrali-bianche .value{font-size:1rem;color:#d8b85a;font-weight:600;margin-top:4px;}
+</style>
+
+<div class="title">✦ PIZZE INTEGRALI BIANCHE ✦</div>
+<div class="subline"></div>
+
+<!-- BUFALA INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Bufala Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- BURRATA INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Burrata Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Burrata (latte)</u></em></strong>
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 18,00</div></div>
+  </div>
+</div>
+
+<!-- CRUDO INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Crudo Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, prosciutto crudo
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, funghi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 8,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 10,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 15,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E SALSICCIA INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Salsiccia Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, funghi, salsiccia
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E PORCINI INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Porcini Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, funghi, porcini
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E SPECK INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Speck Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, funghi, speck
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 9,50</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 11,50</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 16,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E BUFALA INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Bufala Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, funghi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E BURRATA INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Burrata Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Burrata (latte)</u></em></strong>, funghi
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 11,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 13,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 18,00</div></div>
+  </div>
+</div>
+
+<!-- FUNGHI E CRUDO INTEGRALE BIANCA -->
+<div class="pizza-card">
+  <div class="pizza-name">✦ Funghi e Crudo Integrale Bianca</div>
+  <div class="ingredients">
+    <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, funghi, prosciutto crudo
+  </div>
+  <div class="prices">
+    <div class="price"><div class="label">Piccola</div><div class="value">€ 10,00</div></div>
+    <div class="price"><div class="label">Media</div><div class="value">€ 12,00</div></div>
+    <div class="price"><div class="label">Tagliere</div><div class="value">€ 17,00</div></div>
+  </div>
+</div>
+
+
+<!-- FINE BLOCCO INTEGRALI BIANCHE -->
+
+
+
+
+  </div> <!-- menu-inner -->
+</div> <!-- menu-wrapper -->
+
+</body>
+</html>
