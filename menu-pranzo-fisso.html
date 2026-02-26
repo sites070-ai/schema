@@ -1,204 +1,225 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu del Giorno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
-<title>Menu del Giorno</title>
+  <style>
+  body {
+      background-color: transparent; /* così si integra nella pagina Sites */
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.8s ease-out;
+      font-family: "Architects Daughter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
 
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
 
-<style>
+  .titolo-pranzo-fisso {
+      font-size: 1.6rem;
+      color: #FFD700;
+      text-align: center;
+      margin: 10px 0 5px 0;
+      text-shadow: 0 0 6px rgba(255,215,0,0.4);
+  }
 
-/* ============================
-   RESET ANTI-SCROLL LATERALE
-   ============================ */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
+  .sottotitolo-pranzo-fisso {
+      font-size: 1rem;
+      color: #e6e6e6;
+      text-align: center;
+      margin-bottom: 10px;
+      opacity: 0.85;
+      line-height: 1.35;
+  }
 
-/* ============================
-   STRUTTURA BASE IDENTICA
-   ============================ */
-body {
-    background-color: transparent;
-    font-family: "Architects Daughter", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+  .contenitore {
+      width: 100%;
+      max-width: 480px; /* leggermente più larga */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+  }
 
-/* ============================
-   TITOLI (ADATTIVI)
-   ============================ */
-.titolo-pranzo-fisso {
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    color: #FFD700;
-    text-align: center;
-    margin: 10px 0 5px 0;
-    text-shadow: 0 0 6px rgba(255,215,0,0.4);
-}
+  .lavagna {
+      background: #000 url('https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/blackboard.png') repeat;
+      background-size: 400px;
+      filter: contrast(1.05) brightness(0.95);
+      border: 6px double #FFD700;
+      padding: 25px 15px;
+      width: 100%;
+      box-shadow: 0 0 40px rgba(255,215,0,0.25);
+      text-align: center;
+      border-radius: 4px;
+      position: relative;
+      box-sizing: border-box;
+  }
 
-.sottotitolo-pranzo-fisso {
-    font-size: clamp(0.9rem, 2.8vw, 1.2rem);
-    color: #e6e6e6;
-    text-align: center;
-    margin-bottom: 10px;
+  .intestazione {
+      color: #FFD700;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      font-style: italic;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+  }
+
+  .data-serviamo {
+      color: rgba(255, 215, 0, 0.85);
+      font-size: 0.95rem;
+      font-style: normal;
+  }
+
+  h2 {
+      color: #FFD700;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      border-bottom: 1px dashed rgba(255, 215, 0, 0.4);
+      display: inline-block;
+      padding: 0 10px 3px 10px;
+      text-shadow: 0 0 4px rgba(255,215,0,0.25);
+      letter-spacing: 1px;
+  }
+
+  ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  li {
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      margin: 6px 0;
+      line-height: 1.25;
+      word-break: break-word;
+  }
+
+  .piatto-nome {
+      display: block;
+  }
+
+  .piatto-meta {
+    display: block;
+    font-size: 0.9rem;
     opacity: 0.85;
-    line-height: 1.35;
+    color: #c9a23f;
 }
 
-/* ============================
-   CONTENITORE IDENTICO MA FLUIDO
-   ============================ */
-.contenitore {
-    width: 100%;
-    max-width: 480px;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
 
-/* ============================
-   LAVAGNA IDENTICA MA ADATTIVA
-   ============================ */
-.lavagna {
-    width: 100%;
-    background: #000 url('https://raw.githubusercontent.com/encharm/Font-Awesome-SVG-PNG/master/blackboard.png') repeat;
-    background-size: 400px;
-    filter: contrast(1.05) brightness(0.95);
-    border: 6px double #FFD700;
-    padding: clamp(15px, 4vw, 25px);
-    box-shadow: 0 0 40px rgba(255,215,0,0.25);
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+  li.top-dish {
+      color: #FFFFFF !important;
+      font-weight: bold;
+      text-shadow: none;
+  }
 
-/* ============================
-   INTESTAZIONE
-   ============================ */
-.intestazione {
-    color: #FFD700;
-    font-size: clamp(1rem, 3vw, 1.3rem);
-    margin-bottom: 15px;
-    font-style: italic;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-}
+  .top-dish .piatto-nome {
+      color: #FFFFFF !important;
+      font-weight: 600;
+  }
 
-.data-serviamo {
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-}
+  .top-dish .piatto-meta {
+      color: #c9a23f !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+  }
 
-/* ============================
-   TITOLI SEZIONI
-   ============================ */
-.lavagna h2 {
-    color: #FFD700;
-    margin-top: 15px;
-    margin-bottom: 8px;
-    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-    text-transform: uppercase;
-    border-bottom: 1px dashed rgba(255, 215, 0, 0.4);
-    display: inline-block;
-    padding: 0 10px 3px 10px;
-    text-shadow: 0 0 4px rgba(255,215,0,0.25);
-    letter-spacing: 1px;
-}
+  li.top-dish:hover {
+      text-shadow: 0 0 10px rgba(255,215,0,0.9);
+      transform: scale(1.02);
+  }
 
-/* ============================
-   LISTE
-   ============================ */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
+  .top-dish .piatto-nome .emoji {
+      font-size: 0.8rem !important;
+      vertical-align: middle;
+      margin-right: 4px;
+  }
 
-li {
-    color: #FFFFFF;
-    font-size: clamp(1rem, 3vw, 1.3rem);
-    margin: 6px 0;
-    line-height: 1.25;
-    word-break: break-word;
-}
-
-/* ============================
-   CHIUSURA
-   ============================ */
-.chiusura {
+  .chiusura {
     margin-top: 25px;
     color: #FFD700;
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: 1rem;
     opacity: 0.7;
 }
 
-/* ============================
-   BADGE
-   ============================ */
-.legenda-badges {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    color: white;
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
-}
-
-.legenda-badges span {
-    background: rgba(255,255,255,0.08);
-    padding: 6px 10px;
-    border-radius: 6px;
-}
-
-/* ============================
-   WHATSAPP IDENTICO
-   ============================ */
-#whatsapp-vertical {
-    position: fixed;
-    right: 0;
-    top: 40%;
-    background: #FFD700;
-    padding: 8px 6px;
-    border-radius: 6px 0 0 6px;
-    cursor: pointer;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.whatsapp-icon {
-    width: 22px;
-    height: 22px;
-}
-
-.whatsapp-text {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    color: #0a7c2f;
-    font-weight: bold;
-    font-size: 12px;
+/* Firma elegante sotto "Grazie e Buon Appetito" */
+.firma-locanda {
+    margin-top: 5px;
+    color: #FFD700;
+    font-size: 0.9rem;
+    opacity: 0.65;
+    font-style: italic;
     letter-spacing: 0.5px;
 }
 
-</style>
+
+  /* WHATSAPP */
+  #whatsapp-vertical {
+      position: fixed !important;
+      right: -6px !important;
+      top: 40% !important;
+      background: #FFD700 !important;
+      padding: 8px 6px !important;
+      border-radius: 6px 0 0 6px !important;
+      cursor: pointer !important;
+      z-index: 9999 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 4px !important;
+  }
+
+  .whatsapp-icon {
+      width: 22px !important;
+      height: 22px !important;
+      filter: hue-rotate(90deg) saturate(2);
+  }
+
+  .whatsapp-text {
+      writing-mode: vertical-rl !important;
+      text-orientation: upright !important;
+      color: #0a7c2f !important;
+      font-weight: bold !important;
+      font-size: 12px !important;
+      letter-spacing: 0.5px !important;
+  }
+
+  .legenda-badges {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      color: white;
+      font-size: 0.9rem;
+  }
+
+  .legenda-badges span {
+      background: rgba(255,255,255,0.08);
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: inline-block;
+  }
+  </style>
 </head>
 
 <body>
-
-<!-- ============================
-     TUTTO IL TUO HTML IDENTICO
-     ============================ -->
 
 <h2 class="titolo-pranzo-fisso">✦ Menù del Giorno ✦</h2>
 
@@ -209,15 +230,18 @@ li {
   ✔️ Servizio e coperto inclusi.
 </p>
 
+
+<!-- WHATSAPP -->
 <div id="whatsapp-vertical" onclick="condividiWhatsApp()">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon">
     <span class="whatsapp-text">Invia Menu</span>
 </div>
 
 <div class="contenitore">
+
   <div class="lavagna">
 
-     <div class="intestazione">
+    <div class="intestazione">
       <span id="data-odierna" class="data-serviamo"></span>
       <span>Oggi vi serviamo...</span>
     </div>
@@ -225,27 +249,27 @@ li {
     <section>
       <h2>✦ Primi</h2>
       <ul>
-        <li>Orecchiette al Pesto</li>
-        <li>Tortelli di Carne Panna e Prosciutto</li>
-        <li>Spaghetti al Pomodoro e Basilico</li>
+        <li>Pisarei e Fasoi</li>
+        <li>Tortiglioni all'Arrabbiata</li>
+        <li>Orecchiette con crema di Broccoli</li>
       </ul>
     </section>
 
     <section>
       <h2>✦ Secondi</h2>
       <ul>
-        <li>Arrosto di Coppa e Lonza con Patate al forno</li>
-        <li>Bistecche alla Pizzaiola</li>
-        <li>Coppa alla griglia</li>
+        <li>Costine di Maiale con Verze</li>
+        <li>Saltimbocca alla Romana</li>
+        <li>Cotoletta</li>
       </ul>
     </section>
 
     <section>
       <h2>✦ Contorni</h2>
       <ul>
-        <li>Zucchine Trifolate</li>
+        <li>Insalata Verde</li>
         <li>Insalata mista</li>
-        <li>Mix di Verdure Lessate</li>
+        <li>Mix di Verdure Lessate (Fagiolini-Broccoli-Carote-Patate)</li>
       </ul>
     </section>
 
@@ -261,14 +285,7 @@ li {
 
   </div>
 </div>
-
-<!-- ============================
-     I TUOI JS ORIGINALI
-     ============================ -->
-
-<script src="https://sites070-ai.github.io/schema/script-6.js"></script>
-<script src="https://sites070-ai.github.io/schema/piatti-menu-pranzo.js"></script>
-
+<script id="json-ld" type="application/ld+json"></script>
 <script>
 const opzioni = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 let data = new Date().toLocaleDateString('it-IT', opzioni);
@@ -284,7 +301,7 @@ function condividiWhatsApp() {
     let testo = `Menu del giorno (${data}):\n\n`;
 
     sezioni.forEach(section => {
-        const titolo = section.querySelector("h2")?.textContent || "";
+        const titolo = section.querySelector("h2").textContent.replace("✦ ", "");
         testo += titolo + ":\n";
 
         const piatti = section.querySelectorAll("li");
@@ -318,6 +335,10 @@ function condividiWhatsApp() {
     }
 }
 </script>
+
+<!-- DATABASE ESTERNO (per potenziamenti futuri) -->
+<script src="https://sites070-ai.github.io/schema/piatti-menu-pranzo.js"></script>
+<script src="https://sites070-ai.github.io/schema/script-6.js"></script>
 
 </body>
 </html>
