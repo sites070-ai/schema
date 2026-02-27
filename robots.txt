@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sites070-ai.github.io/schema/sitemap.xml
