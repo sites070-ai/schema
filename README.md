@@ -27,15 +27,15 @@ Ogni file rappresenta un’entità autonoma, connessa al resto dell’ecosistema
 
 | File | Tipo | Descrizione |
 |------|------|-------------|
-| [/schema/website.html](schema/website.html) | WebSite | Identità del sito, SearchAction, struttura principale. |
-| [/schema/restaurant.html](schema/restaurant.html) | Restaurant | Entità principale del ristorante. |
-| [/schema/organization.html](schema/organization.html) | Organization | Identità aziendale ufficiale. |
-| [/schema/service.html](schema/service.html) | Service | Servizi offerti (consegna, prenotazioni, asporto). |
-| [/schema/pizza-delivery-cremona.html](schema/pizza-delivery-cremona.html) | Restaurant | Pagina dedicata alla consegna a Cremona. |
-| [/schema/maps.html](schema/maps.html) | LocalBusiness | Booster per Google Maps e coerenza NAP. |
-| [/schema/aggregate-rating.html](schema/aggregate-rating.html) | AggregateRating | Rating aggregato avanzato. |
-| [/schema/searchbox.html](schema/searchbox.html) | WebSite | Sitelinks SearchBox per Google. |
-| [/schema/schema-index.html](schema/schema-index.html) | WebPage | Mappa ufficiale dell’ecosistema semantico. |
+| /schema/website.html | WebSite | Identità del sito, SearchAction, struttura principale. |
+| /schema/restaurant.html | Restaurant | Entità principale del ristorante. |
+| /schema/organization.html | Organization | Identità aziendale ufficiale. |
+| /schema/service.html | Service | Servizi offerti (consegna, prenotazioni, asporto). |
+| /schema/pizza-delivery-cremona.html | Restaurant | Pagina dedicata alla consegna a Cremona. |
+| /schema/maps.html | LocalBusiness | Booster per Google Maps e coerenza NAP. |
+| /schema/aggregate-rating.html | AggregateRating | Rating aggregato avanzato. |
+| /schema/searchbox.html | WebSite | Sitelinks SearchBox per Google. |
+| /schema/schema-index.html | WebPage | Mappa ufficiale dell’ecosistema semantico. |
 
 ---
 
@@ -43,30 +43,30 @@ Ogni file rappresenta un’entità autonoma, connessa al resto dell’ecosistema
 
 | File | Tipo | Descrizione |
 |------|------|-------------|
-| [/schema/breadcrumbs.html](schema/breadcrumbs.html) | BreadcrumbList | Navigazione strutturata. |
-| [/schema/faq.html](schema/faq.html) | FAQPage | Domande frequenti. |
-| [/schema/menu.html](schema/menu.html) | ItemList | Menu generale. |
-| [/schema/pizze-bianche.html](schema/pizze-bianche.html) | OfferCatalog | Categoria pizze bianche. |
-| [/schema/pizze-classiche.html](schema/pizze-classiche.html) | OfferCatalog | Categoria pizze classiche. |
-| [/schema/pizze-integrali.html](schema/pizze-integrali.html) | OfferCatalog | Categoria pizze integrali. |
-| [/schema/pizze-speciali.html](schema/pizze-speciali.html) | OfferCatalog | Categoria pizze speciali. |
-| [/schema/impasti-biologici.html](schema/impasti-biologici.html) | ItemList | Tipologie di impasti. |
-| [/schema/allergeni.html](schema/allergeni.html) | ItemList | Informazioni sugli allergeni. |
-| [/schema/recensioni.html](schema/recensioni.html) | Review | Recensioni singole. |
-| [/schema/pranzo-fisso.html](schema/pranzo-fisso.html) | ItemList | Menu pranzo fisso. |
-| [/schema/about.html](schema/about.html) | AboutPage | Pagina “Chi siamo”. |
-| [/schema/contact.html](schema/contact.html) | ContactPage | Pagina “Contatti”. |
-| [/schema/privacy.html](schema/privacy.html) | WebPage | Privacy policy. |
-| [/schema/qr-code.html](schema/qr-code.html) | WebPage | QR code interattivi. |
+| /schema/breadcrumbs.html | BreadcrumbList | Navigazione strutturata. |
+| /schema/faq.html | FAQPage | Domande frequenti. |
+| /schema/menu.html | ItemList | Menu generale. |
+| /schema/pizze-bianche.html | OfferCatalog | Categoria pizze bianche. |
+| /schema/pizze-classiche.html | OfferCatalog | Categoria pizze classiche. |
+| /schema/pizze-integrali.html | OfferCatalog | Categoria pizze integrali. |
+| /schema/pizze-speciali.html | OfferCatalog | Categoria pizze speciali. |
+| /schema/impasti-biologici.html | ItemList | Tipologie di impasti. |
+| /schema/allergeni.html | ItemList | Informazioni sugli allergeni. |
+| /schema/recensioni.html | Review | Recensioni singole. |
+| /schema/pranzo-fisso.html | ItemList | Menu pranzo fisso. |
+| /schema/about.html | AboutPage | Pagina “Chi siamo”. |
+| /schema/contact.html | ContactPage | Pagina “Contatti”. |
+| /schema/privacy.html | WebPage | Privacy policy. |
+| /schema/qr-code.html | WebPage | QR code interattivi. |
 
 ---
 
 ## 🔗 Schema Index (Hub Semantico)
 
 La pagina **Schema Index** funge da mappa ufficiale dell’intero ecosistema.  
-È ospitata su Google Sites e collega tutte le 24 pagine schema.
+È ospitata su **GitHub Pages** e collega tutte le 24 pagine schema.
 
-🔗 https://sites.google.com/view/locandadelcontadino/schema-index
+🔗 https://sites070-ai.github.io/schema/schema-index.html
 
 ---
 
@@ -128,5 +128,3 @@ Telefono: +39 0372 451964
 
 Questo repository è parte del progetto *Locanda del Contadino*.  
 Tutti i diritti riservati.
-
-
