@@ -7,215 +7,210 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "OfferCatalog",
-  "@id": "https://sites.google.com/view/locandadelcontadino#pizze-classiche",
-  "name": "Pizze Classiche – Locanda del Contadino – Cremona",
-  "inLanguage": "it-IT",
-  "numberOfItems": 16,
-  "about": {
-    "@type": "Restaurant",
-    "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
-  },
+  "@type": "Menu",
+  "@id": "https://sites.google.com/view/locandadelcontadino#menu",
+  "name": "Menu – Locanda del Contadino",
+  "hasMenuSection": {
+    "@type": "MenuSection",
+    "@id": "https://sites.google.com/view/locandadelcontadino#pizze-classiche",
+    "name": "Pizze Classiche",
+    "description": "Sezione del menu dedicata alle pizze classiche",
+    "hasMenuItem": [
 
-  "isPartOf": {
-    "@type": "Menu",
-    "@id": "https://sites.google.com/view/locandadelcontadino#menu"
-  },
+      {
+        "@type": "MenuItem",
+        "name": "Margherita",
+        "description": "Pomodoro, mozzarella fiordilatte",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "6.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "7.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "10.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-  "itemListElement": [
+      {
+        "@type": "MenuItem",
+        "name": "Romana",
+        "description": "Pomodoro, mozzarella fiordilatte, acciughe, origano",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "7.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "13.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Margherita",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte",
-      "offers": [
-        { "@type": "Offer", "price": "6.00", "priceCurrency": "EUR", "name": "Margherita - Piccola" },
-        { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR", "name": "Margherita - Media" },
-        { "@type": "Offer", "price": "10.00", "priceCurrency": "EUR", "name": "Margherita - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Marinara",
+        "description": "Pomodoro, aglio, origano",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "5.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "6.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "9.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Romana",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, acciughe, origano",
-      "offers": [
-        { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR", "name": "Romana - Piccola" },
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Romana - Media" },
-        { "@type": "Offer", "price": "13.00", "priceCurrency": "EUR", "name": "Romana - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Napoli",
+        "description": "Pomodoro, mozzarella fiordilatte, olive, capperi, acciughe, origano",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "9.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "15.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Marinara",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, aglio, origano",
-      "offers": [
-        { "@type": "Offer", "price": "5.00", "priceCurrency": "EUR", "name": "Marinara - Piccola" },
-        { "@type": "Offer", "price": "6.00", "priceCurrency": "EUR", "name": "Marinara - Media" },
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "Marinara - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Prosciutto",
+        "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "7.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "13.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Napoli",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, olive, capperi, acciughe, origano",
-      "offers": [
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Napoli - Piccola" },
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "Napoli - Media" },
-        { "@type": "Offer", "price": "15.00", "priceCurrency": "EUR", "name": "Napoli - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Prosciutto e Funghi",
+        "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "7.50", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "8.50", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "14.50", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Prosciutto",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto",
-      "offers": [
-        { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR", "name": "Prosciutto - Piccola" },
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Prosciutto - Media" },
-        { "@type": "Offer", "price": "13.00", "priceCurrency": "EUR", "name": "Prosciutto - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Capricciosa",
+        "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "9.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "15.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Prosciutto e Funghi",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi",
-      "offers": [
-        { "@type": "Offer", "price": "7.50", "priceCurrency": "EUR", "name": "Prosciutto e Funghi - Piccola" },
-        { "@type": "Offer", "price": "8.50", "priceCurrency": "EUR", "name": "Prosciutto e Funghi - Media" },
-        { "@type": "Offer", "price": "14.50", "priceCurrency": "EUR", "name": "Prosciutto e Funghi - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "4 Stagioni",
+        "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "9.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "15.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Capricciosa",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi",
-      "offers": [
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Capricciosa - Piccola" },
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "Capricciosa - Media" },
-        { "@type": "Offer", "price": "15.00", "priceCurrency": "EUR", "name": "Capricciosa - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "4 Formaggi",
+        "description": "Pomodoro, mozzarella fiordilatte, formaggi misti",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "9.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "10.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "17.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "4 Stagioni",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi",
-      "offers": [
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "4 Stagioni - Piccola" },
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "4 Stagioni - Media" },
-        { "@type": "Offer", "price": "15.00", "priceCurrency": "EUR", "name": "4 Stagioni - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Zola",
+        "description": "Pomodoro, zola, mozzarella fiordilatte",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "7.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "14.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "4 Formaggi",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, formaggi misti",
-      "offers": [
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "4 Formaggi - Piccola" },
-        { "@type": "Offer", "price": "10.00", "priceCurrency": "EUR", "name": "4 Formaggi - Media" },
-        { "@type": "Offer", "price": "17.00", "priceCurrency": "EUR", "name": "4 Formaggi - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Wurstel",
+        "description": "Pomodoro, mozzarella fiordilatte, wurstel",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "7.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "13.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Zola",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, zola, mozzarella fiordilatte",
-      "offers": [
-        { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR", "name": "Zola - Piccola" },
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Zola - Media" },
-        { "@type": "Offer", "price": "14.00", "priceCurrency": "EUR", "name": "Zola - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Pugliese",
+        "description": "Pomodoro, mozzarella fiordilatte, cipolle",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "7.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "13.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Wurstel",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, wurstel",
-      "offers": [
-        { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR", "name": "Wurstel - Piccola" },
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Wurstel - Media" },
-        { "@type": "Offer", "price": "13.00", "priceCurrency": "EUR", "name": "Wurstel - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Diavola",
+        "description": "Pomodoro, mozzarella fiordilatte, cipolle, salamino",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "9.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "14.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Pugliese",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, cipolle",
-      "offers": [
-        { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR", "name": "Pugliese - Piccola" },
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Pugliese - Media" },
-        { "@type": "Offer", "price": "13.00", "priceCurrency": "EUR", "name": "Pugliese - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Salamino",
+        "description": "Pomodoro, mozzarella fiordilatte, salamino",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "7.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Tagliere", "price": "13.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Diavola",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, cipolle, salamino",
-      "offers": [
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Diavola - Piccola" },
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "Diavola - Media" },
-        { "@type": "Offer", "price": "14.00", "priceCurrency": "EUR", "name": "Diavola - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Calzone Liscio",
+        "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "8.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "9.00", "priceCurrency": "EUR" }
+        ]
+      },
 
-    {
-      "@type": "Product",
-      "name": "Salamino",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, salamino",
-      "offers": [
-        { "@type": "Offer", "price": "7.00", "priceCurrency": "EUR", "name": "Salamino - Piccola" },
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Salamino - Media" },
-        { "@type": "Offer", "price": "13.00", "priceCurrency": "EUR", "name": "Salamino - Tagliere" }
-      ]
-    },
+      {
+        "@type": "MenuItem",
+        "name": "Calzone Farcito",
+        "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi",
+        "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
+        "offers": [
+          { "@type": "Offer", "name": "Piccola", "price": "9.00", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Media", "price": "10.00", "priceCurrency": "EUR" }
+        ]
+      }
 
-    {
-      "@type": "Product",
-      "name": "Calzone Liscio",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto",
-      "offers": [
-        { "@type": "Offer", "price": "8.00", "priceCurrency": "EUR", "name": "Calzone Liscio - Piccola" },
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "Calzone Liscio - Media" }
-      ]
-    },
-
-    {
-      "@type": "Product",
-      "name": "Calzone Farcito",
-      "image": "https://sites.google.com/view/locandadelcontadino/assets/pizza.jpg",
-      "description": "Pomodoro, mozzarella fiordilatte, prosciutto cotto, funghi, carciofi",
-      "offers": [
-        { "@type": "Offer", "price": "9.00", "priceCurrency": "EUR", "name": "Calzone Farcito - Piccola" },
-        { "@type": "Offer", "price": "10.00", "priceCurrency": "EUR", "name": "Calzone Farcito - Media" }
-      ]
-    }
-
-  ]
+    ]
+  }
 }
+
 </script>
 
 </head>
