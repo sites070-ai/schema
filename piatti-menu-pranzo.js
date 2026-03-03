@@ -14,17 +14,26 @@ let TOP_PIATTI = {
   "coppa alla griglia": {categoria:"secondo", regione:"Emilia-Romagna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["coppa di maiale alla griglia"], allergeni:[], dieta:"carne"},
   "costine di maiale con verze": {categoria:"secondo", regione:"Lombardia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["costine e verze","puntine con verze"], allergeni:[], dieta:"carne"},
   "cotoletta": {categoria:"secondo", regione:"Lombardia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["cotoletta alla milanese","fettina impanata"], allergeni:["glutine","uova"], dieta:"carne"},
+  "fagiolini-carote-cavoletti di bruxelles": {categoria:"contorno", regione:"Italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure miste bollite","contorno misto verdure"], allergeni:[], dieta:"vegetariano"},
+  "fesa di tacchino con rucola e pomodorini": {categoria:"secondo", regione:"Italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e pomodorini"], allergeni:[], dieta:"carne"},
+  "fusilli al pomodoro e basilico": {categoria:"primo", regione:"Italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["pasta al pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
+  "gnocchi sardi al ragù di salsiccia e fagioli": {categoria:"primo", regione:"Sardegna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["malloreddus al ragù di salsiccia","gnocchetti sardi al ragù"], allergeni:["glutine"], dieta:"carne"},
   "grigliata mista salsiccia-coppa-wurstel": {categoria:"secondo", regione:"Italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["grigliata mista","grigliata di carne"], allergeni:[], dieta:"carne"},
   "guanciale in umido con polenta e purè": {categoria:"secondo", regione:"Lombardia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["guanciale in umido","guanciale con polenta"], allergeni:["latte"], dieta:"carne"},
+  "hamburger con patate al forno": {categoria:"secondo", regione:"USA/Italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["hamburger e patate"], allergeni:[], dieta:"carne"},
   "insalata mista": {categoria:"contorno", regione:"Italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata verde mista"], allergeni:[], dieta:"vegetariano"},
   "insalata verde": {categoria:"contorno", regione:"Italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata semplice"], allergeni:[], dieta:"vegetariano"},
+  "lonza di maiale arrosto": {categoria:"secondo", regione:"Italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["arrosto di lonza"], allergeni:[], dieta:"carne"},
   "mix di verdure lessate (fagiolini-broccoli-carote-patate)": {categoria:"contorno", regione:"Italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["mix di verdure lessate","verdure bollite","verdure lessate"], allergeni:[], dieta:"vegetariano"},
   "orecchiette al pesto": {categoria:"primo", regione:"Puglia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette al pesto di basilico"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "orecchiette con crema di broccoli": {categoria:"primo", regione:"Italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette ai broccoli","pasta con crema di broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
+  "patate lesse": {categoria:"contorno", regione:"Italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["patate bollite"], allergeni:[], dieta:"vegetariano"},
+  "penne con crema di friarielli e ricotta": {categoria:"primo", regione:"Campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta friarielli e ricotta","penne ai friarielli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "pisarei e fasoi": {categoria:"primo", regione:"Emilia-Romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["pisarei e faso"], allergeni:["glutine"], dieta:"vegetariano"},
   "pollo arrosto con patate": {categoria:"secondo", regione:"Italia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["pollo al forno con patate"], allergeni:[], dieta:"carne"},
   "pomodori": {categoria:"contorno", regione:"Italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["pomodori freschi","pomodori al piatto"], allergeni:[], dieta:"vegetariano"},
   "saltimbocca alla romana": {categoria:"secondo", regione:"Lazio", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["saltimbocca"], allergeni:["glutine"], dieta:"carne"},
+  "scarola con capperi e olive": {categoria:"contorno", regione:"Campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["scarola alla napoletana"], allergeni:[], dieta:"vegetariano"},
   "spaghetti alla norma (pomodoro-melanzane-ricotta)": {categoria:"primo", regione:"Sicilia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["spaghetti alla norma","pasta alla norma"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "spaghetti al pomodoro e basilico": {categoria:"primo", regione:"Italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["spaghetti al pomodoro"], allergeni:["glutine"], dieta:"vegetariano"},
   "spaghetti pomodoro e basilico": {categoria:"primo", regione:"Italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["spaghetti al pomodoro e basilico","spaghetti al pomodoro"], allergeni:["glutine"], dieta:"vegetariano"},
@@ -36,6 +45,7 @@ let TOP_PIATTI = {
   "tortiglioni con crema di broccoli e speck": {categoria:"primo", regione:"Italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta broccoli e speck","tortiglioni broccoli e speck"], allergeni:["glutine","latte"], dieta:"carne"},
   "zucchine trifolate": {categoria:"contorno", regione:"Italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"}
 };
+
 
 
 
