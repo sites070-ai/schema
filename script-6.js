@@ -69,11 +69,11 @@ function generaDescrizione(nome, dati) {
             `Preparazione equilibrata, dal gusto autentico.`
         ],
         "secondo": [
-            `Secondo piatto ricco e gustoso, tipico della cucina italiana.`,
-            `Carne cotta lentamente per ottenere morbidezza e sapore.`,
-            `Ricetta tradizionale, saporita e soddisfacente.`,
-            `Un secondo che unisce semplicità e gusto.`,
-            `Preparazione rustica, dal carattere deciso.`
+    `Secondo piatto ricco e gustoso, tipico della cucina italiana.`,
+    `Cottura lenta per ottenere morbidezza e sapore.`,
+    `Ricetta tradizionale, saporita e soddisfacente.`,
+    `Un secondo che unisce semplicità e gusto.`,
+    `Preparazione rustica, dal carattere deciso.`
         ],
         "contorno": [
             `Un accompagnamento sano e gustoso.`,
