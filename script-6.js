@@ -66,6 +66,11 @@ function generaDescrizione(nome, dati) {
             `Un primo piatto che valorizza ingredienti freschi e di qualità.`,
             `Piatto di tradizione italiana preparato con cura.`,
             `Un classico della cucina casalinga, saporito e confortante.`,
+            `Piatto avvolgente, preparato con ingredienti selezionati.`,
+            `Una ricetta che unisce semplicità e gusto autentico.`,
+            `Un primo che celebra la tradizione italiana con equilibrio.`,
+            `Preparazione cremosa e ricca di profumi.`,
+            `Un piatto caldo e confortante, perfetto per ogni stagione.`,
             `Preparazione equilibrata, dal gusto autentico.`
         ],
         "secondo": [
@@ -73,6 +78,11 @@ function generaDescrizione(nome, dati) {
     `Cottura lenta per ottenere morbidezza e sapore.`,
     `Ricetta tradizionale, saporita e soddisfacente.`,
     `Un secondo che unisce semplicità e gusto.`,
+            `Secondo piatto preparato con attenzione per esaltarne il sapore.`,
+`Cottura studiata per ottenere una consistenza morbida e piacevole.`,
+`Ricetta dal gusto deciso, tipica della cucina casalinga.`,
+`Un secondo equilibrato, ricco di profumi e tradizione.`,
+`Preparazione saporita che valorizza ogni ingrediente.`,
     `Preparazione rustica, dal carattere deciso.`
         ],
         "contorno": [
@@ -80,6 +90,11 @@ function generaDescrizione(nome, dati) {
             `Preparazione semplice, fresca e saporita.`,
             `Contorno leggero e genuino, ideale per ogni piatto.`,
             `Verdure selezionate e cucinate con cura.`,
+            `Contorno leggero che accompagna perfettamente ogni portata.`,
+`Verdure cucinate con cura per mantenere freschezza e gusto.`,
+`Un contorno semplice ma ricco di sapore.`,
+`Preparazione genuina, ideale per un pasto equilibrato.`,
+`Un mix di sapori delicati e naturali.`,
             `Un contorno classico della cucina italiana.`
         ]
     };
