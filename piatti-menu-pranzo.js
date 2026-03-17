@@ -29,6 +29,7 @@ let TOP_PIATTI = {
   "hamburger con patate al forno": {categoria:"secondo", regione:"usa/italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["hamburger e patate"], allergeni:[], dieta:"carne"},
   "insalata mista": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata verde mista"], allergeni:[], dieta:"vegetariano"},
   "insalata verde": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata semplice"], allergeni:[], dieta:"vegetariano"},
+  "lasagne": {categoria:"primo", regione:"emilia-romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["lasagne al ragù","lasagna"], allergeni:["glutine","latte"], dieta:"carne"},
   "lonza di maiale arrosto": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["arrosto di lonza"], allergeni:[], dieta:"carne"},
   "mix di verdure gratinate (patate-carote-cavolfiore-fagiolini)": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure gratinate","mix verdure gratinate"], allergeni:["latte"], dieta:"vegetariano"},
   "mix di verdure lessate (patate-carote-broccoli-fagiolini)": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure bollite","mix verdure lessate"], allergeni:[], dieta:"vegetariano"},
@@ -62,10 +63,12 @@ let TOP_PIATTI = {
   "tortiglioni al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["pasta al pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
   "tortiglioni cacio e pepe": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["cacio e pepe","pasta cacio e pepe"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "tortiglioni con crema di broccoli e speck": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta broccoli e speck","tortiglioni broccoli e speck"], allergeni:["glutine","latte"], dieta:"carne"},
+  "tortiglioni ricotta e friarielli": {categoria:"primo", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta ricotta e friarielli","tortiglioni ai friarielli e ricotta"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "vitello tonnato": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["vitel tonné"], allergeni:["uova","pesce"], dieta:"carne"},
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
 };
+
 
 
 
