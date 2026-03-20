@@ -21,10 +21,13 @@ let TOP_PIATTI = {
   "costine di maiale con verze": {categoria:"secondo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["costine e verze","puntine con verze"], allergeni:[], dieta:"carne"},
   "cotoletta": {categoria:"secondo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["cotoletta alla milanese","fettina impanata"], allergeni:["glutine","uova"], dieta:"carne"},
   "cotoletta con patatine": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["cotoletta e patatine","cotoletta con patate"], allergeni:["glutine","uova"], dieta:"carne"},
+  "cotoletta di pollo con patatine": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["cotoletta di pollo e patatine","cotoletta di pollo con patate"], allergeni:["glutine","uova"], dieta:"carne"},
   "fagiolini-carote-cavoletti di bruxelles": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure miste bollite","contorno misto verdure"], allergeni:[], dieta:"vegetariano"},
+  "fesa di tacchino con rucola e grana": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e grana","fesa di tacchino rucola e grana"], allergeni:["latte"], dieta:"carne"},
   "fesa di tacchino con rucola e pomodorini": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e pomodorini"], allergeni:[], dieta:"carne"},
   "fusilli al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["pasta al pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
   "gnocchi al gorgonzola": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi al gorgo"], allergeni:["glutine","latte"], dieta:"vegetariano"},
+  "gnocchi ai 4 formaggi": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi ai quattro formaggi","gnocchi 4 formaggi"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "gnocchi allo zola e asparagi": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi gorgonzola e asparagi","gnocchi zola e asparagi"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "gnocchi sardi al ragù di salsiccia e fagioli": {categoria:"primo", regione:"sardegna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["malloreddus al ragù di salsiccia","gnocchetti sardi al ragù"], allergeni:["glutine"], dieta:"carne"},
   "grigliata mista salsiccia-coppa-wurstel": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["grigliata mista","grigliata di carne"], allergeni:[], dieta:"carne"},
@@ -41,6 +44,7 @@ let TOP_PIATTI = {
   "orecchiette al pesto": {categoria:"primo", regione:"puglia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette al pesto di basilico"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "orecchiette con crema di broccoli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette ai broccoli","pasta con crema di broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "patate lesse": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["patate bollite"], allergeni:[], dieta:"vegetariano"},
+  "penne al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["pasta al pomodoro e basilico","penne al pomodoro"], allergeni:["glutine"], dieta:"vegetariano"},
   "penne alla puttanesca": {categoria:"primo", regione:"campania", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["puttanesca","pasta alla puttanesca"], allergeni:["glutine"], dieta:"vegetariano"},
   "penne all'amatriciana": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["amatriciana","pasta all'amatriciana"], allergeni:["glutine"], dieta:"carne"},
   "penne con crema di friarielli e ricotta": {categoria:"primo", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta friarielli e ricotta","penne ai friarielli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
@@ -76,6 +80,7 @@ let TOP_PIATTI = {
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
 };
+
 
 
 
