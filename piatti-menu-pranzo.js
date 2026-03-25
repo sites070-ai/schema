@@ -8,6 +8,7 @@
 - Questo formato è ottimizzato per il menù del giorno.
 */
 let TOP_PIATTI = {
+  "affettato di tacchino": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino affettato","fesa di tacchino affettata","tacchino a fette"], allergeni:[], dieta:"carne"},
   "affettato di tacchino con rucola e grana": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e grana","fesa di tacchino con rucola e grana","tacchino affettato con rucola e grana"], allergeni:["latte"], dieta:"carne"},
   "affettato di tacchino con rucola e pomodorini": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino affettato con rucola","tacchino freddo con rucola e pomodorini"], allergeni:[], dieta:"carne"},
   "arrosto di coppa e lonza con patate al forno": {categoria:"secondo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["arrosto misto di maiale"], allergeni:[], dieta:"carne"},
@@ -39,7 +40,6 @@ let TOP_PIATTI = {
   "hamburger alla griglia": {categoria:"secondo", regione:"usa/italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["hamburger ai ferri"], allergeni:[], dieta:"carne"},
   "hamburger con patate al forno": {categoria:"secondo", regione:"usa/italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["hamburger e patate"], allergeni:[], dieta:"carne"},
   "insalata mista": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata verde mista"], allergeni:[], dieta:"vegetariano"},
-  "insalata mista - Pomodori": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata verde mista"], allergeni:[], dieta:"vegetariano"},
   "insalata verde": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata semplice"], allergeni:[], dieta:"vegetariano"},
   "lasagne": {categoria:"primo", regione:"emilia-romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["lasagne al ragù","lasagna"], allergeni:["glutine","latte"], dieta:"carne"},
   "lonza di maiale arrosto": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["arrosto di lonza"], allergeni:[], dieta:"carne"},
@@ -60,6 +60,8 @@ let TOP_PIATTI = {
   "pollo alla cacciatora": {categoria:"secondo", regione:"toscana", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["pollo in umido alla cacciatora","pollo cacciatora"], allergeni:[], dieta:"carne"},
   "pollo arrosto con patate": {categoria:"secondo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["pollo al forno con patate"], allergeni:[], dieta:"carne"},
   "pomodori": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["pomodori freschi","pomodori al piatto"], allergeni:[], dieta:"vegetariano"},
+  "risotto con salsiccia e crema di asparagi": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:5, sinonimi:["risotto salsiccia e asparagi","risotto agli asparagi con salsiccia"], allergeni:["latte"], dieta:"carne"},
+  "rotolo di pollo al forno": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["rotolo di pollo","arrosto di pollo ripieno"], allergeni:[], dieta:"carne"},
   "saltimbocca alla romana": {categoria:"secondo", regione:"lazio", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["saltimbocca"], allergeni:["glutine"], dieta:"carne"},
   "scarola con capperi e olive": {categoria:"contorno", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["scarola alla napoletana"], allergeni:[], dieta:"vegetariano"},
   "seppioline in umido con piselli": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["seppioline coi piselli","seppie in umido"], allergeni:["pesce"], dieta:"pesce"},
