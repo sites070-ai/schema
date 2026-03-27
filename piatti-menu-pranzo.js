@@ -32,6 +32,7 @@ let TOP_PIATTI = {
   "fesa di tacchino con rucola e pomodorini": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e pomodorini"], allergeni:[], dieta:"carne"},
   "fusilli al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["pasta al pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
   "gnocchi al gorgonzola": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi al gorgo"], allergeni:["glutine","latte"], dieta:"vegetariano"},
+  "gnocchi al ragù": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi con ragù","gnocchi al sugo di carne"], allergeni:["glutine"], dieta:"carne"},
   "gnocchi ai 4 formaggi": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi ai quattro formaggi","gnocchi 4 formaggi"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "gnocchi allo zola e asparagi": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi gorgonzola e asparagi","gnocchi zola e asparagi"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "gnocchi sardi al ragù di salsiccia e fagioli": {categoria:"primo", regione:"sardegna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["malloreddus al ragù di salsiccia","gnocchetti sardi al ragù"], allergeni:["glutine"], dieta:"carne"},
@@ -40,14 +41,17 @@ let TOP_PIATTI = {
   "hamburger alla griglia": {categoria:"secondo", regione:"usa/italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["hamburger ai ferri"], allergeni:[], dieta:"carne"},
   "hamburger con patate al forno": {categoria:"secondo", regione:"usa/italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["hamburger e patate"], allergeni:[], dieta:"carne"},
   "insalata mista": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata verde mista"], allergeni:[], dieta:"vegetariano"},
+  "insalata mista e pomodori": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:3, sinonimi:["insalata mista - pomodori","insalata mista con pomodori","insalata e pomodori"], allergeni:[], dieta:"vegetariano"},
   "insalata verde": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["insalata semplice"], allergeni:[], dieta:"vegetariano"},
   "lasagne": {categoria:"primo", regione:"emilia-romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["lasagne al ragù","lasagna"], allergeni:["glutine","latte"], dieta:"carne"},
   "lonza di maiale arrosto": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["arrosto di lonza"], allergeni:[], dieta:"carne"},
   "lonza tonnata": {categoria:"secondo", regione:"piemonte", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["lonza con salsa tonnata","lonza alla tonnata"], allergeni:["uova","pesce"], dieta:"carne"},
+  "merluzzo panato": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["filetto di merluzzo panato","merluzzo impanato"], allergeni:["pesce","glutine","uova"], dieta:"pesce"},
   "mix di verdure gratinate (patate-carote-cavolfiore-fagiolini)": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure gratinate","mix verdure gratinate"], allergeni:["latte"], dieta:"vegetariano"},
   "mix di verdure lessate (patate-carote-broccoli-fagiolini)": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure bollite","mix verdure lessate"], allergeni:[], dieta:"vegetariano"},
   "orecchiette al pesto": {categoria:"primo", regione:"puglia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette al pesto di basilico"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "orecchiette con crema di broccoli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette ai broccoli","pasta con crema di broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
+  "pasta al forno": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["pasta al forno tradizionale","pasta gratinata"], allergeni:["glutine","latte"], dieta:"carne"},
   "patate lesse": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["patate bollite"], allergeni:[], dieta:"vegetariano"},
   "penne al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["pasta al pomodoro e basilico","penne al pomodoro"], allergeni:["glutine"], dieta:"vegetariano"},
   "penne alla puttanesca": {categoria:"primo", regione:"campania", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["puttanesca","pasta alla puttanesca"], allergeni:["glutine"], dieta:"vegetariano"},
@@ -65,6 +69,7 @@ let TOP_PIATTI = {
   "saltimbocca alla romana": {categoria:"secondo", regione:"lazio", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["saltimbocca"], allergeni:["glutine"], dieta:"carne"},
   "scarola con capperi e olive": {categoria:"contorno", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["scarola alla napoletana"], allergeni:[], dieta:"vegetariano"},
   "seppioline in umido con piselli": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["seppioline coi piselli","seppie in umido"], allergeni:["pesce"], dieta:"pesce"},
+  "seppioline in umido con piselli e patate": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["seppioline coi piselli e patate","seppie in umido con piselli e patate"], allergeni:["pesce"], dieta:"pesce"},
   "spaghetti alla carbonara": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["carbonara","pasta alla carbonara"], allergeni:["glutine","uova","latte"], dieta:"carne"},
   "spaghetti alla norma (pomodoro-melanzane-ricotta)": {categoria:"primo", regione:"sicilia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["spaghetti alla norma","pasta alla norma"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "spaghetti al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["spaghetti al pomodoro"], allergeni:["glutine"], dieta:"vegetariano"},
@@ -89,7 +94,6 @@ let TOP_PIATTI = {
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
 };
-
 
 
 
