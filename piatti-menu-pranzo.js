@@ -93,6 +93,9 @@ let TOP_PIATTI = {
   "vitello tonnato": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["vitel tonné"], allergeni:["uova","pesce"], dieta:"carne"},
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
+  "cosce di pollo con peperoni e olive": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pollo con peperoni e olive","cosce di pollo ai peperoni"], allergeni:[], dieta:"carne"},
+  "stinco di maiale arrosto con patate al forno": {categoria:"secondo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["stinco di maiale con patate","stinco arrosto con patate"], allergeni:[], dieta:"carne"},
+  "tortiglioni con crema di broccoli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta con crema di broccoli","tortiglioni ai broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
 };
 
 
