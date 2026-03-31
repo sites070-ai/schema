@@ -23,6 +23,7 @@ let TOP_PIATTI = {
   "caprese": {categoria:"secondo", regione:"campania", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["insalata caprese","mozzarella e pomodoro"], allergeni:["latte"], dieta:"vegetariano"},
   "coppa alla griglia": {categoria:"secondo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["coppa di maiale alla griglia"], allergeni:[], dieta:"carne"},
   "cosce di pollo al limone con patate al forno": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pollo al limone con patate","cosce di pollo al limone"], allergeni:[], dieta:"carne"},
+  "cosce di pollo con peperoni e olive": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pollo con peperoni e olive","cosce di pollo ai peperoni"], allergeni:[], dieta:"carne"},
   "costine di maiale con verze": {categoria:"secondo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["costine e verze","puntine con verze"], allergeni:[], dieta:"carne"},
   "cotoletta": {categoria:"secondo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["cotoletta alla milanese","fettina impanata"], allergeni:["glutine","uova"], dieta:"carne"},
   "cotoletta con patatine": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["cotoletta e patatine","cotoletta con patate"], allergeni:["glutine","uova"], dieta:"carne"},
@@ -76,6 +77,7 @@ let TOP_PIATTI = {
   "spaghetti pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["spaghetti al pomodoro e basilico","spaghetti al pomodoro"], allergeni:["glutine"], dieta:"vegetariano"},
   "spiedino misto (pollo-salsiccia-lonza)": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["spiedino misto","spiedino di carne"], allergeni:[], dieta:"carne"},
   "spiedini di pollo e maiale": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["spiedini misti","spiedini pollo e maiale","spiedini di carne"], allergeni:[], dieta:"carne"},
+  "stinco di maiale arrosto con patate al forno": {categoria:"secondo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["stinco di maiale con patate","stinco arrosto con patate"], allergeni:[], dieta:"carne"},
   "tacchino tonnato": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["tacchino con salsa tonnata"], allergeni:["uova","pesce"], dieta:"carne"},
   "tagliatelle al ragù": {categoria:"primo", regione:"emilia-romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["tagliatelle al ragù di carne","tagliatelle alla bolognese"], allergeni:["glutine","uova"], dieta:"carne"},
   "tagliatelle al ragù con salsiccia e funghi": {categoria:"primo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:5, sinonimi:["tagliatelle ragù salsiccia e funghi","tagliatelle ai funghi e salsiccia"], allergeni:["glutine","uova"], dieta:"carne"},
@@ -87,16 +89,15 @@ let TOP_PIATTI = {
   "tortiglioni all'arrabbiata": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["pasta all'arrabbiata","penne all'arrabbiata"], allergeni:["glutine"], dieta:"vegetariano"},
   "tortiglioni al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["pasta al pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
   "tortiglioni cacio e pepe": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["cacio e pepe","pasta cacio e pepe"], allergeni:["glutine","latte"], dieta:"vegetariano"},
+  "tortiglioni con crema di broccoli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta con crema di broccoli","tortiglioni ai broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "tortiglioni con crema di broccoli e speck": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta broccoli e speck","tortiglioni broccoli e speck"], allergeni:["glutine","latte"], dieta:"carne"},
   "tortiglioni ricotta e friarielli": {categoria:"primo", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta ricotta e friarielli","tortiglioni ai friarielli e ricotta"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "verdure alla zingara": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["verdure miste alla zingara","verdure saltate alla zingara"], allergeni:[], dieta:"vegetariano"},
   "vitello tonnato": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["vitel tonné"], allergeni:["uova","pesce"], dieta:"carne"},
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
-  "cosce di pollo con peperoni e olive": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pollo con peperoni e olive","cosce di pollo ai peperoni"], allergeni:[], dieta:"carne"},
-  "stinco di maiale arrosto con patate al forno": {categoria:"secondo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["stinco di maiale con patate","stinco arrosto con patate"], allergeni:[], dieta:"carne"},
-  "tortiglioni con crema di broccoli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta con crema di broccoli","tortiglioni ai broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
 };
+
 
 
 
