@@ -17,6 +17,7 @@ let TOP_PIATTI = {
   "bistecca alla griglia": {categoria:"secondo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["bistecca ai ferri"], allergeni:[], dieta:"carne"},
   "bistecca alla pizzaiola": {categoria:"secondo", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["bistecche alla pizzaiola","fettina alla pizzaiola"], allergeni:[], dieta:"carne"},
   "bistecche alla pizzaiola": {categoria:"secondo", regione:"campania", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["fettine alla pizzaiola"], allergeni:[], dieta:"carne"},
+  "bocconcini di manzo con piselli": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["spezzatino di manzo con piselli","manzo con piselli"], allergeni:[], dieta:"carne"},
   "braciola alla valdostana": {categoria:"secondo", regione:"valle d'aosta", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["braciola valdostana","cotoletta alla valdostana"], allergeni:["glutine","latte"], dieta:"carne"},
   "braciole alla griglia": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["braciole ai ferri","braciole grigliate"], allergeni:[], dieta:"carne"},
   "brasato di lonza con polenta": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["brasato di lonza","lonza brasata"], allergeni:[], dieta:"carne"},
@@ -56,11 +57,13 @@ let TOP_PIATTI = {
   "patate e scarola con olive e capperi": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:3, sinonimi:["patate - scarola con olive e capperi","patate con scarola e olive","scarola e patate"], allergeni:[], dieta:"vegetariano"},
   "pasta al forno": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["pasta al forno tradizionale","pasta gratinata"], allergeni:["glutine","latte"], dieta:"carne"},
   "patate lesse": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["patate bollite"], allergeni:[], dieta:"vegetariano"},
+  "penne al pesto": {categoria:"primo", regione:"liguria", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["pasta al pesto","penne al pesto di basilico"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "penne al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["pasta al pomodoro e basilico","penne al pomodoro"], allergeni:["glutine"], dieta:"vegetariano"},
   "penne alla puttanesca": {categoria:"primo", regione:"campania", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["puttanesca","pasta alla puttanesca"], allergeni:["glutine"], dieta:"vegetariano"},
   "penne all'amatriciana": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["amatriciana","pasta all'amatriciana"], allergeni:["glutine"], dieta:"carne"},
   "penne cacio e pepe": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["cacio e pepe con penne","penne alla cacio e pepe"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "penne con crema di friarielli e ricotta": {categoria:"primo", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta friarielli e ricotta","penne ai friarielli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
+  "peperoni-cavolfiore-patate-fagioli bianchi": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:3, sinonimi:["mix peperoni cavolfiore patate fagioli","contorno misto verdure e legumi"], allergeni:[], dieta:"vegetariano"},
   "pizzoccheri con spinaci-patate-verze": {categoria:"primo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["pizzoccheri valtellinesi","pizzoccheri"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "pisarei e fasoi": {categoria:"primo", regione:"emilia-romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["pisarei e faso"], allergeni:["glutine"], dieta:"vegetariano"},
   "platessa alla mugnaia": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["platessa alla meunière","filetto di platessa alla mugnaia"], allergeni:["pesce","glutine","latte"], dieta:"pesce"},
@@ -85,6 +88,7 @@ let TOP_PIATTI = {
   "tacchino tonnato": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["tacchino con salsa tonnata"], allergeni:["uova","pesce"], dieta:"carne"},
   "tagliatelle al ragù": {categoria:"primo", regione:"emilia-romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["tagliatelle al ragù di carne","tagliatelle alla bolognese"], allergeni:["glutine","uova"], dieta:"carne"},
   "tagliatelle al ragù con salsiccia e funghi": {categoria:"primo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:5, sinonimi:["tagliatelle ragù salsiccia e funghi","tagliatelle ai funghi e salsiccia"], allergeni:["glutine","uova"], dieta:"carne"},
+  "tortelli di carne al ragù": {categoria:"primo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:5, sinonimi:["tortelli al ragù","tortelli di carne con ragù"], allergeni:["glutine","latte","uova"], dieta:"carne"},
   "tortelli di carne panna e prosciutto": {categoria:"primo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tortelli panna e prosciutto"], allergeni:["glutine","latte","uova"], dieta:"carne"},
   "tortelli di zucca": {categoria:"primo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["tortelli alla zucca","tortelli mantovani"], allergeni:["glutine","latte","uova"], dieta:"vegetariano"},
   "tortelli ricotta e spinaci": {categoria:"primo", regione:"emilia-romagna", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["tortelli di ricotta e spinaci","tortelli ricotta spinaci"], allergeni:["glutine","latte","uova"], dieta:"vegetariano"},
@@ -101,7 +105,11 @@ let TOP_PIATTI = {
   "vitello tonnato": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["vitel tonné"], allergeni:["uova","pesce"], dieta:"carne"},
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
-};
+};a:
+
+
+
+
 
 
 
