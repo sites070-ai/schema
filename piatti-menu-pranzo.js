@@ -108,6 +108,9 @@ let TOP_PIATTI = {
   "vitello tonnato": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["vitel tonné"], allergeni:["uova","pesce"], dieta:"carne"},
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
+ "carpaccio con rucola e grana": {categoria:"secondo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["carpaccio di manzo con rucola e grana","carpaccio rucola e grana"], allergeni:["latte"], dieta:"carne"},
+ "involtini di lonza": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["involtini di maiale","involtini di lonza al forno"], allergeni:[], dieta:"carne"},
+ "orecchiette al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette al pomodoro","orecchiette pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
 };
 
 
