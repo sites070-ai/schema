@@ -8,7 +8,13 @@
 - Questo formato è ottimizzato per il menù del giorno.
 */
 let TOP_PIATTI = {
- "gnocchi al ragù e zola": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi ragù e gorgonzola","gnocchi al ragù con zola"], allergeni:["glutine","latte"], dieta:"carne"},
+  "broccoli-patate-rapa rossa": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["mix broccoli patate rapa rossa","contorno broccoli patate rapa rossa"], allergeni:[], dieta:"vegetariano"},
+  "merluzzo": {categoria:"secondo", regione:"italia", iconico:false, top:false, selezione:false, punteggio:3, sinonimi:["filetto di merluzzo","merluzzo semplice"], allergeni:["pesce"], dieta:"pesce"},
+  "mix di formaggi": {categoria:"secondo", regione:"italia", iconico:false, top:false, selezione:false, punteggio:3, sinonimi:["piatto di formaggi","tagliere di formaggi"], allergeni:["latte"], dieta:"vegetariano"},
+  "tomino alla griglia": {categoria:"secondo", regione:"piemonte", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["tomino ai ferri","tomino grigliato"], allergeni:["latte"], dieta:"vegetariano"},
+  "totani pastellati alla romana": {categoria:"secondo", regione:"lazio", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["totani fritti alla romana","totani in pastella"], allergeni:["pesce","glutine","uova"], dieta:"pesce"},
+  "trofie al pomodoro e basilico": {categoria:"primo", regione:"liguria", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["trofie al pomodoro","trofie pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
+  "gnocchi al ragù e zola": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi ragù e gorgonzola","gnocchi al ragù con zola"], allergeni:["glutine","latte"], dieta:"carne"},
   "petto di pollo al limone": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pollo al limone","fettine di pollo al limone"], allergeni:[], dieta:"carne"},
   "affettato di tacchino": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino affettato","fesa di tacchino affettata","tacchino a fette"], allergeni:[], dieta:"carne"},
   "affettato di tacchino con rucola e grana": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e grana","fesa di tacchino con rucola e grana","tacchino affettato con rucola e grana"], allergeni:["latte"], dieta:"carne"},
