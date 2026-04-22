@@ -11,6 +11,7 @@ let TOP_PIATTI = {
   "affettato di tacchino": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino affettato","fesa di tacchino affettata","tacchino a fette"], allergeni:[], dieta:"carne"},
   "affettato di tacchino con rucola e grana": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e grana","fesa di tacchino con rucola e grana","tacchino affettato con rucola e grana"], allergeni:["latte"], dieta:"carne"},
   "affettato di tacchino con rucola e pomodorini": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino affettato con rucola","tacchino freddo con rucola e pomodorini"], allergeni:[], dieta:"carne"},
+  "affettato di tacchino con salsa tonnata": {categoria:"secondo", regione:"piemonte", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con salsa tonnata","fesa di tacchino con salsa tonnata"], allergeni:["uova","pesce"], dieta:"carne"},
   "arrosto di coppa e lonza con patate al forno": {categoria:"secondo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["arrosto misto di maiale"], allergeni:[], dieta:"carne"},
   "arrosto di lonza": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["lonza arrosto","arrosto di maiale"], allergeni:[], dieta:"carne"},
   "bietola rossa": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["barbabietola","bietola rossa lessata"], allergeni:[], dieta:"vegetariano"},
@@ -25,7 +26,7 @@ let TOP_PIATTI = {
   "broccoli-patate-rapa rossa": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["mix broccoli patate rapa rossa","contorno broccoli patate rapa rossa"], allergeni:[], dieta:"vegetariano"},
   "caprese": {categoria:"secondo", regione:"campania", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["insalata caprese","mozzarella e pomodoro"], allergeni:["latte"], dieta:"vegetariano"},
   "carpaccio con rucola e grana": {categoria:"secondo", regione:"italia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["carpaccio di manzo con rucola e grana","carpaccio rucola e grana"], allergeni:["latte"], dieta:"carne"},
-  "casonsèi con ricotta e spinaci": {categoria:"primo", regione:"lombardia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["casoncelli ricotta e spinaci","casonsei ripieni di ricotta e spinaci"], allergeni:["glutine","latte","uova"], dieta:"vegetariano"},
+  "casonsei con ricotta e spinaci": {categoria:"primo", regione:"lombardia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["casoncelli ricotta e spinaci","casonsei ripieni di ricotta e spinaci"], allergeni:["glutine","latte","uova"], dieta:"vegetariano"},
   "cavolfiore gratinato": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["cavolfiore al gratin","cavolfiore gratinato al forno"], allergeni:["latte"], dieta:"vegetariano"},
   "coppa alla griglia": {categoria:"secondo", regione:"emilia-romagna", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["coppa di maiale alla griglia"], allergeni:[], dieta:"carne"},
   "cosce di pollo al limone con patate al forno": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pollo al limone con patate","cosce di pollo al limone"], allergeni:[], dieta:"carne"},
@@ -38,6 +39,7 @@ let TOP_PIATTI = {
   "fagiolini-carote-cavoletti di bruxelles": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure miste bollite","contorno misto verdure"], allergeni:[], dieta:"vegetariano"},
   "fesa di tacchino con rucola e grana": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e grana","fesa di tacchino rucola e grana"], allergeni:["latte"], dieta:"carne"},
   "fesa di tacchino con rucola e pomodorini": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e pomodorini"], allergeni:[], dieta:"carne"},
+  "fettuccine al nero di seppia con sugo mare e monti": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:5, sinonimi:["fettuccine nero di seppia mare e monti","pasta al nero di seppia mare e monti"], allergeni:["glutine","pesce","molluschi","latte"], dieta:"pesce"},
   "fusilli al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["pasta al pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
   "gnocchi al gorgonzola": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi al gorgo"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "gnocchi al pomodoro e ricotta": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["gnocchi pomodoro e ricotta","gnocchi al sugo con ricotta"], allergeni:["glutine","latte"], dieta:"vegetariano"},
@@ -62,11 +64,11 @@ let TOP_PIATTI = {
   "merluzzo fritto": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["filetto di merluzzo fritto","merluzzo impanato e fritto"], allergeni:["pesce","glutine","uova"], dieta:"pesce"},
   "merluzzo panato": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["filetto di merluzzo panato","merluzzo impanato"], allergeni:["pesce","glutine","uova"], dieta:"pesce"},
   "mix di formaggi": {categoria:"secondo", regione:"italia", iconico:false, top:false, selezione:false, punteggio:3, sinonimi:["piatto di formaggi","tagliere di formaggi"], allergeni:["latte"], dieta:"vegetariano"},
-  "mix di verdure gratinate (patate-carote-cavolfiore-fagiolini)": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure gratinate","mix verdure gratinate"], allergeni:["latte"], dieta:"vegetariano"},
   "mix di verdure lessate (patate-carote-broccoli-fagiolini)": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["verdure bollite","mix verdure lessate"], allergeni:[], dieta:"vegetariano"},
   "orecchiette al pesto": {categoria:"primo", regione:"puglia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette al pesto di basilico"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "orecchiette al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette al pomodoro","orecchiette pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
   "orecchiette con crema di broccoli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette ai broccoli","pasta con crema di broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
+  "orecchiette con crema di friarielli e stracchino": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["orecchiette friarielli e stracchino","pasta friarielli e stracchino"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "osso buco con verdure": {categoria:"secondo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["ossobuco con verdure","osso buco in umido con verdure"], allergeni:[], dieta:"carne"},
   "osso buco di manzo in umido": {categoria:"secondo", regione:"lombardia", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["ossobuco di manzo","osso buco in umido"], allergeni:[], dieta:"carne"},
   "patate e scarola con olive e capperi": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:3, sinonimi:["patate - scarola con olive e capperi","patate con scarola e olive","scarola e patate"], allergeni:[], dieta:"vegetariano"},
@@ -118,7 +120,6 @@ let TOP_PIATTI = {
   "tortiglioni all'amatriciana": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["amatriciana con tortiglioni","tortiglioni amatriciana"], allergeni:["glutine"], dieta:"carne"},
   "tortiglioni all'arrabbiata": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:4, sinonimi:["pasta all'arrabbiata","penne all'arrabbiata"], allergeni:["glutine"], dieta:"vegetariano"},
   "tortiglioni al pomodoro e basilico": {categoria:"primo", regione:"italia", iconico:true, top:true, selezione:true, punteggio:5, sinonimi:["pasta al pomodoro e basilico"], allergeni:["glutine"], dieta:"vegetariano"},
-  "tortiglioni cacio e pepe": {categoria:"primo", regione:"lazio", iconico:true, top:true, selezione:false, punteggio:5, sinonimi:["cacio e pepe","pasta cacio e pepe"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "tortiglioni con crema di broccoli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta con crema di broccoli","tortiglioni ai broccoli"], allergeni:["glutine","latte"], dieta:"vegetariano"},
   "tortiglioni con crema di broccoli e speck": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta broccoli e speck","tortiglioni broccoli e speck"], allergeni:["glutine","latte"], dieta:"carne"},
   "tortiglioni ricotta e friarielli": {categoria:"primo", regione:"campania", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["pasta ricotta e friarielli","tortiglioni ai friarielli e ricotta"], allergeni:["glutine","latte"], dieta:"vegetariano"},
@@ -130,8 +131,6 @@ let TOP_PIATTI = {
   "zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:true, punteggio:4, sinonimi:["zucchine in padella"], allergeni:[], dieta:"vegetariano"},
   "zuppa di fagioli": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["minestra di fagioli","zuppa rustica di fagioli"], allergeni:[], dieta:"vegetariano"}
 };
-
-
 
 
 
