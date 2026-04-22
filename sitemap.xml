@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- INDEX -->
   <url><loc>https://sites070-ai.github.io/schema/schema-index.html</loc></url>
+
+  <!-- CORE SCHEMA PAGES -->
   <url><loc>https://sites070-ai.github.io/schema/restaurant.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/organization.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/website.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/service.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/aggregate-rating.html</loc></url>
 
+  <!-- MENU PRINCIPALE -->
   <url><loc>https://sites070-ai.github.io/schema/menu.html</loc></url>
+
+  <!-- MENU PIZZE -->
   <url><loc>https://sites070-ai.github.io/schema/pizze-bianche.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/pizze-classiche.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/pizze-integrali.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/pizze-speciali.html</loc></url>
 
+  <!-- MENU GIORNO (NUOVI) -->
+  <url><loc>https://sites070-ai.github.io/schema/menu-giorno-primi.html</loc></url>
+  <url><loc>https://sites070-ai.github.io/schema/menu-giorno-secondi.html</loc></url>
+  <url><loc>https://sites070-ai.github.io/schema/menu-giorno-contorni.html</loc></url>
+
+  <!-- ALTRE PAGINE -->
   <url><loc>https://sites070-ai.github.io/schema/pizza-delivery-cremona.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/pranzo-fisso.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/impasti-biologici.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/allergeni.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/recensioni.html</loc></url>
 
+  <!-- SUPPORTO SEO -->
   <url><loc>https://sites070-ai.github.io/schema/breadcrumbs.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/searchbox.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/faq.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/qr-code.html</loc></url>
 
+  <!-- INFO -->
   <url><loc>https://sites070-ai.github.io/schema/about.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/contact.html</loc></url>
   <url><loc>https://sites070-ai.github.io/schema/maps.html</loc></url>
