@@ -8,6 +8,9 @@
 - Questo formato è ottimizzato per il menù del giorno.
 */
 let TOP_PIATTI = {
+  "orecchiette con crema di friarielli stracchino e salsiccia": {categoria:"primo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:5, sinonimi:["orecchiette friarielli stracchino e salsiccia","pasta friarielli stracchino e salsiccia"], allergeni:["glutine","latte"], dieta:"carne"},
+  "patate-zucchine trifolate": {categoria:"contorno", regione:"italia", iconico:false, top:false, selezione:true, punteggio:3, sinonimi:["patate e zucchine trifolate","mix patate zucchine"], allergeni:[], dieta:"vegetariano"},
+  "salsiccia con patate al forno": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["salsiccia e patate","salsiccia al forno con patate"], allergeni:[], dieta:"carne"},
   "finocchi gratinati": {categoria:"contorno", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["finocchi al gratin","finocchi gratinati al forno"], allergeni:["latte"], dieta:"vegetariano"},
   "affettato di tacchino": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino affettato","fesa di tacchino affettata","tacchino a fette"], allergeni:[], dieta:"carne"},
   "affettato di tacchino con rucola e grana": {categoria:"secondo", regione:"italia", iconico:false, top:true, selezione:false, punteggio:4, sinonimi:["tacchino con rucola e grana","fesa di tacchino con rucola e grana","tacchino affettato con rucola e grana"], allergeni:["latte"], dieta:"carne"},
