@@ -2,37 +2,140 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Impasti Biologici – Locanda del Contadino</title>
 
-<!-- SCHEMA ORG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Impasti Biologici",
-  "url": "https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona",
-  "description": "Impasti biologici con farine Tipo 1 e Integrale, macinate a pietra e lievitate naturalmente 48/72 ore.",
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "Impasti biologici della Locanda del Contadino",
+  "@id": "https://sites070-ai.github.io/schema/impasti-biologici.html",
+  "name": "Impasti Biologici – Locanda del Contadino",
+  "description": "Pizza artigianale con farine biologiche macinate a pietra e lievitazione naturale 48/72 ore. Disponibili impasto Bio Tipo 1 e Bio Integrale, allo stesso prezzo.",
+  "url": "https://sites070-ai.github.io/schema/impasti-biologici.html",
+  "inLanguage": "it-IT",
+  "dateModified": "2026-04-24",
+  "lastReviewed": "2026-04-24",
+
+  "about": {
+    "@type": "Restaurant",
+    "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
+  },
+
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://sites.google.com/view/locandadelcontadino#website"
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://sites.google.com/view/locandadelcontadino#organization",
+    "name": "Locanda del Contadino"
+  },
+
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Impasto Tipo 1",
-        "description": "Farina biologica Tipo 1, semi-integrale, ricca di fibre e nutrienti. Perfetta per impasti leggeri, digeribili e a lunga lievitazione."
+        "name": "Home",
+        "item": "https://sites.google.com/view/locandadelcontadino"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Impasto Integrale",
-        "description": "Farina integrale biologica macinata a pietra, ricca di fibre, minerali e antiossidanti. Ideale per un impasto naturale, nutriente e molto leggero."
+        "name": "Impasti Biologici",
+        "item": "https://sites070-ai.github.io/schema/impasti-biologici.html"
+      }
+    ]
+  },
+
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Tipi di Impasto Biologico",
+    "numberOfItems": 2,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Impasto Bio Tipo 1",
+          "description": "Farina biologica Tipo 1 macinata a pietra, a lunga maturazione 48/72 ore. Croccante fuori dal forno, leggero nello stomaco. Eccezionale digeribilità grazie al naturale apporto di fibre e nutrienti.",
+          "category": "Impasto Pizza",
+          "material": "Farina biologica Tipo 1 macinata a pietra",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Lievitazione",
+              "value": "48/72 ore"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Certificazione",
+              "value": "Biologico"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Macinazione",
+              "value": "A pietra"
+            }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "description": "Disponibile a parità di prezzo rispetto all'impasto classico.",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Restaurant",
+              "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
+            }
+          }
+        }
       },
       {
         "@type": "ListItem",
-        "position": 3,
-        "name": "Lievitazione Naturale 48/72 ore",
-        "description": "Lievitazione lenta e naturale che garantisce alta digeribilità, fragranza e una struttura morbida e leggera."
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Impasto Bio Integrale",
+          "description": "Farina biologica integrale macinata a pietra, lievitazione naturale 48/72 ore. Più fibre, più sapore, massima leggerezza. Fonte di nutrizione e benessere.",
+          "category": "Impasto Pizza",
+          "material": "Farina biologica integrale macinata a pietra",
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Lievitazione",
+              "value": "48/72 ore"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Certificazione",
+              "value": "Biologico"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Macinazione",
+              "value": "A pietra"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Contenuto fibre",
+              "value": "Alto"
+            }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "description": "Disponibile a parità di prezzo rispetto all'impasto classico.",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Restaurant",
+              "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
+            }
+          }
+        }
       }
     ]
   }
@@ -40,42 +143,50 @@
 </script>
 
 <style>
-body { font-family: Arial; max-width: 900px; margin: 40px auto; line-height: 1.6; }
-h1 { color: #333; }
-p { margin-bottom: 20px; }
+  body {
+    font-family: Georgia, serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #222;
+    line-height: 1.7;
+  }
+  h1 { font-size: 1.6em; margin-bottom: 0.3em; }
+  h2 { font-size: 1.1em; margin-top: 2em; }
+  .tagline { font-weight: bold; margin-bottom: 1em; }
 </style>
-
 </head>
 <body>
 
 <h1>Impasti Biologici – Locanda del Contadino</h1>
 
-<p>
-<strong>ARTE ED ECCELLENZA DELL'IMPASTO BIO</strong><br>
-La nostra pizza nasce da un blend di farine biologiche di cereali antichi macinate a pietra e una lievitazione naturale di 48/72 ore.
-</p>
+<p class="tagline">ARTE ED ECCELLENZA DELL'IMPASTO BIO</p>
 
 <p>
-Utilizziamo solo ingredienti di qualità per garantirti una pizza leggera, digeribile e fragrante.  
-La nostra pizza non scende a compromessi: ingredienti selezionati e consegna puntuale, direttamente a casa tua.
+  La nostra pizza nasce da un blend di farine biologiche di cereali antichi macinate a pietra
+  e una lievitazione naturale di 48/72 ore.
 </p>
-
 <p>
-Da noi la qualità ha un solo prezzo: scegli l'impasto che preferisci, la spesa non cambia.
+  Utilizziamo solo ingredienti di qualità per garantirti una pizza leggera, digeribile e fragrante.
+  La nostra pizza non scende a compromessi: ingredienti selezionati e consegna puntuale,
+  direttamente a casa tua.
+</p>
+<p>
+  <strong>Da noi la qualità ha un solo prezzo:</strong> scegli l'impasto che preferisci,
+  la spesa non cambia.
 </p>
 
 <h2>🌾 100% FARINA BIO TIPO 1</h2>
 <p>
-"L'equilibrio perfetto.  
-Un impasto a lunga maturazione che sfida la gravità: croccante fuori dal forno, leggero nello stomaco.  
-Si distingue per la sua eccezionale digeribilità, grazie al naturale apporto di fibre e nutrienti."
+  L'equilibrio perfetto. Un impasto a lunga maturazione che sfida la gravità: croccante fuori
+  dal forno, leggero nello stomaco. Si distingue per la sua eccezionale digeribilità, grazie
+  al naturale apporto di fibre e nutrienti.
 </p>
 
 <h2>🌾 BIO INTEGRALE</h2>
 <p>
-"Per chi cerca il carattere.  
-L'energia pura dei cereali integrali biologici: fonte di nutrizione e benessere assoluto.  
-Più fibre, più sapore, massima leggerezza."
+  Per chi cerca il carattere. L'energia pura dei cereali integrali biologici: fonte di
+  nutrizione e benessere assoluto. Più fibre, più sapore, massima leggerezza.
 </p>
 
 </body>
