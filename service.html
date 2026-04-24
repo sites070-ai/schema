@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <title>Servizio Consegna Pizza - Locanda del Contadino</title>
@@ -11,34 +10,95 @@
   "@type": "Service",
   "@id": "https://sites.google.com/view/locandadelcontadino#service-delivery",
   "serviceType": "Consegna Pizza a Domicilio",
+  "name": "Pizza Delivery – Locanda del Contadino – Cremona",
+  "description": "Servizio di consegna pizza a domicilio a Cremona. Consegna gratuita in città con un ordine minimo di due pizze. Per una sola pizza contributo fisso di 3,00€. Consegna disponibile anche nei comuni limitrofi.",
   "inLanguage": "it-IT",
-
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://sites.google.com/view/locandadelcontadino#organization",
-    "name": "Locanda del Contadino"
-  },
+  "url": "https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona",
 
   "provider": {
     "@type": "Restaurant",
     "@id": "https://sites.google.com/view/locandadelcontadino#restaurant",
-    "name": "Locanda Del Contadino",
+    "name": "Locanda del Contadino",
+    "telephone": "+39 0372 451964",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Via Battaglione 86",
       "addressLocality": "Cremona",
       "postalCode": "26100",
       "addressCountry": "IT"
+    }
+  },
+
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Cremona"
     },
-    "telephone": "+39 0372 451964"
+    {
+      "@type": "AdministrativeArea",
+      "name": "Provincia di Cremona"
+    }
+  ],
+
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "servicePhone": {
+      "@type": "ContactPoint",
+      "telephone": "+39 0372 451964",
+      "contactType": "orders",
+      "availableLanguage": "Italian"
+    }
   },
 
-  "areaServed": {
-    "@type": "City",
-    "name": "Cremona"
-  },
+  "hoursAvailable": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "12:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "18:30",
+      "closes": "23:00"
+    }
+  ],
 
-  "description": "Servizio di consegna pizza a domicilio a Cremona. Consegna gratuita in città con un ordine minimo di due pizze."
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Consegna gratuita",
+      "description": "Consegna gratuita a Cremona con ordine minimo di due pizze.",
+      "price": "0.00",
+      "priceCurrency": "EUR",
+      "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "minValue": 2,
+        "unitText": "pizze"
+      },
+      "eligibleRegion": {
+        "@type": "City",
+        "name": "Cremona"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Contributo consegna singola pizza",
+      "description": "Per ordini di una sola pizza è previsto un contributo fisso di 3,00€.",
+      "price": "3.00",
+      "priceCurrency": "EUR",
+      "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "maxValue": 1,
+        "unitText": "pizza"
+      },
+      "eligibleRegion": {
+        "@type": "City",
+        "name": "Cremona"
+      }
+    }
+  ]
 }
 </script>
 
