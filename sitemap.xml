@@ -1,48 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- INDEX -->
-  <url><loc>https://sites070-ai.github.io/schema/schema-index.html</loc></url>
-
   <!-- CORE SCHEMA PAGES -->
-  <url><loc>https://sites070-ai.github.io/schema/restaurant.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/organization.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/website.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/service.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/aggregate-rating.html</loc></url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/restaurant.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/organization.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/website.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/service.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/aggregate-rating.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- MENU PRINCIPALE -->
-  <url><loc>https://sites070-ai.github.io/schema/menu.html</loc></url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/menu.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- MENU PIZZE -->
-  <url><loc>https://sites070-ai.github.io/schema/pizze-bianche.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/pizze-classiche.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/pizze-integrali.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/pizze-speciali.html</loc></url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/pizze-classiche.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/pizze-speciali.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/pizze-bianche.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/pizze-integrali.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- MENU GIORNO (NUOVI) -->
-  <url><loc>https://sites070-ai.github.io/schema/menu-giorno-primi.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/menu-giorno-secondi.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/menu-giorno-contorni.html</loc></url>
+  <!-- MENU GIORNO -->
+  <url>
+    <loc>https://sites070-ai.github.io/schema/menu-giorno-primi.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/menu-giorno-secondi.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/menu-giorno-contorni.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- ALTRE PAGINE -->
-  <url><loc>https://sites070-ai.github.io/schema/pizza-delivery-cremona.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/pranzo-fisso.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/impasti-biologici.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/allergeni.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/recensioni.html</loc></url>
+  <!-- PAGINE TEMATICHE -->
+  <url>
+    <loc>https://sites070-ai.github.io/schema/pizza-delivery-cremona.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/pranzo-fisso.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/impasti-biologici.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/allergeni.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/recensioni.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- SUPPORTO SEO -->
-  <url><loc>https://sites070-ai.github.io/schema/breadcrumbs.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/searchbox.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/faq.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/qr-code.html</loc></url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/breadcrumbs.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/searchbox.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/faq.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/qr-code.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/maps.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- INFO -->
-  <url><loc>https://sites070-ai.github.io/schema/about.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/contact.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/maps.html</loc></url>
-  <url><loc>https://sites070-ai.github.io/schema/privacy.html</loc></url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/schema-index.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/about.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/contact.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sites070-ai.github.io/schema/privacy.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
 </urlset>
-
