@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <title>Organization - Locanda del Contadino</title>
@@ -11,8 +11,12 @@
   "@id": "https://sites.google.com/view/locandadelcontadino#organization",
 
   "name": "Locanda del Contadino",
+  "legalName": "Locanda del Contadino",
+  "description": "Pizzeria artigianale a Cremona con impasti biologici macinati a pietra, lievitazione naturale 48/72 ore, servizio di pizza delivery e pranzo fisso dal martedì al venerdì.",
   "url": "https://sites.google.com/view/locandadelcontadino",
   "logo": "https://sites.google.com/view/locandadelcontadino/logo.png",
+  "image": "https://sites.google.com/view/locandadelcontadino/logo.png",
+  "inLanguage": "it-IT",
 
   "address": {
     "@type": "PostalAddress",
@@ -23,11 +27,49 @@
     "addressCountry": "IT"
   },
 
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.1208591,
+    "longitude": 10.0581828
+  },
+
   "telephone": "+39 0372 451964",
 
-  "sameAs": [
-    "https://maps.app.goo.gl/89P334rG2yYKdpMUA"
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+39 0372 451964",
+      "contactType": "customer service",
+      "areaServed": "IT",
+      "availableLanguage": "Italian"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+39 0372 451964",
+      "contactType": "orders",
+      "areaServed": "IT",
+      "availableLanguage": "Italian"
+    }
   ],
+
+  "taxID": "01358540191",
+
+  "areaServed": {
+    "@type": "City",
+    "name": "Cremona"
+  },
+
+  "servesCuisine": [
+    "Pizza artigianale",
+    "Cucina italiana",
+    "Pranzo fisso"
+  ],
+
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "@id": "https://sites.google.com/view/locandadelcontadino#menu",
+    "name": "Menu Pizzeria e Pranzo"
+  },
 
   "knowsAbout": [
     "Pizza delivery Cremona",
@@ -37,9 +79,18 @@
     "Pranzo fisso"
   ],
 
+  "sameAs": [
+    "https://maps.app.goo.gl/89P334rG2yYKdpMUA"
+  ],
+
   "department": {
     "@type": "Restaurant",
     "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
+  },
+
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://sites.google.com/view/locandadelcontadino#website"
   }
 }
 </script>
