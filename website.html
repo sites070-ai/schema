@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <title>WebSite - Locanda del Contadino</title>
@@ -10,15 +10,21 @@
   "@type": "WebSite",
   "@id": "https://sites.google.com/view/locandadelcontadino#website",
 
-  "name": "Locanda Del Contadino",
-  "alternateName": "Pizzeria Locanda del Contadino Cremona",
+  "name": "Locanda del Contadino",
+  "alternateName": [
+    "Pizzeria Locanda del Contadino Cremona",
+    "Locanda del Contadino pizzeria Cremona",
+    "Pizza delivery Cremona Locanda del Contadino"
+  ],
   "url": "https://sites.google.com/view/locandadelcontadino",
   "inLanguage": "it-IT",
-  "description": "Sito ufficiale della Locanda del Contadino: pizzeria artigianale, consegna a domicilio, pranzo fisso e impasti biologici a Cremona.",
+  "description": "Sito ufficiale della Locanda del Contadino: pizzeria artigianale con impasti biologici, consegna pizza a domicilio a Cremona, pranzo fisso e menù completo.",
+  "dateModified": "2026-04-24",
 
   "publisher": {
     "@type": "Organization",
-    "@id": "https://sites.google.com/view/locandadelcontadino#organization"
+    "@id": "https://sites.google.com/view/locandadelcontadino#organization",
+    "name": "Locanda del Contadino"
   },
 
   "about": {
@@ -26,19 +32,57 @@
     "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
   },
 
-  "isPartOf": {
-    "@id": "https://sites.google.com/view/locandadelcontadino#organization"
-  },
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/menu.html",
+      "name": "Menù Pizzeria e Pranzo"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/pizza-delivery-cremona.html",
+      "name": "Pizza Delivery Cremona"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/impasti-biologici.html",
+      "name": "Impasti Biologici"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/allergeni.html",
+      "name": "Allergeni"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/recensioni.html",
+      "name": "Recensioni e Google Maps"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/faq.html",
+      "name": "FAQ"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/about.html",
+      "name": "Chi Siamo"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/contact.html",
+      "name": "Contatti"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sites070-ai.github.io/schema/privacy.html",
+      "name": "Privacy Policy"
+    }
+  ],
 
   "sameAs": [
     "https://maps.app.goo.gl/89P334rG2yYKdpMUA"
-  ],
-
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://sites.google.com/view/locandadelcontadino/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  ]
 }
 </script>
 
