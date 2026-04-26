@@ -8,17 +8,15 @@
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  "@id": "https://sites.google.com/view/locandadelcontadino#pizza-delivery-cremona",
+  "@id": "https://sites.google.com/view/locandadelcontadino#restaurant",
   "inLanguage": "it-IT",
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://sites.google.com/view/locandadelcontadino#organization",
-    "name": "Locanda del Contadino"
-  },
-  "name": "Locanda del Contadino - Pizza Delivery Cremona",
+
+  "name": "Locanda del Contadino",
+  "description": "Servizio di pizza delivery a Cremona con impasti biologici, ingredienti selezionati e consegna gratuita con minimo due pizze. Pagamento esclusivamente in contanti alla consegna.",
   "image": "https://sites.google.com/view/locandadelcontadino/logo.png",
   "url": "https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona",
   "telephone": "+39 0372 451964",
+
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Via Battaglione 86",
@@ -27,35 +25,65 @@
     "postalCode": "26100",
     "addressCountry": "IT"
   },
+
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.1208591,
+    "longitude": 10.0581828
+  },
+
   "servesCuisine": ["Pizza", "Italiana"],
   "priceRange": "€€",
-  "areaServed": "Cremona",
-  "description": "Servizio di pizza delivery a Cremona con impasti biologici, ingredienti selezionati e consegna gratuita con minimo due pizze.",
+
+  "areaServed": [
+    { "@type": "City", "name": "Cremona" },
+    { "@type": "AdministrativeArea", "name": "Provincia di Cremona" }
+  ],
+
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
       "opens": "12:00",
       "closes": "14:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens": "18:30",
       "closes": "23:00"
     }
   ],
-  "paymentAccepted": "Cash",
-  "identifier": "P.IVA 01358540191",
+
+  "paymentAccepted": ["Contanti"],
+
+  "additionalProperty": {
+    "@type": "PropertyValue",
+    "name": "Nota pagamento delivery",
+    "value": "Per il servizio di consegna a domicilio accettiamo esclusivamente contanti alla consegna. Si prega di preparare l'importo esatto."
+  },
+
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "P.IVA",
+    "value": "01358540191"
+  },
+
   "sameAs": [
-    "https://sites.google.com/view/locandadelcontadino"
-  ]
+    "https://maps.app.goo.gl/89P334rG2yYKdpMUA"
+  ],
+
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://sites.google.com/view/locandadelcontadino#organization",
+    "name": "Locanda del Contadino"
+  }
 }
 </script>
 
 </head>
 <body>
-<h1>Pizza Delivery Cremona</h1>
-<p>Servizio di consegna pizza a Cremona della Locanda del Contadino.</p>
+<h1>Pizza Delivery Cremona – Locanda del Contadino</h1>
+<p>Servizio di consegna pizza a domicilio a Cremona. Pagamento in contanti alla consegna.</p>
 </body>
 </html>
