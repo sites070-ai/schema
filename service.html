@@ -11,7 +11,7 @@
   "@id": "https://sites.google.com/view/locandadelcontadino#service-delivery",
   "serviceType": "Consegna Pizza a Domicilio",
   "name": "Pizza Delivery – Locanda del Contadino – Cremona",
-  "description": "Servizio di consegna pizza a domicilio a Cremona. Consegna gratuita in città con un ordine minimo di due pizze. Per una sola pizza contributo fisso di 3,00€. Consegna disponibile anche nei comuni limitrofi.",
+  "description": "Servizio di consegna pizza a domicilio a Cremona. Consegna gratuita in città con ordine minimo di due pizze. Per una sola pizza contributo fisso di 3,00€. Pagamento esclusivamente in contanti alla consegna.",
   "inLanguage": "it-IT",
   "url": "https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona",
 
@@ -69,9 +69,10 @@
     {
       "@type": "Offer",
       "name": "Consegna gratuita",
-      "description": "Consegna gratuita a Cremona con ordine minimo di due pizze.",
+      "description": "Consegna gratuita a Cremona con ordine minimo di due pizze. Pagamento esclusivamente in contanti alla consegna.",
       "price": "0.00",
       "priceCurrency": "EUR",
+      "paymentAccepted": "Contanti",
       "eligibleQuantity": {
         "@type": "QuantitativeValue",
         "minValue": 2,
@@ -85,9 +86,10 @@
     {
       "@type": "Offer",
       "name": "Contributo consegna singola pizza",
-      "description": "Per ordini di una sola pizza è previsto un contributo fisso di 3,00€.",
+      "description": "Per ordini di una sola pizza contributo fisso di 3,00€. Pagamento esclusivamente in contanti alla consegna.",
       "price": "3.00",
       "priceCurrency": "EUR",
+      "paymentAccepted": "Contanti",
       "eligibleQuantity": {
         "@type": "QuantitativeValue",
         "maxValue": 1,
