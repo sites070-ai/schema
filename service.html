@@ -13,10 +13,9 @@
   "@id": "https://sites.google.com/view/locandadelcontadino#service-delivery",
   "serviceType": "Consegna Pizza a Domicilio",
   "name": "Pizza Delivery – Locanda del Contadino – Cremona",
-  "description": "Servizio di consegna pizza a domicilio a Cremona. Consegna gratuita in città con ordine minimo di due pizze. Per una sola pizza contributo fisso di 3,00€. Pagamento esclusivamente in contanti alla consegna.",
+  "description": "Servizio di consegna pizza a domicilio a Cremona il venerdì, sabato e domenica dalle 18:30 alle 21:30. Consegna gratuita con ordine minimo di due pizze. Pagamento esclusivamente in contanti alla consegna.",
   "inLanguage": "it-IT",
   "url": "https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona",
-
   "provider": {
     "@type": "Restaurant",
     "@id": "https://sites.google.com/view/locandadelcontadino#restaurant",
@@ -30,12 +29,10 @@
       "addressCountry": "IT"
     }
   },
-
   "areaServed": [
     { "@type": "City", "name": "Cremona" },
     { "@type": "AdministrativeArea", "name": "Provincia di Cremona" }
   ],
-
   "availableChannel": {
     "@type": "ServiceChannel",
     "servicePhone": {
@@ -45,22 +42,14 @@
       "availableLanguage": "Italian"
     }
   },
-
   "hoursAvailable": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "12:00",
-      "closes": "14:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "dayOfWeek": ["Friday","Saturday","Sunday"],
       "opens": "18:30",
-      "closes": "23:00"
+      "closes": "21:30"
     }
   ],
-
   "offers": [
     {
       "@type": "Offer",
@@ -102,46 +91,43 @@
   table { border-collapse: collapse; width: 100%; margin-top: 0.5em; }
   td { padding: 6px 12px 6px 0; vertical-align: top; }
   td:first-child { font-weight: bold; width: 200px; }
+  .chiuso { color: #999; }
 </style>
 </head>
 <body>
 
 <h1>Pizza Delivery Cremona – Locanda del Contadino</h1>
-
 <p>
-  Consegniamo pizza artigianale a domicilio a <strong>Cremona</strong> e nei
-  comuni limitrofi. Impasti biologici macinati a pietra, lievitazione naturale
-  48/72 ore, oltre 100 varianti di pizza tra Classiche, Speciali, Bianche e Integrali.
+  Consegniamo pizza artigianale a domicilio a <strong>Cremona</strong> e nei comuni
+  limitrofi. Disponibile il <strong>venerdì, sabato e domenica</strong> dalle 18:30 alle 21:30.
 </p>
 
 <h2>Condizioni di consegna</h2>
 <table>
   <tr><td>Consegna gratuita</td><td>Con ordine minimo di 2 pizze</td></tr>
   <tr><td>Contributo singola pizza</td><td>3,00€ fisso</td></tr>
+  <tr><td>Fuori Cremona</td><td>Disponibile con contributo spese · chiama per conferma</td></tr>
   <tr><td>Pagamento</td><td>Esclusivamente contanti alla consegna</td></tr>
-  <tr><td>Area servita</td><td>Cremona città e comuni limitrofi</td></tr>
 </table>
 
-<h2>Orari di consegna</h2>
+<h2>Orari delivery</h2>
 <table>
-  <tr><td>Martedì – Venerdì</td><td>12:00 – 14:00 &nbsp;|&nbsp; 18:30 – 23:00</td></tr>
-  <tr><td>Sabato – Domenica</td><td>18:30 – 23:00</td></tr>
-  <tr><td>Lunedì</td><td>Non disponibile</td></tr>
+  <tr><td>Venerdì – Sabato – Domenica</td><td>18:30 – 21:30</td></tr>
+  <tr><td class="chiuso">Lunedì – Giovedì</td><td class="chiuso">Non disponibile</td></tr>
 </table>
 
 <h2>Come ordinare</h2>
 <p>
-  Chiama il <a href="tel:+390372451964"><strong>0372 451964</strong></a> negli
-  orari di consegna. Comunica il tuo indirizzo e le pizze che desideri.
-  Prepara l'importo esatto in contanti.
+  Chiama il <a href="tel:+390372451964"><strong>0372 451964</strong></a>
+  negli orari di consegna.
 </p>
 
 <h2>Le nostre pizze</h2>
 <table>
-  <tr><td><a href="pizze-classiche.html">Pizze Classiche</a></td><td>16 varianti tra le grandi tradizioni italiane</td></tr>
-  <tr><td><a href="pizze-speciali.html">Pizze Speciali</a></td><td>53 varianti della casa con ingredienti selezionati</td></tr>
-  <tr><td><a href="pizze-bianche.html">Pizze Bianche</a></td><td>18 varianti senza pomodoro</td></tr>
-  <tr><td><a href="pizze-integrali.html">Pizze Integrali</a></td><td>Tutte le pizze con impasto integrale biologico</td></tr>
+  <tr><td><a href="pizze-classiche.html">Classiche</a></td><td>16 varianti · da 5,00€</td></tr>
+  <tr><td><a href="pizze-speciali.html">Speciali</a></td><td>53 varianti · da 7,50€</td></tr>
+  <tr><td><a href="pizze-bianche.html">Bianche</a></td><td>18 varianti senza pomodoro</td></tr>
+  <tr><td><a href="pizze-integrali.html">Integrali</a></td><td>Impasto integrale bio · stesso prezzo</td></tr>
 </table>
 
 </body>
