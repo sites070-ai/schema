@@ -1,39 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Contact Page - Locanda del Contadino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contatti – Locanda del Contadino – Cremona</title>
+<link rel="canonical" href="https://sites070-ai.github.io/schema/contact.html">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://sites.google.com/view/locandadelcontadino#contact",
-  "name": "Contatti - Locanda del Contadino",
-  "url": "https://sites.google.com/view/locandadelcontadino/contact",
+  "@id": "https://sites070-ai.github.io/schema/contact.html",
+  "name": "Contatti – Locanda del Contadino",
+  "description": "Contatti della Locanda del Contadino a Cremona. Telefono, indirizzo, orari pranzo in loco e orari delivery.",
+  "url": "https://sites070-ai.github.io/schema/contact.html",
   "inLanguage": "it-IT",
-
+  "dateModified": "2026-04-27",
   "isPartOf": {
     "@type": "WebSite",
     "@id": "https://sites.google.com/view/locandadelcontadino#website"
   },
-
+  "about": {
+    "@type": "Restaurant",
+    "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
+  },
   "publisher": {
     "@type": "Organization",
     "@id": "https://sites.google.com/view/locandadelcontadino#organization",
     "name": "Locanda del Contadino"
   },
-
-  "contactPoint": {
-    "@type": "ContactPoint",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sites.google.com/view/locandadelcontadino" },
+      { "@type": "ListItem", "position": 2, "name": "Contatti", "item": "https://sites070-ai.github.io/schema/contact.html" }
+    ]
+  },
+  "mainEntity": {
+    "@type": "Restaurant",
+    "@id": "https://sites.google.com/view/locandadelcontadino#restaurant",
+    "name": "Locanda del Contadino",
     "telephone": "+39 0372 451964",
-    "contactType": "customer service",
-    "areaServed": "IT"
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Battaglione 86",
+      "addressLocality": "Cremona",
+      "addressRegion": "CR",
+      "postalCode": "26100",
+      "addressCountry": "IT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 45.1208591,
+      "longitude": 10.0581828
+    },
+    "hasMap": "https://maps.app.goo.gl/89P334rG2yYKdpMUA",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "name": "Pranzo in loco",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "12:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "name": "Delivery serale",
+        "dayOfWeek": ["Friday","Saturday","Sunday"],
+        "opens": "18:30",
+        "closes": "21:30"
+      }
+    ],
+    "paymentAccepted": ["Contanti","Carte","NFC"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+39 0372 451964",
+      "contactType": "orders",
+      "availableLanguage": "Italian"
+    }
   }
 }
 </script>
 
+<style>
+  body { font-family: Georgia, serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.7; }
+  h1 { font-size: 1.6em; margin-bottom: 0.3em; }
+  h2 { font-size: 1.1em; margin-top: 2em; }
+  a { color: #555; }
+  table { border-collapse: collapse; width: 100%; margin-top: 0.5em; }
+  td { padding: 6px 12px 6px 0; vertical-align: top; }
+  td:first-child { font-weight: bold; width: 200px; }
+  .chiuso { color: #999; }
+</style>
 </head>
-<body></body>
-</html>
+<body>
 
+<h1>Contatti – Locanda del Contadino</h1>
+
+<h2>Dove siamo</h2>
+<table>
+  <tr><td>Indirizzo</td><td>Via Battaglione 86, 26100 Cremona</td></tr>
+  <tr><td>Telefono</td><td><a href="tel:+390372451964">0372 451964</a></td></tr>
+  <tr><td>Google Maps</td><td><a href="https://maps.app.goo.gl/89P334rG2yYKdpMUA" target="_blank" rel="noopener">Apri su Google Maps</a></td></tr>
+</table>
+
+<h2>Orari ristorante in loco</h2>
+<table>
+  <tr><td>Martedì – Venerdì</td><td>12:00 – 14:00 (solo pranzo)</td></tr>
+  <tr><td class="chiuso">Sabato – Domenica</td><td class="chiuso">Non aperto in loco</td></tr>
+  <tr><td class="chiuso">Lunedì</td><td class="chiuso">Chiuso</td></tr>
+</table>
+
+<h2>Orari delivery</h2>
+<table>
+  <tr><td>Venerdì – Sabato – Domenica</td><td>18:30 – 21:30</td></tr>
+  <tr><td class="chiuso">Lunedì – Giovedì</td><td class="chiuso">Non disponibile</td></tr>
+</table>
+
+<h2>Pagamenti</h2>
+<table>
+  <tr><td>In loco</td><td>Contanti · Carte · NFC</td></tr>
+  <tr><td>Delivery</td><td>Solo contanti alla consegna</td></tr>
+</table>
+
+<h2>Seguici</h2>
+<table>
+  <tr><td>Facebook</td><td><a href="https://www.facebook.com/p/Locanda-del-contadino-di-Gianluca-Bonaccorsi-100063652055858/" target="_blank" rel="noopener">Pagina Facebook</a></td></tr>
+  <tr><td>TripAdvisor</td><td><a href="https://www.tripadvisor.it/Restaurant_Review-g187831-d4308058-Reviews-Locanda_del_Contadino-Cremona_Province_of_Cremona_Lombardy.html" target="_blank" rel="noopener">Profilo TripAdvisor</a></td></tr>
+</table>
+
+</body>
+</html>
