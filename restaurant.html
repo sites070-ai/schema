@@ -16,7 +16,7 @@
   "inLanguage": "it-IT",
   "image": "https://sites.google.com/view/locandadelcontadino/assets/logo.png",
   "telephone": "+39 0372 451964",
-  "description": "Pizzeria artigianale a Cremona con impasti biologici macinati a pietra, lievitazione naturale 48/72 ore, oltre 100 varianti di pizza, servizio delivery gratuito e pranzo fisso a 14€.",
+  "description": "Pizzeria artigianale a Cremona con impasti biologici macinati a pietra, lievitazione naturale 48/72 ore, oltre 100 varianti di pizza. Pranzo in loco martedì–venerdì 12:00–14:00. Delivery venerdì–domenica 18:30–21:30.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Via Battaglione 86",
@@ -35,18 +35,21 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
+      "name": "Pranzo in loco",
       "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
       "opens": "12:00",
       "closes": "14:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "name": "Delivery serale",
+      "dayOfWeek": ["Friday","Saturday","Sunday"],
       "opens": "18:30",
-      "closes": "23:00"
+      "closes": "21:30"
     },
     {
       "@type": "OpeningHoursSpecification",
+      "name": "Chiusura",
       "dayOfWeek": ["Monday"],
       "opens": "00:00",
       "closes": "00:00"
@@ -85,18 +88,18 @@
   a { color: #555; }
   table { border-collapse: collapse; width: 100%; margin-top: 0.5em; }
   td { padding: 6px 12px 6px 0; vertical-align: top; }
-  td:first-child { font-weight: bold; width: 180px; }
+  td:first-child { font-weight: bold; width: 200px; }
+  .chiuso { color: #999; }
 </style>
 </head>
 <body>
 
 <h1>Locanda del Contadino – Pizzeria Artigianale a Cremona</h1>
-
 <p>
-  La <strong>Locanda del Contadino</strong> è una pizzeria artigianale a Cremona,
+  La <strong>Locanda del Contadino</strong> è una pizzeria artigianale a Cremona
   in Via Battaglione 86. Oltre 100 varianti di pizza con impasti biologici macinati
-  a pietra e lievitazione naturale di 48/72 ore. Servizio delivery a domicilio e
-  pranzo fisso dal martedì al venerdì.
+  a pietra e lievitazione naturale di 48/72 ore. Pranzo fisso in loco e delivery
+  nel weekend.
 </p>
 
 <h2>Informazioni</h2>
@@ -109,41 +112,40 @@
   <tr><td>Google Maps</td><td><a href="https://maps.app.goo.gl/89P334rG2yYKdpMUA" target="_blank" rel="noopener">Apri su Google Maps</a></td></tr>
 </table>
 
-<h2>Orari</h2>
+<h2>Orari ristorante in loco</h2>
 <table>
-  <tr><td>Martedì – Venerdì</td><td>12:00 – 14:00 &nbsp;|&nbsp; 18:30 – 23:00</td></tr>
-  <tr><td>Sabato – Domenica</td><td>18:30 – 23:00</td></tr>
-  <tr><td>Lunedì</td><td>Chiuso</td></tr>
+  <tr><td>Martedì – Venerdì</td><td>12:00 – 14:00 (solo pranzo)</td></tr>
+  <tr><td class="chiuso">Sabato – Domenica</td><td class="chiuso">Non aperto in loco</td></tr>
+  <tr><td class="chiuso">Lunedì</td><td class="chiuso">Chiuso</td></tr>
+</table>
+
+<h2>Orari delivery</h2>
+<table>
+  <tr><td>Venerdì – Sabato – Domenica</td><td>18:30 – 21:30</td></tr>
+  <tr><td class="chiuso">Lunedì – Giovedì</td><td class="chiuso">Non disponibile</td></tr>
 </table>
 
 <h2>Impasti</h2>
 <p>
-  Utilizziamo farine biologiche macinate a pietra con lievitazione naturale di 48/72 ore.
-  Disponibili in tre varianti: classico, Bio Tipo 1 e Bio Integrale — stesso prezzo per tutti.
+  Farine biologiche macinate a pietra con lievitazione naturale di 48/72 ore.
+  Disponibili in tre varianti: classico, Bio Tipo 1 e Bio Integrale — stesso prezzo.
 </p>
 
 <h2>Menù</h2>
 <p>
-  Oltre 100 pizze suddivise in quattro categorie:
-  <a href="pizze-classiche.html">Classiche</a>,
-  <a href="pizze-speciali.html">Speciali</a>,
-  <a href="pizze-bianche.html">Bianche</a> e
-  <a href="pizze-integrali.html">Integrali</a>.
-  Dal martedì al venerdì a pranzo: <a href="pranzo-fisso.html">pranzo fisso a 14€</a>.
-</p>
-
-<h2>Delivery</h2>
-<p>
-  Consegna pizza a domicilio a Cremona e comuni limitrofi.
-  Gratuita con minimo 2 pizze · 3€ per 1 pizza · Solo contanti alla consegna.
-  Chiama il <a href="tel:+390372451964">0372 451964</a>.
+  <a href="pizze-classiche.html">Classiche</a> ·
+  <a href="pizze-speciali.html">Speciali</a> ·
+  <a href="pizze-bianche.html">Bianche</a> ·
+  <a href="pizze-integrali.html">Integrali</a> ·
+  <a href="pranzo-fisso.html">Pranzo fisso 14€</a>
 </p>
 
 <h2>Accessibilità e servizi</h2>
 <table>
-  <tr><td>Accessibilità</td><td>Ingresso, parcheggio e tavoli accessibili in sedia a rotelle</td></tr>
+  <tr><td>Accessibilità</td><td>Ingresso, parcheggio e tavoli per sedia a rotelle</td></tr>
   <tr><td>Animali</td><td>Ammessi</td></tr>
   <tr><td>Pagamenti in loco</td><td>Contanti · Carte · NFC</td></tr>
+  <tr><td>Pagamento delivery</td><td>Solo contanti</td></tr>
 </table>
 
 </body>
