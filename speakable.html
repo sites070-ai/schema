@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Speakable – Locanda del Contadino – Cremona</title>
+<link rel="canonical" href="https://sites070-ai.github.io/schema/speakable.html">
 
 <script type="application/ld+json">
 {
@@ -11,43 +12,32 @@
   "@type": "WebPage",
   "@id": "https://sites070-ai.github.io/schema/speakable.html",
   "name": "Speakable – Locanda del Contadino – Cremona",
-  "description": "Contenuti ottimizzati per assistenti vocali e Google Assistant della Locanda del Contadino a Cremona.",
+  "description": "Contenuti ottimizzati per assistenti vocali della Locanda del Contadino a Cremona.",
   "url": "https://sites070-ai.github.io/schema/speakable.html",
   "inLanguage": "it-IT",
-  "dateModified": "2026-04-24",
-
+  "dateModified": "2026-04-27",
   "isPartOf": {
     "@type": "WebSite",
     "@id": "https://sites.google.com/view/locandadelcontadino#website"
   },
-
   "about": {
     "@type": "Restaurant",
     "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
   },
-
   "publisher": {
     "@type": "Organization",
     "@id": "https://sites.google.com/view/locandadelcontadino#organization",
     "name": "Locanda del Contadino"
   },
-
   "speakable": {
     "@type": "SpeakableSpecification",
-    "cssSelector": [
-      "#chi-siamo",
-      "#orari",
-      "#delivery",
-      "#pranzo",
-      "#contatti"
-    ]
+    "cssSelector": ["#chi-siamo","#orari","#delivery","#pranzo","#contatti"]
   },
-
   "mainEntity": {
     "@type": "Restaurant",
     "@id": "https://sites.google.com/view/locandadelcontadino#restaurant",
     "name": "Locanda del Contadino",
-    "description": "Pizzeria artigianale a Cremona con impasti biologici macinati a pietra, lievitazione naturale 48/72 ore, oltre 100 varianti di pizza, servizio delivery gratuito e pranzo fisso a 14 euro dal martedì al venerdì.",
+    "description": "Pizzeria artigianale a Cremona con impasti biologici macinati a pietra, lievitazione naturale 48/72 ore, oltre 100 varianti di pizza, pranzo fisso in loco e delivery nel weekend.",
     "telephone": "+39 0372 451964",
     "address": {
       "@type": "PostalAddress",
@@ -57,29 +47,20 @@
       "postalCode": "26100",
       "addressCountry": "IT"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 45.1208591,
-      "longitude": 10.0581828
-    },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
+        "name": "Pranzo in loco",
         "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
         "opens": "12:00",
         "closes": "14:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "name": "Delivery serale",
+        "dayOfWeek": ["Friday","Saturday","Sunday"],
         "opens": "18:30",
-        "closes": "23:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday"],
-        "opens": "00:00",
-        "closes": "00:00"
+        "closes": "21:30"
       }
     ],
     "aggregateRating": {
@@ -94,14 +75,7 @@
 </script>
 
 <style>
-  body {
-    font-family: Georgia, serif;
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 0 20px;
-    color: #222;
-    line-height: 1.7;
-  }
+  body { font-family: Georgia, serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.7; }
   h1 { font-size: 1.6em; margin-bottom: 0.3em; }
   h2 { font-size: 1.1em; margin-top: 2em; }
   a { color: #555; }
@@ -118,16 +92,16 @@
     La Locanda del Contadino è una pizzeria artigianale a Cremona in Via Battaglione 86.
     Utilizziamo farine biologiche macinate a pietra con lievitazione naturale di 48 e 72 ore.
     Offriamo oltre 100 varianti di pizza tra Classiche, Speciali, Bianche e Integrali,
-    tutte disponibili allo stesso prezzo con impasto classico, Bio Tipo 1 o Bio Integrale.
+    tutte disponibili con impasto classico, Bio Tipo 1 o Bio Integrale allo stesso prezzo.
   </p>
 </section>
 
 <section id="orari">
-  <h2>Orari di apertura</h2>
+  <h2>Orari</h2>
   <p>
-    Siamo aperti dal martedì al venerdì a pranzo dalle 12 alle 14
-    e a cena dalle 18 e 30 alle 23.
-    Il sabato e la domenica siamo aperti solo a cena dalle 18 e 30 alle 23.
+    Il ristorante è aperto dal martedì al venerdì solo a pranzo dalle 12 alle 14.
+    Il servizio delivery è disponibile il venerdì, il sabato e la domenica
+    dalle 18 e 30 alle 21 e 30.
     Il lunedì siamo chiusi.
   </p>
 </section>
@@ -135,9 +109,11 @@
 <section id="delivery">
   <h2>Servizio delivery</h2>
   <p>
-    Consegniamo pizza a domicilio a Cremona e nei comuni limitrofi.
+    Consegniamo pizza a domicilio a Cremona e nei comuni limitrofi
+    il venerdì, sabato e domenica dalle 18 e 30 alle 21 e 30.
     La consegna è gratuita con un ordine minimo di due pizze.
     Per una sola pizza il contributo di consegna è di 3 euro.
+    Accettiamo esclusivamente contanti alla consegna.
     Per ordinare chiama il numero 0372 451964.
   </p>
 </section>
@@ -145,7 +121,7 @@
 <section id="pranzo">
   <h2>Pranzo fisso</h2>
   <p>
-    Dal martedì al venerdì a pranzo offriamo un menù fisso completo a 14 euro.
+    Dal martedì al venerdì a pranzo offriamo un menù fisso completo a 14 euro solo in loco.
     Include un primo, un secondo e un contorno a scelta tra tre opzioni,
     mezzo litro di acqua, mezzo litro di vino della casa e caffè.
     Servizio e coperto sono inclusi nel prezzo.
@@ -157,7 +133,7 @@
   <p>
     Locanda del Contadino, Via Battaglione 86, Cremona.
     Telefono: <a href="tel:+390372451964">0372 451964</a>.
-    Valutazione media su Google: 4,3 su 5 con 473 recensioni.
+    Valutazione media su Google: 4 virgola 3 su 5 con 473 recensioni.
   </p>
 </section>
 
