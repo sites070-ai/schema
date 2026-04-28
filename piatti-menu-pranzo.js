@@ -8,6 +8,7 @@
 */
 
 let TOP_PIATTI = {
+ "spaghetti alla norma con melanzane e pecorino":{categoria:"primo",regione:"sicilia",iconico:false,top:true,selezione:false,punteggio:5,sinonimi:["spaghetti alla norma pecorino","pasta alla norma con pecorino"],allergeni:["glutine","latte"],dieta:"vegetariano"},
 "affettato di tacchino":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino affettato","fesa di tacchino affettata","tacchino a fette"],allergeni:[],dieta:"carne"},
 "affettato di tacchino con rucola e grana":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino con rucola e grana","fesa di tacchino con rucola e grana"],allergeni:["latte"],dieta:"carne"},
 "affettato di tacchino con rucola e pomodorini":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino affettato con rucola","tacchino freddo con rucola e pomodorini"],allergeni:[],dieta:"carne"},
