@@ -12,10 +12,10 @@
   "@type": "ContactPage",
   "@id": "https://sites070-ai.github.io/schema/contact.html",
   "name": "Contatti – Locanda del Contadino",
-  "description": "Contatti della Locanda del Contadino a Cremona. Telefono, indirizzo, orari pranzo in loco e orari delivery.",
+  "description": "Contatti della Locanda del Contadino a Cremona. Telefono, indirizzo, orari pizzeria in loco e orari delivery.",
   "url": "https://sites070-ai.github.io/schema/contact.html",
   "inLanguage": "it-IT",
-  "dateModified": "2026-04-27",
+  "dateModified": "2026-04-29",
   "isPartOf": {
     "@type": "WebSite",
     "@id": "https://sites.google.com/view/locandadelcontadino#website"
@@ -58,14 +58,21 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "name": "Pranzo in loco",
+        "name": "Pranzo fisso in loco",
         "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
         "opens": "12:00",
         "closes": "14:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "name": "Delivery serale",
+        "name": "Pizzeria serale in loco",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "18:30",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "name": "Delivery",
         "dayOfWeek": ["Friday","Saturday","Sunday"],
         "opens": "18:30",
         "closes": "21:30"
@@ -104,17 +111,12 @@
   <tr><td>Google Maps</td><td><a href="https://maps.app.goo.gl/89P334rG2yYKdpMUA" target="_blank" rel="noopener">Apri su Google Maps</a></td></tr>
 </table>
 
-<h2>Orari ristorante in loco</h2>
+<h2>Orari</h2>
 <table>
-  <tr><td>Martedì – Venerdì</td><td>12:00 – 14:00 (solo pranzo)</td></tr>
-  <tr><td class="chiuso">Sabato – Domenica</td><td class="chiuso">Non aperto in loco</td></tr>
+  <tr><td>Pranzo in loco</td><td>Martedì – Venerdì · 12:00 – 14:00</td></tr>
+  <tr><td>Pizzeria serale</td><td>Martedì – Domenica · 18:30 – 23:00</td></tr>
+  <tr><td>Delivery</td><td>Venerdì – Sabato – Domenica · 18:30 – 21:30</td></tr>
   <tr><td class="chiuso">Lunedì</td><td class="chiuso">Chiuso</td></tr>
-</table>
-
-<h2>Orari delivery</h2>
-<table>
-  <tr><td>Venerdì – Sabato – Domenica</td><td>18:30 – 21:30</td></tr>
-  <tr><td class="chiuso">Lunedì – Giovedì</td><td class="chiuso">Non disponibile</td></tr>
 </table>
 
 <h2>Pagamenti</h2>
