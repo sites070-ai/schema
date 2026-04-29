@@ -11,7 +11,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    "@id": "https://sites070-ai.github.io/schema/event.html#pranzo-fisso-ricorrente",
+    "@id": "https://sites070-ai.github.io/schema/event.html#pranzo-fisso",
     "name": "Pranzo Fisso – Locanda del Contadino",
     "description": "Ogni martedì, mercoledì, giovedì e venerdì a pranzo in loco: menù fisso completo a 14€ con primo, secondo, contorno, mezzo litro d'acqua, mezzo litro di vino della casa e caffè. Servizio e coperto inclusi.",
     "inLanguage": "it-IT",
@@ -71,9 +71,68 @@
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    "@id": "https://sites070-ai.github.io/schema/event.html#delivery-pizza-biologica",
-    "name": "Pizza Delivery Biologica – Locanda del Contadino",
-    "description": "Ogni venerdì, sabato e domenica sera: pizza artigianale con impasti biologici macinati a pietra consegnata a domicilio a Cremona. Consegna gratuita con minimo 2 pizze. Solo contanti.",
+    "@id": "https://sites070-ai.github.io/schema/event.html#pizzeria-serale",
+    "name": "Pizzeria Serale – Locanda del Contadino",
+    "description": "Dal martedì alla domenica sera: pizza artigianale con impasti biologici macinati a pietra in loco a Cremona. Oltre 100 varianti tra Classiche, Speciali, Bianche e Integrali.",
+    "inLanguage": "it-IT",
+    "url": "https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "startDate": "2026-04-29T18:30:00+02:00",
+    "endDate": "2026-04-29T23:00:00+02:00",
+    "eventSchedule": {
+      "@type": "Schedule",
+      "byDay": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "startTime": "18:30",
+      "endTime": "23:00",
+      "scheduleTimezone": "Europe/Rome",
+      "repeatFrequency": "P1W"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Locanda del Contadino",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Battaglione 86",
+        "addressLocality": "Cremona",
+        "addressRegion": "CR",
+        "postalCode": "26100",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.1208591,
+        "longitude": 10.0581828
+      }
+    },
+    "organizer": {
+      "@type": "Restaurant",
+      "@id": "https://sites.google.com/view/locandadelcontadino#restaurant",
+      "name": "Locanda del Contadino",
+      "telephone": "+39 0372 451964"
+    },
+    "offers": {
+      "@type": "Offer",
+      "name": "Pizza artigianale biologica",
+      "description": "Oltre 100 varianti. Da 5€ a 19€. Impasto classico, Bio Tipo 1 o Bio Integrale stesso prezzo.",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Restaurant",
+        "@id": "https://sites.google.com/view/locandadelcontadino#restaurant"
+      }
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://sites.google.com/view/locandadelcontadino#website"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "@id": "https://sites070-ai.github.io/schema/event.html#delivery",
+    "name": "Pizza Delivery – Locanda del Contadino",
+    "description": "Ogni venerdì, sabato e domenica sera: pizza artigianale con impasti biologici consegnata a domicilio a Cremona e comuni limitrofi. Consegna gratuita con minimo 2 pizze. Solo contanti.",
     "inLanguage": "it-IT",
     "url": "https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -105,8 +164,8 @@
     },
     "offers": {
       "@type": "Offer",
-      "name": "Pizza artigianale biologica a domicilio",
-      "description": "Pizze classiche, speciali, bianche e integrali. Da 5€ a 19€. Consegna gratuita con min. 2 pizze.",
+      "name": "Pizza a domicilio",
+      "description": "Da 5€ a 19€. Consegna gratuita con min. 2 pizze · 3€ per 1 pizza · solo contanti.",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -142,6 +201,15 @@
   <tr><td>Solo in loco</td><td>Via Battaglione 86, Cremona</td></tr>
   <tr><td>Prezzo</td><td><strong>14,00€</strong> tutto incluso</td></tr>
   <tr><td>Include</td><td>Primo · Secondo · Contorno · Acqua · Vino · Caffè · Servizio</td></tr>
+  <tr><td>Info</td><td><a href="tel:+390372451964">0372 451964</a></td></tr>
+</table>
+
+<h2>Pizzeria Serale – martedì, mercoledì, giovedì, venerdì, sabato e domenica</h2>
+<table>
+  <tr><td>Orario</td><td>18:30 – 23:00</td></tr>
+  <tr><td>In loco</td><td>Via Battaglione 86, Cremona</td></tr>
+  <tr><td>Pizze</td><td>Oltre 100 varianti · Da 5€ a 19€</td></tr>
+  <tr><td>Impasti</td><td>Classico · Bio Tipo 1 · Bio Integrale · stesso prezzo</td></tr>
   <tr><td>Info</td><td><a href="tel:+390372451964">0372 451964</a></td></tr>
 </table>
 
