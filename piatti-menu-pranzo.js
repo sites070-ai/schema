@@ -8,6 +8,9 @@
 */
 
 let TOP_PIATTI = {
+ "crespelle ricotta e spinaci":{categoria:"primo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:5,sinonimi:["crespelle agli spinaci","crespelle ripiene ricotta e spinaci","crepes ricotta e spinaci"],allergeni:["glutine","latte","uova"],dieta:"vegetariano"},
+"involtini di pollo con prosciutto e formaggio":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["involtini di pollo ripieni","pollo ripieno prosciutto e formaggio"],allergeni:["latte"],dieta:"carne"},
+"cotoletta di pollo alla zingara":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["cotoletta alla zingara","pollo alla zingara impanato"],allergeni:["glutine","uova"],dieta:"carne"},
  "spaghetti alla norma con melanzane e pecorino":{categoria:"primo",regione:"sicilia",iconico:false,top:true,selezione:false,punteggio:5,sinonimi:["spaghetti alla norma pecorino","pasta alla norma con pecorino"],allergeni:["glutine","latte"],dieta:"vegetariano"},
 "affettato di tacchino":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino affettato","fesa di tacchino affettata","tacchino a fette"],allergeni:[],dieta:"carne"},
 "affettato di tacchino con rucola e grana":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino con rucola e grana","fesa di tacchino con rucola e grana"],allergeni:["latte"],dieta:"carne"},
