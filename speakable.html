@@ -15,7 +15,7 @@
   "description": "Contenuti ottimizzati per assistenti vocali della Locanda del Contadino a Cremona.",
   "url": "https://sites070-ai.github.io/schema/speakable.html",
   "inLanguage": "it-IT",
-  "dateModified": "2026-04-27",
+  "dateModified": "2026-04-29",
   "isPartOf": {
     "@type": "WebSite",
     "@id": "https://sites.google.com/view/locandadelcontadino#website"
@@ -37,7 +37,7 @@
     "@type": "Restaurant",
     "@id": "https://sites.google.com/view/locandadelcontadino#restaurant",
     "name": "Locanda del Contadino",
-    "description": "Pizzeria artigianale a Cremona con impasti biologici macinati a pietra, lievitazione naturale 48/72 ore, oltre 100 varianti di pizza, pranzo fisso in loco e delivery nel weekend.",
+    "description": "Pizzeria artigianale a Cremona con impasti biologici macinati a pietra, lievitazione naturale 48/72 ore, oltre 100 varianti di pizza. Pranzo fisso in loco e pizzeria serale dal martedì alla domenica. Delivery nel weekend.",
     "telephone": "+39 0372 451964",
     "address": {
       "@type": "PostalAddress",
@@ -50,14 +50,21 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "name": "Pranzo in loco",
+        "name": "Pranzo fisso in loco",
         "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
         "opens": "12:00",
         "closes": "14:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "name": "Delivery serale",
+        "name": "Pizzeria serale in loco",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "18:30",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "name": "Delivery",
         "dayOfWeek": ["Friday","Saturday","Sunday"],
         "opens": "18:30",
         "closes": "21:30"
@@ -99,7 +106,8 @@
 <section id="orari">
   <h2>Orari</h2>
   <p>
-    Il ristorante è aperto dal martedì al venerdì solo a pranzo dalle 12 alle 14.
+    La pizzeria è aperta dal martedì al venerdì a pranzo dalle 12 alle 14
+    e dal martedì alla domenica a cena dalle 18 e 30 alle 23.
     Il servizio delivery è disponibile il venerdì, il sabato e la domenica
     dalle 18 e 30 alle 21 e 30.
     Il lunedì siamo chiusi.
