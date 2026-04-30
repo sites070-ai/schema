@@ -61,7 +61,7 @@ let TOP_PIATTI = {
 "tortiglioni con crema di broccoli e speck":{categoria:"primo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["pasta broccoli e speck"],allergeni:["glutine","latte"],dieta:"carne"},
 "tortiglioni ricotta e friarielli":{categoria:"primo",regione:"campania",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["pasta ricotta e friarielli"],allergeni:["glutine","latte"],dieta:"vegetariano"},
 "trofie al pomodoro e basilico":{categoria:"primo",regione:"liguria",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["trofie al pomodoro"],allergeni:["glutine"],dieta:"vegetariano"},
-"zuppa di fagioli":{categoria:"primo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["minestra di fagioli"],allergeni:[],dieta:"vegetariano"}
+"zuppa di fagioli":{categoria:"primo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["minestra di fagioli"],allergeni:[],dieta:"vegetariano"},
 "affettato di tacchino":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino affettato","fesa di tacchino affettata","tacchino a fette"],allergeni:[],dieta:"carne"},
 "affettato di tacchino con rucola e grana":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino con rucola e grana","fesa di tacchino con rucola e grana"],allergeni:["latte"],dieta:"carne"},
 "affettato di tacchino con rucola e pomodorini":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["tacchino affettato con rucola","tacchino freddo con rucola e pomodorini"],allergeni:[],dieta:"carne"},
@@ -115,7 +115,7 @@ let TOP_PIATTI = {
 "tacchino tonnato":{categoria:"secondo",regione:"piemonte",iconico:true,top:true,selezione:true,punteggio:5,sinonimi:["tacchino con salsa tonnata"],allergeni:["uova","pesce"],dieta:"carne"},
 "tomino alla griglia":{categoria:"secondo",regione:"piemonte",iconico:true,top:true,selezione:false,punteggio:5,sinonimi:["tomino ai ferri"],allergeni:["latte"],dieta:"vegetariano"},
 "totani pastellati alla romana":{categoria:"secondo",regione:"lazio",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["totani fritti alla romana"],allergeni:["pesce","glutine","uova"],dieta:"pesce"},
-"vitello tonnato":{categoria:"secondo",regione:"piemonte",iconico:true,top:true,selezione:true,punteggio:5,sinonimi:["vitel tonné"],allergeni:["uova","pesce"],dieta:"carne"}
+"vitello tonnato":{categoria:"secondo",regione:"piemonte",iconico:true,top:true,selezione:true,punteggio:5,sinonimi:["vitel tonné"],allergeni:["uova","pesce"],dieta:"carne"},
 "bietola rossa":{categoria:"contorno",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["barbabietola","bietola rossa lessata"],allergeni:[],dieta:"vegetariano"},
 "broccoli-patate-rapa rossa":{categoria:"contorno",regione:"italia",iconico:false,top:false,selezione:true,punteggio:3,sinonimi:["mix broccoli patate rapa rossa"],allergeni:[],dieta:"vegetariano"},
 "cavolfiore gratinato":{categoria:"contorno",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["cavolfiore al gratin"],allergeni:["latte"],dieta:"vegetariano"},
