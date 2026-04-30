@@ -8,6 +8,8 @@
 */
 
 let TOP_PIATTI = {
+ "tortiglioni al pesto":{categoria:"primo",regione:"liguria",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["pasta al pesto con tortiglioni","tortiglioni pesto"],allergeni:["glutine","latte"],dieta:"vegetariano"},
+"gnocchi con zola e panna":{categoria:"primo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["gnocchi gorgonzola e panna","gnocchi panna e zola"],allergeni:["glutine","latte"],dieta:"vegetariano"},
  "crespelle ricotta e spinaci":{categoria:"primo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:5,sinonimi:["crespelle agli spinaci","crespelle ripiene ricotta e spinaci","crepes ricotta e spinaci"],allergeni:["glutine","latte","uova"],dieta:"vegetariano"},
 "involtini di pollo con prosciutto e formaggio":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["involtini di pollo ripieni","pollo ripieno prosciutto e formaggio"],allergeni:["latte"],dieta:"carne"},
 "cotoletta di pollo alla zingara":{categoria:"secondo",regione:"italia",iconico:false,top:true,selezione:false,punteggio:4,sinonimi:["cotoletta alla zingara","pollo alla zingara impanato"],allergeni:["glutine","uova"],dieta:"carne"},
