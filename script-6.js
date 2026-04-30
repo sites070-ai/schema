@@ -36,7 +36,7 @@ function generaMiglioramentiPiatti() {
         /* BADGE DAL DATABASE */
         let badge = "";
         if (dati.iconico) badge += "🥇 Iconico ";
-        if (dati.top) badge += "🔥 Top ";
+        if (dati.top)     badge += "🔥 Top ";
         if (dati.selezione) badge += "✨ Selezione ";
 
         /* COLORE AMBRATO */
@@ -73,7 +73,6 @@ function generaDescrizione(nome, dati) {
             `Preparazione cremosa e ricca di profumi.`,
             `Un piatto caldo e confortante, perfetto per ogni stagione.`
         ],
-
         "secondo": [
             `Secondo piatto ricco e gustoso, tipico della cucina italiana.`,
             `Cottura lenta per ottenere morbidezza e sapore.`,
@@ -86,7 +85,6 @@ function generaDescrizione(nome, dati) {
             `Un secondo equilibrato, ricco di profumi e tradizione.`,
             `Preparazione saporita che valorizza ogni ingrediente.`
         ],
-
         "contorno": [
             `Un accompagnamento sano e gustoso.`,
             `Preparazione semplice, fresca e saporita.`,
@@ -102,58 +100,55 @@ function generaDescrizione(nome, dati) {
     };
 
     const lista = categorie[dati.categoria] || ["Piatto preparato con ingredienti freschi."];
-
     return lista[Math.floor(Math.random() * lista.length)];
 }
 
-
 /* ============================================================
-   3. STORICO RICORRENZE (senza duplicati)
+   3. STORICO RICORRENZE — in-memory (localStorage rimosso:
+      non funziona in iframe Google Sites per policy cross-origin)
    ============================================================ */
+
+// Storico della sessione corrente (si azzera al ricaricamento)
+var _storicoSessione = {};
+
 function generaStoricoRicorrenze() {
 
     const piattiHTML = document.querySelectorAll("li");
 
-    let storico = JSON.parse(localStorage.getItem("storicoPiatti")) || {};
-
     piattiHTML.forEach(li => {
-        const nome = li.textContent.trim();
+        const nome = li.childNodes[0] ? li.childNodes[0].textContent.trim() : li.textContent.trim();
         let meta = li.querySelector(".piatto-meta");
         if (!meta) return;
 
-        /* SE CI SONO GIÀ BADGE → NON AGGIUNGO NULLA */
+        /* SE CI SONO GIÀ BADGE DA DATABASE → NON AGGIUNGO NULLA */
         const testoMeta = meta.innerHTML;
-
         if (
             testoMeta.includes("🥇") ||
             testoMeta.includes("🔥") ||
             testoMeta.includes("✨")
         ) {
-            storico[nome] = (storico[nome] || 0) + 1;
+            _storicoSessione[nome] = (_storicoSessione[nome] || 0) + 1;
             return;
         }
 
-        /* ALTRIMENTI USO LO STORICO PER ASSEGNARE UN SOLO BADGE */
-        storico[nome] = (storico[nome] || 0) + 1;
+        /* ALTRIMENTI USO LO STORICO DI SESSIONE PER UN BADGE */
+        _storicoSessione[nome] = (_storicoSessione[nome] || 0) + 1;
 
         let badge = "";
-        if (storico[nome] >= 4) badge = "🥇 Iconico";
-        else if (storico[nome] >= 2) badge = "🔥 Top";
-        else badge = "✨ Selezione";
+        if (_storicoSessione[nome] >= 4)      badge = "🥇 Iconico";
+        else if (_storicoSessione[nome] >= 2)  badge = "🔥 Top";
+        else                                    badge = "✨ Selezione";
 
         meta.innerHTML += `<br>${badge}`;
     });
-
-    localStorage.setItem("storicoPiatti", JSON.stringify(storico));
 }
 
 /* ============================================================
-   4. JSON-LD AUTOMATICO (versione corretta)
+   4. JSON-LD AUTOMATICO
    ============================================================ */
 function generaJSONLD() {
 
     const sezioni = document.querySelectorAll("section");
-
     let piatti = [];
 
     sezioni.forEach(section => {
@@ -163,10 +158,9 @@ function generaJSONLD() {
             .trim();
 
         const items = section.querySelectorAll("li");
-
         items.forEach(li => {
-            const nome = li.childNodes[0].textContent.trim(); // solo nome piatto
-
+            // Solo il testo del nome, non il .piatto-meta
+            const nome = li.childNodes[0] ? li.childNodes[0].textContent.trim() : li.textContent.trim();
             piatti.push({
                 "@type": "MenuItem",
                 "name": nome,
@@ -200,15 +194,14 @@ function generaJSONLD() {
 function aggiungiFirmaLocanda() {
     const chiusura = document.querySelector(".chiusura");
     if (!chiusura) return;
-
     if (document.querySelector(".firma-locanda")) return;
 
     const firma = document.createElement("div");
     firma.className = "firma-locanda";
     firma.textContent = "Locanda del Contadino — dal 2005";
-
     chiusura.insertAdjacentElement("afterend", firma);
 }
+
 /* ============================================================
    BARRA SOCIAL — AZIONI
    ============================================================ */
@@ -216,11 +209,10 @@ document.addEventListener("click", function(e) {
     if (!e.target.classList.contains("icona-social")) return;
 
     const azione = e.target.dataset.azione;
-
-    if (azione === "copia") copiaMenu();
-    if (azione === "whatsapp") condividiWhatsApp();
-    if (azione === "telegram") condividiTelegram();
-    if (azione === "facebook") condividiFacebook();
+    if (azione === "copia")     copiaMenu();
+    if (azione === "whatsapp")  condividiWhatsApp();
+    if (azione === "telegram")  condividiTelegram();
+    if (azione === "facebook")  condividiFacebook();
 });
 
 /* TESTO MENÙ — versione breve e pulita */
@@ -233,7 +225,8 @@ function generaTestoMenu() {
         testo += titolo + ":\n";
 
         section.querySelectorAll("li").forEach(li => {
-            testo += "- " + li.childNodes[0].textContent.trim() + "\n";
+            const nome = li.childNodes[0] ? li.childNodes[0].textContent.trim() : li.textContent.trim();
+            testo += "- " + nome + "\n";
         });
 
         testo += "\n";
