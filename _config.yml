@@ -1,8 +1,0 @@
-plugins:
-  - jekyll-sitemap
-
-include:
-  - sitemap.xml
-
-mime_types:
-  xml: text/xml
