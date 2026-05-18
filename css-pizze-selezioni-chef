@@ -53,9 +53,7 @@
       position: relative;
       border: 1px solid var(--gold);
       outline: 5px solid #000000;
-      box-shadow: 
-        0 30px 80px rgba(0,0,0,0.95),
-        0 0 50px rgba(230, 196, 99, 0.05);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.95), 0 0 50px rgba(230, 196, 99, 0.05);
     }
 
     .menu-wrapper::before {
@@ -81,162 +79,36 @@
 
     .menu-inner { position: relative; z-index: 1; }
 
-    .header-block {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+    .header-block { text-align: center; margin-bottom: 40px; }
+    .header-title { font-family: "Playfair Display", serif; font-size: 2.6rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; text-shadow: 0 3px 12px rgba(0,0,0,0.6); }
+    .header-subline { margin: 12px auto; width: 200px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .header-tagline { font-size: 0.8rem; color: var(--text-soft); letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.8; }
 
-    .header-title {
-      font-family: "Playfair Display", serif;
-      font-size: 2.6rem;
-      color: var(--gold);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 700;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.6);
-    }
-
-    .header-subline {
-      margin: 12px auto;
-      width: 200px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .header-tagline {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      opacity: 0.8;
-    }
-
-    .delivery-box {
-      margin-bottom: 25px;
-      padding: 22px;
-      background: rgba(5, 5, 5, 0.85);
-      text-align: center;
-      border: 1px solid rgba(230, 196, 99, 0.15);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-
-    .delivery-title {
-      font-family: "Playfair Display", serif;
-      font-size: 1.15rem;
-      color: var(--gold);
-      margin-bottom: 8px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
+    .delivery-box { margin-bottom: 25px; padding: 22px; background: rgba(5, 5, 5, 0.85); text-align: center; border: 1px solid rgba(230, 196, 99, 0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+    .delivery-title { font-family: "Playfair Display", serif; font-size: 1.15rem; color: var(--gold); margin-bottom: 8px; letter-spacing: 0.12em; text-transform: uppercase; }
     .delivery-text { font-size: 0.9rem; color: var(--text-soft); line-height: 1.6; }
 
     .two-columns { display: flex; gap: 20px; margin-bottom: 45px; }
-
-    .column-box {
-      flex: 1;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(230, 196, 99, 0.08);
-    }
-
-    .column-title {
-      font-family: "Playfair Display", serif;
-      text-align: center;
-      color: var(--gold);
-      margin-bottom: 12px;
-      font-size: 0.98rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
+    .column-box { flex: 1; padding: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(230, 196, 99, 0.08); }
+    .column-title { font-family: "Playfair Display", serif; text-align: center; color: var(--gold); margin-bottom: 12px; font-size: 0.98rem; letter-spacing: 0.1em; text-transform: uppercase; }
     .column-text { font-size: 0.85rem; color: var(--text-soft); line-height: 1.6; margin-bottom: 10px; }
-    .column-text:last-child { margin-bottom: 0; }
     .column-highlight { color: var(--gold-soft); font-weight: 500; }
 
-    .section-separator {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      color: var(--gold);
-      font-family: "Playfair Display", serif;
-      font-size: 1.45rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin: 50px 0 35px;
-      border-bottom: 1px solid rgba(230, 196, 99, 0.15);
-      padding-bottom: 10px;
-    }
-
-    .section-separator span.diamond {
-      font-size: 0.75rem;
-      color: var(--gold-dark);
-    }
+    .section-separator { display: flex; align-items: center; justify-content: center; gap: 15px; color: var(--gold); font-family: "Playfair Display", serif; font-size: 1.45rem; letter-spacing: 0.22em; text-transform: uppercase; margin: 50px 0 35px; border-bottom: 1px solid rgba(230, 196, 99, 0.15); padding-bottom: 10px; }
+    .section-separator span.diamond { font-size: 0.75rem; color: var(--gold-dark); }
 
     .pizza-list { margin-bottom: 25px; }
     .pizza-item { margin-bottom: 28px; display: flex; flex-direction: column; }
     .pizza-header { display: flex; flex-direction: column; margin-bottom: 6px; }
-
-    .pizza-name {
-      font-family: "Playfair Display", serif;
-      font-size: 1.25rem;
-      color: var(--text-main);
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .pizza-prices {
-      font-family: "Inter", sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--gold-soft);
-      letter-spacing: 0.04em;
-      margin-top: 4px;
-    }
-
-    .pizza-prices span.size {
-      color: var(--text-soft);
-      font-weight: 400;
-      font-size: 0.8rem;
-    }
-
-    .pizza-ingredients {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      font-style: italic;
-      line-height: 1.6;
-      padding-left: 5px;
-      opacity: 0.85;
-    }
-
-    .allergen {
-      font-weight: 700;
-      font-style: normal;
-      text-decoration: underline;
-      color: var(--accent);
-      text-underline-offset: 3px;
-    }
-
-    .legend-sub {
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--text-soft);
-      opacity: 0.4;
-      margin-top: -25px;
-      margin-bottom: 35px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .menu-footer {
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(230, 196, 99, 0.15);
-      text-align: center;
-    }
-
+    .pizza-name { font-family: "Playfair Display", serif; font-size: 1.25rem; color: var(--text-main); letter-spacing: 0.03em; text-transform: uppercase; font-weight: 600; }
+    .pizza-prices { font-family: "Inter", sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--gold-soft); letter-spacing: 0.04em; margin-top: 4px; }
+    .pizza-prices span.size { color: var(--text-soft); font-weight: 400; font-size: 0.8rem; }
+    .pizza-ingredients { font-size: 0.9rem; color: var(--text-soft); font-style: italic; line-height: 1.6; padding-left: 5px; opacity: 0.85; }
+    
+    .allergen { font-weight: 700; font-style: normal; text-decoration: underline; color: var(--accent); text-underline-offset: 3px; }
+    .legend-sub { text-align: center; font-size: 0.75rem; color: var(--text-soft); opacity: 0.4; margin-top: -25px; margin-bottom: 35px; letter-spacing: 0.15em; text-transform: uppercase; }
+    
+    .menu-footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(230, 196, 99, 0.15); text-align: center; }
     .footer-line { font-size: 0.8rem; color: var(--text-soft); opacity: 0.5; letter-spacing: 0.08em; line-height: 1.8; }
     .footer-line a { color: var(--gold-soft); text-decoration: none; }
 
@@ -278,28 +150,13 @@
       <div class="column-box">
         <h3 class="column-title">Gli Impasti</h3>
         <p class="column-text">
-          Ogni nostra combinazione viene servita scegliendo tra <span class="column-highlight">due selezioni biologiche</span> senza alcun sovrapprezzo:
-        </p>
-        <p class="column-text">
-          · <strong>Biologico Tipo 1</strong> — Macinato interamente a pietra.<br>
-          · <strong>Biologico Integrale</strong> — Purezza naturale ricca di fibre.
-        </p>
-        <p class="column-text">
-          Idratazione al <strong>60%</strong> e maturazione controllata di <strong>48/72 ore</strong> per una digeribilità d'eccellenza.
+          Scegli tra i nostri due impasti biologici macinati a pietra <span class="column-highlight">allo stesso prezzo</span>: <strong>Bio Tipo 1</strong> o <strong>Bio Integrale</strong>. Idratazione al 60% e maturazione naturale di 48/72 ore.
         </p>
       </div>
-
       <div class="column-box">
         <h3 class="column-title">Registro Allergeni</h3>
         <p class="column-text">
-          In ottemperanza al <strong>Regolamento UE 1169/2011</strong>, i potenziali allergeni presenti nelle preparazioni sono identificati nelle descrizioni in <span class="allergen" style="text-decoration:none;">grassetto colorato</span>.
-        </p>
-        <p class="column-text">
-          Nota del pizzaiolo: le nostre lavorazioni contengono nativamente 
-          <strong><span class="allergen" style="text-decoration:none;">glutine</span></strong> derivante dai grani biologici impiegati.
-        </p>
-        <p class="column-text" style="border-top: 1px solid rgba(230,196,99,0.15); padding-top: 8px; margin-top: 8px;">
-          <strong>Nota di Legge:</strong> Il registro cartaceo completo degli ingredienti e delle sostanze allergeniche è <span class="column-highlight">sempre disponibile e consultabile su richiesta in sede</span>.
+          Ai sensi del Reg. UE 1169/2011 gli allergeni sono in <span class="allergen" style="text-decoration:none;">grassetto colorato</span>. Il registro completo è <span class="column-highlight">disponibile e consultabile in formato cartaceo su richiesta</span>.
         </p>
       </div>
     </div>
@@ -314,82 +171,10 @@
 
       <div class="pizza-item">
         <div class="pizza-header">
-          <span class="pizza-name">Mare e Monti</span>
-          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 17,00 <span class="size">(Tagliere)</span></span>
+          <span class="pizza-name">Mortadella Special</span>
+          <span class="pizza-prices">14,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 15,00 <span class="size">(Media)</span></span>
         </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span>, pregiati funghi porcini del bosco e sfiziosi <span class="allergen">gamberetti* (crostacei)</span>.
-        </div>
-      </div>
-
-      <div class="pizza-item">
-        <div class="pizza-header">
-          <span class="pizza-name">Calamari</span>
-          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
-        </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span> e teneri <span class="allergen">calamari* (molluschi)</span> saltati.
-        </div>
-      </div>
-
-      <div class="pizza-item">
-        <div class="pizza-header">
-          <span class="pizza-name">Tonno e Gamberetti</span>
-          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 17,00 <span class="size">(Tagliere)</span></span>
-        </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span>, saporito <span class="allergen">tonno (pesce)</span> a filetti e gustosi <span class="allergen">gamberetti* (crostacei)</span>.
-        </div>
-      </div>
-
-      <div class="pizza-item">
-        <div class="pizza-header">
-          <span class="pizza-name">Zucchine e Gamberetti</span>
-          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
-        </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span>, delicate zucchine dell'orto e <span class="allergen">gamberetti* (crostacei)</span>.
-        </div>
-      </div>
-
-      <div class="pizza-item">
-        <div class="pizza-header">
-          <span class="pizza-name">Frutti di Mare</span>
-          <span class="pizza-prices">10,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 20,00 <span class="size">(Tagliere)</span></span>
-        </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span> e una ricca selezione imperiale di <span class="allergen">frutti di mare* (molluschi, crostacei)</span>.
-        </div>
-      </div>
-
-      <div class="pizza-item">
-        <div class="pizza-header">
-          <span class="pizza-name">Suprema</span>
-          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
-        </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span>, pregiato <span class="allergen">salmone (pesce)</span>, <span class="allergen">gamberetti* (crostacei)</span> e prelibata <span class="allergen">polpa di granchio (crostacei)</span>.
-        </div>
-      </div>
-
-      <div class="pizza-item">
-        <div class="pizza-header">
-          <span class="pizza-name">Burrata Crudo</span>
-          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
-        </div>
-        <div class="pizza-ingredients">
-          Pomodoro, prosciutto crudo stagionato nazionale ed eccellente <span class="allergen">burrata (latte)</span> freschissima all'uscita.
-        </div>
-      </div>
-
-      <div class="pizza-item">
-        <div class="pizza-header">
-          <span class="pizza-name">Kebab</span>
-          <span class="pizza-prices">11,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 13,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 22,00 <span class="size">(Tagliere)</span></span>
-        </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella (latte)</span>, carne kebab speziata a straccetti, cipolla, insalata fresca e salse artigianali <span class="allergen">(uova, latte)</span>.
-        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span>, mortadella, scaglie di <span class="allergen">grana (latte)</span>, <span class="allergen">burrata (latte)</span>, <span class="allergen">granella di pistacchio (frutta a guscio)</span> e glassa di aceto balsamico.</div>
       </div>
 
       <div class="pizza-item">
@@ -397,19 +182,191 @@
           <span class="pizza-name">Estiva</span>
           <span class="pizza-prices">11,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 13,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 22,00 <span class="size">(Tagliere)</span></span>
         </div>
-        <div class="pizza-ingredients">
-          Pomodoro, cremosa burrata intera pugliese <span class="allergen">(latte)</span> adagiata all'uscita, pomodorini secchi ed elegante crudo dolce.
-        </div>
+        <div class="pizza-ingredients">Pomodoro, rucola, pomodorini freschi, <span class="allergen">burrata (latte)</span> e prosciutto crudo.</div>
       </div>
 
       <div class="pizza-item">
         <div class="pizza-header">
-          <span class="pizza-name">Mortadella Special</span>
-          <span class="pizza-prices">14,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 15,00 <span class="size">(Media)</span></span>
+          <span class="pizza-name">Kebab</span>
+          <span class="pizza-prices">11,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 13,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 22,00 <span class="size">(Tagliere)</span></span>
         </div>
-        <div class="pizza-ingredients">
-          Pomodoro, <span class="allergen">mozzarella fiordilatte (latte)</span>, mortadella d'eccellenza, scaglie di <span class="allergen">grana (latte)</span>, <span class="allergen">burrata (latte)</span>, <span class="allergen">granella di pistacchio (frutta a guscio)</span> e glassa all'aceto balsamico.
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, carne kebab, cipolla, insalata, <span class="allergen">maionese (uova)</span> e <span class="allergen">salsa yogurt (latte)</span>.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Cremonese</span>
+          <span class="pizza-prices">11,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 13,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 22,00 <span class="size">(Tagliere)</span></span>
         </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, zola, salame piccante e mostarda.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Burrata e Crudo</span>
+          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, prosciutto crudo e <span class="allergen">burrata (latte)</span> all'uscita.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Deliziosa</span>
+          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 21,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, prosciutto crudo, porcini e scaglie di <span class="allergen">grana (latte)</span>.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Emiliana</span>
+          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 21,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, prosciutto crudo e scaglie di <span class="allergen">grana (latte)</span>.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Valtellina</span>
+          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 21,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, bresaola, rucola e scaglie di <span class="allergen">grana (latte)</span>.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Delizia d'Autunno</span>
+          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 21,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients"><span class="allergen">Mozzarella (latte)</span>, <span class="allergen">panna (latte)</span>, crema di zucca, porcini e scaglie di <span class="allergen">grana (latte)</span>.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Zola Noci e Miele</span>
+          <span class="pizza-prices">10,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 20,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients"><span class="allergen">Mozzarella (latte)</span>, <span class="allergen">gorgonzola (latte)</span>, <span class="allergen">noci (frutta a guscio)</span> e miele.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Porcini e Tartufo</span>
+          <span class="pizza-prices">10,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 20,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, porcini e salsa tartufata.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Primavera</span>
+          <span class="pizza-prices">10,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 20,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, rucola, pomodorini freschi e scaglie di <span class="allergen">grana (latte)</span>.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Contadina</span>
+          <span class="pizza-prices">10,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 20,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, zola, salamella e cipolla.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Contadina di Mare</span>
+          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 21,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, capperi, acciughe, pomodorini confit e burrata.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Frutti di Mare</span>
+          <span class="pizza-prices">10,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 20,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, aglio, origano, frutti di mare <span class="allergen">(molluschi, crostacei)</span> e prezzemolo.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Suprema</span>
+          <span class="pizza-prices">11,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 12,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, gamberetti, polpa di granchio e salmone.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Calamari</span>
+          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span> e calamari.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Mare e Monti</span>
+          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 17,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, porcini e gamberetti.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Zucchine e Gamberetti</span>
+          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, zucchine e gamberetti.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Tonno e Gamberetti</span>
+          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,00 <span class="size">(Media)</span> &nbsp;·&nbsp; 17,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, tonno e gamberetti.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">4 Formaggi e Speck</span>
+          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, formaggi misti e speck.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Affumicata</span>
+          <span class="pizza-prices">10,00 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 11,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 19,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, scamorza affumicata e pancetta.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Fumè</span>
+          <span class="pizza-prices">9,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 10,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 17,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, scamorza affumicata e speck.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Carpaccio</span>
+          <span class="pizza-prices">9,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 10,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 18,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, bresaola, rucola e grana.</div>
+      </div>
+
+      <div class="pizza-item">
+        <div class="pizza-header">
+          <span class="pizza-name">Saporita</span>
+          <span class="pizza-prices">9,50 <span class="size">(Piccola)</span> &nbsp;·&nbsp; 10,50 <span class="size">(Media)</span> &nbsp;·&nbsp; 18,00 <span class="size">(Tagliere)</span></span>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="allergen">mozzarella (latte)</span>, gorgonzola, salame piccante e cipolla.</div>
       </div>
 
     </div>
@@ -417,7 +374,7 @@
     <div class="menu-footer">
       <p class="footer-line">
         © 2005-2026 Locanda del Contadino — Via Battaglione 86, Cremona<br>
-        Naviga il menu: <a href="sapori-locanda.html">I Sapori della Locanda</a> · <a href="orto-bosco.html">Orto e Bosco</a> · <a href="grandi-classici.html">I Grandi Classici</a>
+        Sfoglia i listini: <strong>Selezioni dello Chef</strong> · <a href="sapori-locanda.html">I Sapori della Locanda</a> · <a href="orto-bosco.html">Orto e Bosco</a> · <a href="grandi-classici.html">I Grandi Classici</a>
       </p>
     </div>
 
