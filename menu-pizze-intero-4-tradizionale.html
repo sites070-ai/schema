@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=600;700&family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,42 +17,7 @@
       padding-bottom: 60px;
     }
 
-    /* NAV BAR DI SELEZIONE CATEGORIE (STICKY FISSA IN CIMA) */
-    .tabs-container {
-      position: sticky;
-      top: 0;
-      background: rgba(10, 10, 10, 0.98);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(230, 196, 99, 0.3);
-      z-index: 200;
-      display: flex;
-      justify-content: center;
-      padding: 8px 4px;
-    }
-
-    .tab-btn {
-      background: transparent;
-      border: none;
-      color: #a8a8a8;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 10px 14px;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .tab-btn:hover { color: #fcfcfc; }
-    .tab-btn.active { color: #e6c463; }
-    .tab-btn .tab-icon { font-size: 1.4em; }
-
-    /* CONTENITORE INFO (MARKETING & ALLERGENI) */
+    /* CONTENITORE INFO IN ALTO (SCHEMA V4) */
     .top-info-container {
       max-width: 900px;
       margin: 20px auto;
@@ -121,7 +86,43 @@
       line-height: 1.4;
     }
 
-    /* ALLERGENI — Stile pulito derivato dal v4 */
+    /* NAV BAR DI SELEZIONE CATEGORIE (STICKY SOTTO I BOX) */
+    .tabs-container {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(230, 196, 99, 0.3);
+      z-index: 200;
+      display: flex;
+      justify-content: center;
+      padding: 8px 4px;
+      margin-top: 25px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: #a8a8a8;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 10px 14px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tab-btn:hover { color: #fcfcfc; }
+    .tab-btn.active { color: #e6c463; }
+    .tab-btn .tab-icon { font-size: 1.4em; }
+
+    /* ALLERGENI — Stile pulito ereditato dal v4 */
     .alg { 
       color: #fcfcfc; 
       font-weight: 700; 
@@ -225,21 +226,6 @@
 </head>
 <body>
 
-  <div class="tabs-container" id="main-tabs-bar">
-    <button class="tab-btn active" onclick="openCategory(event, 'classiche')">
-      <span class="tab-icon">🍕</span><span>Classiche</span>
-    </button>
-    <button class="tab-btn" onclick="openCategory(event, 'speciali')">
-      <span class="tab-icon">⭐</span><span>Speciali</span>
-    </button>
-    <button class="tab-btn" onclick="openCategory(event, 'bianche')">
-      <span class="tab-icon">⚪</span><span>Bianche</span>
-    </button>
-    <button class="tab-btn" onclick="openCategory(event, 'integrali')">
-      <span class="tab-icon">🌾</span><span>Integrali</span>
-    </button>
-  </div>
-
   <div class="top-info-container">
     <div class="info-box">
       <div class="info-content">
@@ -267,6 +253,21 @@
         <div class="qr-text">📸 <strong>QR Allergeni:</strong><br>Scansiona il codice QR per accedere direttamente alla scheda completa online sulla sicurezza alimentare.</div>
       </div>
     </div>
+  </div>
+
+  <div class="tabs-container" id="main-tabs-bar">
+    <button class="tab-btn active" onclick="openCategory(event, 'classiche')">
+      <span class="tab-icon">🍕</span><span>Classiche</span>
+    </button>
+    <button class="tab-btn" onclick="openCategory(event, 'speciali')">
+      <span class="tab-icon">⭐</span><span>Speciali</span>
+    </button>
+    <button class="tab-btn" onclick="openCategory(event, 'bianche')">
+      <span class="tab-icon">⚪</span><span>Bianche</span>
+    </button>
+    <button class="tab-btn" onclick="openCategory(event, 'integrali')">
+      <span class="tab-icon">🌾</span><span>Integrali</span>
+    </button>
   </div>
 
   <div id="classiche" class="menu-section active section-anchor">
@@ -347,7 +348,7 @@
             <div class="price-item"><span>T</span>16</div>
           </div>
         </div>
-        <div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">pesce (tonno)</span>, cipolle di Tropea, pomodori freschi</div>
+        <div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">pesce (tonno)</span>, cipolle di Tropea, pomodori frescos</div>
       </div>
       
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Yami</div><div class="pizza-prices"><div class="price-item"><span>P</span>9</div><div class="price-item"><span>M</span>10</div><div class="price-item"><span>T</span>16</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella di bufala</span>, salamino, funghi</div></div>
@@ -422,7 +423,7 @@
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Prosciutto e Funghi Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,50</div><div class="price-item"><span>M</span>8,50</div><div class="price-item"><span>T</span>14,50</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, prosciutto cotto, funghi</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Romana Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>7</div><div class="price-item"><span>M</span>8</div><div class="price-item"><span>T</span>13</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">pesce (acciughe)</span>, origano</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Rustica Bianca Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>10</div><div class="price-item"><span>M</span>11</div><div class="price-item"><span>T</span>19</div></div></div><div class="pizza-ingredients"><span class="alg">mozzarella fiordilatte</span>, rucola, bresaola, <span class="alg">formaggio grana</span></div></div>
-      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">San Secondo Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>9</div><div class="price-item"><span>M</span>10</div><div class="price-item"><span>T</span>16</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">gorgonzola (zola)</span>, spalla di San Secondo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">San Secondo Integrale</div><div class="price-item"><span>P</span>9</div><div class="price-item"><span>M</span>10</div><div class="price-item"><span>T</span>16</div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">gorgonzola (zola)</span>, spalla di San Secondo</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Vegetariana Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, zucchine, peperoni, melanzane, pomodorini</div></div>
     </div>
   </div>
