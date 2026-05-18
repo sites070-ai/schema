@@ -17,7 +17,7 @@
       padding-bottom: 60px;
     }
 
-    /* CONTENITORE INFO IN ALTO (SCHEMA V4) */
+    /* CONTENITORE INFO IN ALTO */
     .top-info-container {
       max-width: 900px;
       margin: 20px auto;
@@ -122,7 +122,7 @@
     .tab-btn.active { color: #e6c463; }
     .tab-btn .tab-icon { font-size: 1.4em; }
 
-    /* ALLERGENI — Stile pulito ereditato dal v4 */
+    /* ALLERGENI */
     .alg { 
       color: #fcfcfc; 
       font-weight: 700; 
@@ -138,10 +138,10 @@
       margin: 20px auto;
       padding: 0 15px;
       display: none;
+      scroll-margin-top: 80px; /* Evita che la barra sticky copra i titoli quando si scatta alla sezione */
     }
 
     .menu-section.active { display: block; }
-    .section-anchor { scroll-margin-top: 70px; }
 
     .section-header {
       text-align: center;
@@ -270,7 +270,7 @@
     </button>
   </div>
 
-  <div id="classiche" class="menu-section active section-anchor">
+  <div id="classiche" class="menu-section active">
     <div class="section-header">
       <h1>🍕 Le Pizze Classiche</h1>
       <p>I sapori più conosciuti e amati della tradizione italiana</p>
@@ -296,7 +296,7 @@
     </div>
   </div>
 
-  <div id="speciali" class="menu-section section-anchor">
+  <div id="speciali" class="menu-section">
     <div class="section-header">
       <h1>⭐ Le Pizze Speciali</h1>
       <p>Abbinamenti ricercati e farciture ricche per un'esperienza di gusto superiore</p>
@@ -338,19 +338,7 @@
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Piemontese</div><div class="pizza-prices"><div class="price-item"><span>P</span>10</div><div class="price-item"><span>M</span>11</div><div class="price-item"><span>T</span>17</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">gorgonzola (zola)</span>, <span class="alg">scamorza</span>, funghi porcini</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Rosa</div><div class="pizza-prices"><div class="price-item"><span>P</span>10</div><div class="price-item"><span>M</span>11</div><div class="price-item"><span>T</span>19</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella di bufala</span>, funghi porcini, <span class="alg">panna</span>, prosciutto crudo</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Salame Dolce</div><div class="pizza-prices"><div class="price-item"><span>P</span>7</div><div class="price-item"><span>M</span>8</div><div class="price-item"><span>T</span>13</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, salame dolce</div></div>
-      
-      <div class="pizza-card">
-        <div class="pizza-main">
-          <div class="pizza-name">Pizza Tropea</div>
-          <div class="pizza-prices">
-            <div class="price-item"><span>P</span>9</div>
-            <div class="price-item"><span>M</span>10</div>
-            <div class="price-item"><span>T</span>16</div>
-          </div>
-        </div>
-        <div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">pesce (tonno)</span>, cipolle di Tropea, pomodori frescos</div>
-      </div>
-      
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Tropea</div><div class="pizza-prices"><div class="price-item"><span>P</span>9</div><div class="price-item"><span>M</span>10</div><div class="price-item"><span>T</span>16</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">pesce (tonno)</span>, cipolle di Tropea, pomodori freschi</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Yami</div><div class="pizza-prices"><div class="price-item"><span>P</span>9</div><div class="price-item"><span>M</span>10</div><div class="price-item"><span>T</span>16</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella di bufala</span>, salamino, funghi</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Porcella</div><div class="pizza-prices"><div class="price-item"><span>P</span>11</div><div class="price-item"><span>M</span>12</div><div class="price-item"><span>T</span>19</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, würstel, salsiccia, salamino, funghi, patatine fritte</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Porcini</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,50</div><div class="price-item"><span>M</span>9,50</div><div class="price-item"><span>T</span>14</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, funghi porcini, prezzemolo</div></div>
@@ -375,7 +363,7 @@
     </div>
   </div>
 
-  <div id="bianche" class="menu-section section-anchor">
+  <div id="bianche" class="menu-section">
     <div class="section-header">
       <h1>⚪ L'Angolo delle Bianche</h1>
       <p>Esaltazione dell'impasto e freschezza assoluta senza pomodoro</p>
@@ -403,7 +391,7 @@
     </div>
   </div>
 
-  <div id="integrali" class="menu-section section-anchor">
+  <div id="integrali" class="menu-section">
     <div class="section-header">
       <h1>🌾 Le Pizze Integrali</h1>
       <p>Il gusto rustico e il benessere della nostra farina integrale biologica</p>
@@ -423,7 +411,17 @@
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Prosciutto e Funghi Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,50</div><div class="price-item"><span>M</span>8,50</div><div class="price-item"><span>T</span>14,50</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, prosciutto cotto, funghi</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Romana Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>7</div><div class="price-item"><span>M</span>8</div><div class="price-item"><span>T</span>13</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">pesce (acciughe)</span>, origano</div></div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Rustica Bianca Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>10</div><div class="price-item"><span>M</span>11</div><div class="price-item"><span>T</span>19</div></div></div><div class="pizza-ingredients"><span class="alg">mozzarella fiordilatte</span>, rucola, bresaola, <span class="alg">formaggio grana</span></div></div>
-      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">San Secondo Integrale</div><div class="price-item"><span>P</span>9</div><div class="price-item"><span>M</span>10</div><div class="price-item"><span>T</span>16</div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">gorgonzola (zola)</span>, spalla di San Secondo</div></div>
+      <div class="pizza-card">
+        <div class="pizza-main">
+          <div class="pizza-name">San Secondo Integrale</div>
+          <div class="pizza-prices">
+            <div class="price-item"><span>P</span>9</div>
+            <div class="price-item"><span>M</span>10</div>
+            <div class="price-item"><span>T</span>16</div>
+          </div>
+        </div>
+        <div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, <span class="alg">gorgonzola (zola)</span>, spalla di San Secondo</div>
+      </div>
       <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Vegetariana Integrale</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17</div></div></div><div class="pizza-ingredients">Pomodoro, <span class="alg">mozzarella fiordilatte</span>, zucchine, peperoni, melanzane, pomodorini</div></div>
     </div>
   </div>
@@ -447,8 +445,7 @@
       
       if (evt) {
         evt.currentTarget.className += " active";
-        
-        // ANCORAGGIO MOBILE EVITA SCATTI IMPROVVISI E FLUIDIFICA LO SCROLL
+        // Scorrimento fluido puntando alla sezione (rispetta lo scroll-margin-top impostato nel CSS)
         targetSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         for (i = 0; i < tabBtn.length; i++) {
