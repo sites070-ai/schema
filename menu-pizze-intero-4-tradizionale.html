@@ -225,9 +225,12 @@
       padding-right: 20px;
     }
 
-    /* FORMATTAZIONE RIGOROSA ALLERGENI */
-    .pizza-ingredients em u strong {
+    /* INSERIMENTO RIGOROSO FORMATTAZIONE ALLERGENI */
+    .pizza-ingredients em u strong, .info-content em u strong {
       color: #fcfcfc;
+      font-style: italic;
+      font-weight: bold;
+      text-decoration: underline;
       text-underline-offset: 3px;
       text-decoration-color: #e6c463;
     }
@@ -267,7 +270,7 @@
 
     <div class="info-box">
       <div class="info-content">
-        <h2>⚠️ Comunicazione Allergeni</h2>
+        <h2>⚠️ Communicatione Allergeni</h2>
         <p>Ai sensi del Reg. UE 1169/2011, gli ingredienti che contengono una o più delle 14 sostanze allergizzanti sono evidenziati all'interno delle nostre ricette in <strong>grassetto, corsivo e sottolineato</strong>.</p>
         <p><strong>Nota:</strong> Tutti i nostri impasti contengono <em><u>**glutine**</u></em> (Farina Tipo 1 Biologica).</p>
         <p>Il registro completo è disponibile e consultabile in formato cartaceo rivolgendosi al personale in servizio.</p>
@@ -445,7 +448,7 @@
       if (evt) {
         evt.currentTarget.className += " active";
         
-        // ANCORAGGIO MOBILE CONTROLLATO: Fa scivolare lo schermo sopra la sezione selezionata
+        // ANCORAGGIO MOBILE RIGOROSO
         targetSection.scrollIntoView({ behavior: 'smooth' });
       } else {
         for (i = 0; i < tabBtn.length; i++) {
