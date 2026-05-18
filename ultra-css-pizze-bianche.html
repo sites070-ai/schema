@@ -357,53 +357,6 @@
       max-width: 180px;
     }
 
-    .personalizza-box {
-      margin-top: 18px;
-      padding: 22px 20px;
-      background: radial-gradient(circle at top, #262626 0, #181818 55%, #101010 100%);
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: inset 0 0 22px rgba(0,0,0,0.65);
-    }
-
-    .personalizza-desc {
-      font-size: 0.95rem;
-      color: var(--text-soft);
-      margin-bottom: 18px;
-      text-align: center;
-      opacity: 0.9;
-      line-height: 1.6;
-    }
-
-    .personalizza-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .personalizza-item:last-child { border-bottom: none; }
-
-    .personalizza-name {
-      font-size: 1rem;
-      color: var(--text-main);
-      letter-spacing: 0.02em;
-    }
-
-    .personalizza-price {
-      font-size: 1rem;
-      color: var(--gold-soft);
-      font-weight: 500;
-      letter-spacing: 0.03em;
-    }
-
-    .small-note {
-      font-size: 0.8rem;
-      opacity: 0.8;
-      margin-top: 6px;
-      color: var(--text-soft);
-    }
-
     .menu-footer {
       margin-top: 36px;
       padding-top: 20px;
@@ -466,12 +419,10 @@
 <div class="menu-wrapper">
   <div class="menu-inner">
 
-    <!-- ═══ HEADER ═══ -->
     <div class="header-title">✦ LOCANDA DEL CONTADINO ✦</div>
     <div class="header-subline"></div>
     <div class="header-tagline">PIZZE BIANCHE</div>
 
-    <!-- ═══ DELIVERY ═══ -->
     <div class="delivery-box">
       <div class="delivery-title">Pizza Delivery</div>
       <p class="delivery-text">
@@ -490,7 +441,6 @@
       </div>
     </div>
 
-    <!-- ═══ TITOLO ═══ -->
     <div class="section-title-line">
       <span class="line"></span>
       <span>PIZZE BIANCHE</span>
@@ -498,7 +448,6 @@
     </div>
     <div class="section-subline"></div>
 
-    <!-- ═══ IMPASTO + ALLERGENI ═══ -->
     <div class="two-columns">
 
       <div class="column-box">
@@ -528,9 +477,6 @@
         <div class="formats-line">
           <strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong>
         </div>
-        <p class="column-text" style="opacity:0.85;margin-top:12px;">
-          Un impasto che rappresenta la nostra idea di qualità.
-        </p>
       </div>
 
       <div class="column-box">
@@ -553,21 +499,15 @@
 
     </div>
 
-    <!-- ═══════════════════════════════════════════
-         PIZZE BIANCHE
-         ═══════════════════════════════════════════ -->
-
     <div class="pizza-section">
 
-      <!-- Tartufata -->
       <div class="pizza-card">
         <div class="pizza-card-header">
           <div class="pizza-card-name">✦ Tartufata</div>
           <span class="pizza-badge">🍄 Tartufo</span>
         </div>
         <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, crema di tartufo, bresaola, rucola,
-          <strong><em><u>grana (latte)</u></em></strong>
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, crema di tartufo, bresaola, rucola, <strong><em><u>grana (latte)</u></em></strong>
         </div>
         <div class="pizza-card-prices">
           <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 11,00</span></div>
@@ -576,14 +516,13 @@
         </div>
       </div>
 
-      <!-- Crudo Tartufo Basilico -->
       <div class="pizza-card">
         <div class="pizza-card-header">
           <div class="pizza-card-name">✦ Crudo Tartufo Basilico</div>
           <span class="pizza-badge">🍄 Tartufo</span>
         </div>
         <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, crema di tartufo, crudo, basilico
+          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, crema di tartufo, prosciutto crudo, basilico
         </div>
         <div class="pizza-card-prices">
           <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 11,00</span></div>
@@ -592,15 +531,13 @@
         </div>
       </div>
 
-      <!-- Al Tartufo -->
       <div class="pizza-card">
         <div class="pizza-card-header">
           <div class="pizza-card-name">✦ Al Tartufo</div>
           <span class="pizza-badge">🍄 Tartufo</span>
         </div>
         <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, crema di tartufo, porcini,
-          <strong><em><u>grana (latte)</u></em></strong>
+          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, crema di tartufo, porcini, <strong><em><u>grana (latte)</u></em></strong>
         </div>
         <div class="pizza-card-prices">
           <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 11,00</span></div>
@@ -609,31 +546,12 @@
         </div>
       </div>
 
-      <!-- Profumo d'Autunno -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Profumo d'Autunno</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Provola (latte)</u></em></strong>, crema di zucca, salsiccia,
-          <strong><em><u>pecorino (latte)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 11,00</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 12,00</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 19,00</span></div>
-        </div>
-      </div>
-
-      <!-- Philadelphia -->
       <div class="pizza-card">
         <div class="pizza-card-header">
           <div class="pizza-card-name">✦ Philadelphia</div>
         </div>
         <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
-          <strong><em><u>Philadelphia (latte)</u></em></strong>,
-          <strong><em><u>salmone (pesce)</u></em></strong>, zucchine
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>Philadelphia (latte)</u></em></strong>, <strong><em><u>salmone (pesce)</u></em></strong>, zucchine
         </div>
         <div class="pizza-card-prices">
           <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 11,00</span></div>
@@ -642,79 +560,12 @@
         </div>
       </div>
 
-      <!-- Rotolo Estivo -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Rotolo Estivo</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, speck, olio d'oliva, rucola,
-          <strong><em><u>grana (latte)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 10,00</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 11,00</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 19,00</span></div>
-        </div>
-      </div>
-
-      <!-- Mediterranea -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Mediterranea</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, pomodorini, crudo, rucola
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,50</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,50</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
-        </div>
-      </div>
-
-      <!-- Sinfonia -->
       <div class="pizza-card">
         <div class="pizza-card-header">
           <div class="pizza-card-name">✦ Sinfonia</div>
         </div>
         <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, asparagi,
-          <strong><em><u>uova (uova)</u></em></strong>,
-          <strong><em><u>salmone (pesce)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,50</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,50</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
-        </div>
-      </div>
-
-      <!-- Delicata -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Delicata</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, zucchine,
-          <strong><em><u>tonno (pesce)</u></em></strong>, cipolle,
-          <strong><em><u>panna (latte)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,50</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,50</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
-        </div>
-      </div>
-
-      <!-- Rustica -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Rustica</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, rucola, bresaola,
-          <strong><em><u>grana (latte)</u></em></strong>
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, asparagi, <strong><em><u>uova (uova)</u></em></strong>, <strong><em><u>salmone (pesce)</u></em></strong>
         </div>
         <div class="pizza-card-prices">
           <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,00</span></div>
@@ -723,7 +574,161 @@
         </div>
       </div>
 
-      <!-- Caprese -->
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Profumo d'Autunno</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Provola (latte)</u></em></strong>, crema di zucca, salsiccia, <strong><em><u>pecorino (latte)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 11,00</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 12,00</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 19,00</span></div>
+        </div>
+      </div>
+
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Carbonara</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>panna (latte)</u></em></strong>, pancetta, <strong><em><u>uova (uova)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 7,50</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 8,50</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 15,00</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Tirolese</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>panna (latte)</u></em></strong>, crema di zucca, speck
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,50</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,50</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 16,00</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Rustica Bianca</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, rucola, bresaola, <strong><em><u>grana (latte)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 10,00</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 11,00</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 19,00</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Rotolo Estivo</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, speck, olio di oliva, rucola, <strong><em><u>grana (latte)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices two-formats">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 8,50</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 9,50</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Genovese</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, patate lesse, <strong><em><u>pesto (frutta a guscio, latte)</u></em></strong>, salsiccia
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,00</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,00</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Mantovana Bianca</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, crema di zucca, salsiccia, <strong><em><u>gorgonzola (latte)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 8,50</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 9,50</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 15,00</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Francese</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, <strong><em><u>gorgonzola (latte)</u></em></strong>, <strong><em><u>noci (frutta a guscio)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,00</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,00</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 16,00</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Delicata</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, zucchine, <strong><em><u>tonno (pesce)</u></em></strong>, cipolle, <strong><em><u>panna (latte)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,50</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,50</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Bufala Radicchio Tonno</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, radicchio, <strong><em><u>tonno (pesce)</u></em></strong>
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 10,00</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 11,00</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
+        </div>
+      </div>
+
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Mediterranea</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, pomodorini, prosciutto crudo, rucola
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,50</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,50</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
+        </div>
+      </div>
+
       <div class="pizza-card">
         <div class="pizza-card-header">
           <div class="pizza-card-name">✦ Caprese</div>
@@ -738,119 +743,6 @@
         </div>
       </div>
 
-      <!-- Tirolese -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Tirolese</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
-          <strong><em><u>panna (latte)</u></em></strong>, crema di zucca, speck
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,50</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,50</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 16,00</span></div>
-        </div>
-      </div>
-
-      <!-- Francese -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Francese</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
-          <strong><em><u>gorgonzola (latte)</u></em></strong>,
-          <strong><em><u>noci (frutta a guscio)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 9,00</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 10,00</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 16,00</span></div>
-        </div>
-      </div>
-
-      <!-- Bufala Radicchio Tonno -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Bufala Radicchio Tonno</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella di bufala (latte)</u></em></strong>, radicchio,
-          <strong><em><u>tonno (pesce)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 10,00</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 11,00</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
-        </div>
-      </div>
-
-      <!-- Biancaneve -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Biancaneve</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, crudo
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 8,00</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 9,00</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
-        </div>
-      </div>
-
-      <!-- Genovese -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Genovese</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, patate lesse,
-          <strong><em><u>pesto (frutta a guscio, latte)</u></em></strong>, salsiccia
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 8,50</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 9,50</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 15,00</span></div>
-        </div>
-      </div>
-
-      <!-- Mantovana -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Mantovana</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, crema di zucca, salsiccia,
-          <strong><em><u>gorgonzola (latte)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 8,00</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 9,00</span></div>
-          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 15,00</span></div>
-        </div>
-      </div>
-
-      <!-- Carbonara -->
-      <div class="pizza-card">
-        <div class="pizza-card-header">
-          <div class="pizza-card-name">✦ Carbonara</div>
-        </div>
-        <div class="pizza-card-ingredients">
-          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>,
-          <strong><em><u>panna (latte)</u></em></strong>, pancetta,
-          <strong><em><u>uova (uova)</u></em></strong>
-        </div>
-        <div class="pizza-card-prices two-formats">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 7,50</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 8,50</span></div>
-        </div>
-      </div>
-
-      <!-- Focaccia Primavera -->
       <div class="pizza-card">
         <div class="pizza-card-header">
           <div class="pizza-card-name">✦ Focaccia Primavera</div>
@@ -859,67 +751,31 @@
           Pomodorini, <strong><em><u>mozzarella di bufala (latte)</u></em></strong>, rucola
         </div>
         <div class="pizza-card-prices two-formats">
-          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 8,50</span></div>
-          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 9,50</span></div>
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 7,50</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 8,50</span></div>
+        </div>
+      </div>
+
+      <div class="pizza-card">
+        <div class="pizza-card-header">
+          <div class="pizza-card-name">✦ Biancaneve</div>
+        </div>
+        <div class="pizza-card-ingredients">
+          <strong><em><u>Mozzarella fiordilatte (latte)</u></em></strong>, prosciutto crudo
+        </div>
+        <div class="pizza-card-prices">
+          <div class="price-tag"><span class="price-label">Piccola</span><span class="price-value">€ 8,00</span></div>
+          <div class="price-tag"><span class="price-label">Media</span><span class="price-value">€ 9,00</span></div>
+          <div class="price-tag"><span class="price-label">Tagliere</span><span class="price-value">€ 17,00</span></div>
         </div>
       </div>
 
     </div>
 
-    <!-- ═══════════════════════════════════════════
-         PERSONALIZZA
-         ═══════════════════════════════════════════ -->
-    <div class="section-title-line">
-      <span class="line"></span>
-      <span>PERSONALIZZA LA TUA PIZZA</span>
-      <span class="line"></span>
-    </div>
-    <div class="section-subline"></div>
-
-    <div class="personalizza-box">
-      <p class="personalizza-desc">
-        Aggiunte selezionate per completare la tua pizza con un tocco personale.
-      </p>
-      <div class="personalizza-item">
-        <span class="personalizza-name">Speck</span>
-        <span class="personalizza-price">€ 2,00</span>
-      </div>
-      <div class="personalizza-item">
-        <span class="personalizza-name">Spalla Cotta</span>
-        <span class="personalizza-price">€ 2,00</span>
-      </div>
-      <div class="personalizza-item">
-        <span class="personalizza-name">Crudo</span>
-        <span class="personalizza-price">€ 2,00</span>
-      </div>
-      <div class="personalizza-item">
-        <span class="personalizza-name">Patatine*</span>
-        <span class="personalizza-price">€ 2,00</span>
-      </div>
-      <div class="personalizza-item">
-        <span class="personalizza-name"><strong><em><u>Doppia Mozzarella (latte)</u></em></strong></span>
-        <span class="personalizza-price">€ 3,00</span>
-      </div>
-      <div class="personalizza-item">
-        <span class="personalizza-name">Doppio Pomodoro</span>
-        <span class="personalizza-price">€ 0,50</span>
-      </div>
-      <div class="personalizza-item">
-        <span class="personalizza-name">Verdure / Condimenti Extra</span>
-        <span class="personalizza-price">€ 1,00</span>
-      </div>
-    </div>
-
-    <p class="small-note">
-      I prodotti contrassegnati con * sono preparati con materie prime surgelate.<br>
-      Tutti gli impasti contengono <strong><em><u>glutine</u></em></strong> (Farina Tipo 1 Biologica di frumento).
-    </p>
-
-    <!-- ═══ FOOTER ═══ -->
     <div class="menu-footer">
       <p class="footer-line">
-        © 2025 Locanda del Contadino — Via Battaglione 86, Cremona<br>
-        <a href="mailto:locandadelcontadino@gmail.com">locandadelcontadino@gmail.com</a> · 0372.451964
+        © 2005-2026 Locanda del Contadino · Cremona · Tel. 0372 451964<br>
+        Vedi anche: <a href="pizze-classiche.html">Pizze Classiche</a> · <a href="pizze-speciali.html">Pizze Speciali</a> · <a href="pizze-integrali.html">Pizze Integrali</a>
       </p>
     </div>
 
