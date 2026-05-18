@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>I Nuovi Percorsi del Gusto - Locanda del Contadino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: #000000;
+      color: #fcfcfc;
+      padding-bottom: 60px;
+    }
+
+    /* BANNER UNICO UNIVERSALE IN ALTO (1 PER TUTTI) */
+    .master-banner {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .banner-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .banner-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .info-box {
+      background: rgba(15, 15, 15, 0.8);
+      border: 1px solid rgba(230, 196, 99, 0.2);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info-box h2 {
+      font-family: "Playfair Display", serif;
+      color: #e6c463;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      border-bottom: 1px dashed rgba(230, 196, 99, 0.2);
+      padding-bottom: 6px;
+    }
+
+    .info-box p {
+      font-size: 0.85rem;
+      color: #dcdcdc;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .info-box strong { color: #e6c463; }
+
+    .qr-block {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(230, 196, 99, 0.04);
+      border: 1px solid rgba(230, 196, 99, 0.15);
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .qr-code-img {
+      width: 90px;
+      height: 90px;
+      background: #ffffff;
+      padding: 4px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .qr-text {
+      font-size: 0.8rem;
+      color: #a8a8a8;
+      line-height: 1.4;
+    }
+
+    /* NAV BAR DI SELEZIONE CATEGORIE (STICKY SOTTO IL BANNER) */
+    .tabs-container {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 10, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(230, 196, 99, 0.25);
+      border-top: 1px solid rgba(230, 196, 99, 0.1);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      padding: 10px 4px;
+      margin-top: 25px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: #a8a8a8;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 10px 12px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tab-btn.active { color: #e6c463; }
+    .tab-btn .tab-icon { font-size: 1.4em; }
+
+    /* SEZIONI CONTENUTO MENU */
+    .menu-section {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 15px;
+      display: none;
+    }
+
+    .menu-section.active { display: block; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-header h1 {
+      font-family: "Playfair Display", serif;
+      color: #e6c463;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: #a8a8a8;
+      font-style: italic;
+    }
+
+    /* LISTINO PIZZE */
+    .pizza-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .pizza-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    }
+
+    .pizza-card {
+      background: rgba(15, 15, 15, 0.6);
+      border-bottom: 1px dashed rgba(230, 196, 99, 0.15);
+      padding-bottom: 15px;
+    }
+
+    .pizza-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .pizza-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fcfcfc;
+      letter-spacing: 0.02em;
+    }
+
+    .pizza-prices {
+      display: flex;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #e6c463;
+    }
+
+    .price-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(230, 196, 99, 0.06);
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .price-item span {
+      font-size: 0.6rem;
+      color: #a8a8a8;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .pizza-ingredients {
+      font-size: 0.88rem;
+      color: #a8a8a8;
+      line-height: 1.5;
+      padding-right: 20px;
+    }
+
+    /* ALLERGENI REGOLAMENTARI (GRASSETTO, CORSIVO, SOTTOLINEATO) */
+    .pizza-ingredients em u strong {
+      color: #fcfcfc;
+      text-underline-offset: 3px;
+      text-decoration-color: #e6c463;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="master-banner">
+    <div class="banner-grid">
+      <div class="info-box">
+        <div>
+          <h2>🌾 Impasto & Pizza Delivery</h2>
+          <p>Un impasto curato nei dettagli, pensato per offrire equilibrio, leggerezza e costanza. Realizzato con 100% Farina Tipo 1 Biologica (<em><u>**glutine**</u></em>) macinata a pietra. Maturazione di 48/72 ore per un'alta digeribilità.</p>
+          <p><strong>Formati:</strong> Piccola 32 cm · Media 36 cm · Tagliere 50 cm</p>
+          <p style="margin-top: 8px;">🛵 <strong>Delivery:</strong> Da venerdì a domenica, 18:30–21:30. <strong>Lunedì chiuso.</strong> Consegna gratuita (min. 2 pizze) per la città di Cremona.</p>
+          <p>📍 Via Battaglione 86, Cremona · ☎️ Tel: <strong>0372.451964</strong></p>
+        </div>
+        <div class="qr-block">
+          <img class="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sites.google.com/view/locandadelcontadino/pizza-delivery-cremona" alt="QR Delivery">
+          <div class="qr-text">📸 <strong>QR Pizza Delivery:</strong><br>Scansiona il codice per visualizzare i dettagli completi sul servizio a domicilio.</div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div>
+          <h2>⚠️ Comunicazione Allergeni</h2>
+          <p>Ai sensi del Reg. UE 1169/2011, gli ingredienti che contengono sostanze allergizzanti sono evidenziati nelle ricette in <strong>grassetto, corsivo e sottolineato</strong>.</p>
+          <p><strong>Nota:</strong> Tutti i nostri impasti contengono <em><u>**glutine**</u></em> (Farina Tipo 1 Biologica).</p>
+          <p>Il registro completo è disponibile e consultabile in formato cartaceo rivolgendosi al personale in servizio.</p>
+        </div>
+        <div class="qr-block">
+          <img class="qr-code-img" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare" alt="QR Allergeni">
+          <div class="qr-text">📸 <strong>QR Allergeni:</strong><br>Scansiona il QR per accedere direttamente alla scheda sulla sicurezza alimentare online.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs-container" id="nav-pizze">
+    <button class="tab-btn active" onclick="openCategory(event, 'chef')">
+      <span class="tab-icon">👑</span><span>Chef</span>
+    </button>
+    <button class="tab-btn" onclick="openCategory(event, 'bianche')">
+      <span class="tab-icon">⚪</span><span>Bianche</span>
+    </button>
+    <button class="tab-btn" onclick="openCategory(event, 'ortomare')">
+      <span class="tab-icon">🌿</span><span>Orto & Mare</span>
+    </button>
+    <button class="tab-btn" onclick="openCategory(event, 'classici')">
+      <span class="tab-icon">🍕</span><span>I Classici</span>
+    </button>
+  </div>
+
+  <div id="chef" class="menu-section active">
+    <div class="section-header">
+      <h1>👑 Le Selezioni dello Chef</h1>
+      <p>Accostamenti ricchi e farciture combinate per un'esperienza superiore</p>
+    </div>
+    <div class="pizza-grid">
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Mortadella Special</div><div class="pizza-prices"><div class="price-item"><span>P</span>14,00</div><div class="price-item"><span>M</span>15,00</div><div class="price-item"><span>T</span>—</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**mortadella**</u></em>, <em><u>**grana**</u></em>, <em><u>**burrata**</u></em>, <em><u>**granella di pistacchio**</u></em>, glassa di aceto balsamico</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Del Bersagliere</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**salame**</u></em>, funghi, radicchio, pancetta</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Fantasia</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto, funghi, carciofi, olive nere, würstel, <em><u>**salamino**</u></em>, <em><u>**uova**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Peccato di Gola</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, <em><u>**salamino**</u></em>, cipolle, olive nere, würstel, peperoni</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Porcella</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, würstel, salsiccia, <em><u>**salamino**</u></em>, funghi, patatine fritte</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Zingara</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto, funghi, carciofi, <em><u>**salamino**</u></em>, würstel, olive nere, capperi, <em><u>**acciughe**</u></em>, origano</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Burrata Crudo</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**burrata**</u></em>, prosciutto crudo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Delizia</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, fiocchetto, carciofi alla romana</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Frutti di Bosco</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, funghi porcini, prosciutto crudo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Rosa</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, funghi porcini, <em><u>**panna**</u></em>, prosciutto crudo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Provolina</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, <em><u>**scamorza**</u></em>, prosciutto crudo, origano</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Romagnola</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, <em><u>**stracchino**</u></em>, prosciutto crudo, rucola, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Stradivari</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, finferli, bresaola, rucola, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Calabrese</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, speck, <em><u>**salamino**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Campagnola</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**brie**</u></em>, funghi, speck</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Emiliana</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, funghi, salsiccia, <em><u>**zola**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Milanese</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, <em><u>**stracchino**</u></em>, patatine, salsiccia</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Piemontese</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, <em><u>**scamorza**</u></em>, funghi porcini</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Wurstel e Patatine</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, würstel, patatine fritte</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Altea</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>18,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**acciughe**</u></em>, speck, olive</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Sarda</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, pomodorini, rucola, salsiccia, funghi, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Alla Paesana</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, cipolla, pancetta</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Mantovana Special</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, crema di zucca, funghi, salsiccia, <em><u>**zola**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Micolina</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, pancetta, patate lesse, cipolle, rosmarino</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Africana</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, <em><u>**salamino**</u></em>, olive</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Maialina</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, würstel, salsiccia, <em><u>**salamino**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">San Secondo</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, spalla di San Secondo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Friarielli e Salsiccia</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, friarielli, salsiccia</div></div>
+    </div>
+  </div>
+
+  <div id="bianche" class="menu-section">
+    <div class="section-header">
+      <h1>⚪ L'Angolo delle Bianche</h1>
+      <p>Esaltazione dell'impasto biologico e freschezza pura senza pomodoro</p>
+    </div>
+    <div class="pizza-grid">
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Al Tartufo</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella di bufala**</u></em>, crema di tartufo, funghi porcini, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Crudo Tartufo Basilico</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella di bufala**</u></em>, crema di tartufo, prosciutto crudo, basilico</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Philadelphia</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, <em><u>**Philadelphia**</u></em>, <em><u>**salmone**</u></em>, zucchine</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Profumo d'Autunno</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients"><em><u>**provola**</u></em>, crema di zucca, salsiccia, <em><u>**pecorino**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Tartufata</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, crema di tartufo, bresaola, rucola, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Bufala Radicchio Tonno</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella di bufala**</u></em>, radicchio, <em><u>**tonno**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Rustica Bianca</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, rucola, bresaola, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Delicata</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, zucchine, <em><u>**tonno**</u></em>, cipolle, <em><u>**panna**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Mediterranea</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella di bufala**</u></em>, pomodorini, prosciutto crudo, rucola</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Tirolese</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, <em><u>**panna**</u></em>, crema di zucca, speck</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Francese</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, noci</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Genovese</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, patate lesse, pesto, salsiccia</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Sinfonia</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, asparagi, <em><u>**uova**</u></em>, <em><u>**salmone**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Mantovana Bianca</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,50</div><div class="price-item"><span>M</span>9,50</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, crema di zucca, salsiccia, <em><u>**zola**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Rotolo Estivo</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,50</div><div class="price-item"><span>M</span>9,50</div><div class="price-item"><span>T</span>—</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, speck, olio di oliva, rucola, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Biancaneve</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, prosciutto crudo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Caprese</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella di bufala**</u></em>, pomodorini, capperi, origano</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Carbonara</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,50</div><div class="price-item"><span>M</span>8,50</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients"><em><u>**mozzarella fiordilatte**</u></em>, <em><u>**panna**</u></em>, pancetta, <em><u>**uova**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Focaccia Primavera</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,50</div><div class="price-item"><span>M</span>8,50</div><div class="price-item"><span>T</span>—</div></div></div><div class="pizza-ingredients">Pomodorini, <em><u>**mozzarella di bufala**</u></em>, rucola</div></div>
+    </div>
+  </div>
+
+  <div id="ortomare" class="menu-section">
+    <div class="section-header">
+      <h1>🌿 I Sapori dell'Orto e del Mare</h1>
+      <p>Leggerezza dell'orto, profumo dei boschi ed eccellenze marine su base rossa</p>
+    </div>
+    <div class="pizza-grid">
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Frutti di Mare</div><div class="pizza-prices"><div class="price-item"><span>P</span>14,00</div><div class="price-item"><span>M</span>15,00</div><div class="price-item"><span>T</span>20,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**frutti di mare**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Suprema</div><div class="pizza-prices"><div class="price-item"><span>P</span>11,00</div><div class="price-item"><span>M</span>12,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**salmone**</u></em>, <em><u>**gamberetti**</u></em>, <em><u>**polpa di granchio**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Calamari</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**calamari**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Mare e Monti</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, funghi porcini, <em><u>**gamberetti**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Tonno e Gamberetti</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**tonno**</u></em>, <em><u>**gamberetti**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Zucchine e Gamberetti</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, zucchine, <em><u>**gamberetti**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Al Radicchio</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**zola**</u></em>, funghi porcini, radicchio</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Boscaiola</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>19,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, funghi porcini, funghi champignon, finferli, prezzemolo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Parigina</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, rucola, <em><u>**grana**</u></em>, <em><u>**tonno**</u></em>, maionese</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Vegetariana</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, zucchine, peperoni, melanzane, pomodorini</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Regina</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,50</div><div class="price-item"><span>M</span>10,50</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, funghi porcini, rucola</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Tropea</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**tonno**</u></em>, cipolle di Tropea, pomodori freschi</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Incontro</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, pancetta, rucola, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Light</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**ricotta**</u></em>, verdure miste</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Yami</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, <em><u>**salamino**</u></em>, funghi</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Primavera</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**tonno**</u></em>, peperoni, <em><u>**salamino**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Verde</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>16,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, pancetta, carciofi alla romana</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Tonno e Cipolle</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,50</div><div class="price-item"><span>M</span>9,50</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**tonno**</u></em>, cipolle</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Rucolina</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,50</div><div class="price-item"><span>M</span>9,50</div><div class="price-item"><span>T</span>14,50</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, rucola, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Porcini</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,50</div><div class="price-item"><span>M</span>9,50</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, funghi porcini, prezzemolo</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Bufalina</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Del Contadino</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella di bufala**</u></em>, insalata, pomodorini, olive nere</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Uova e Asparagi</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**uova**</u></em>, asparagi</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Patatina</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, patatine fritte</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Tonno</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,50</div><div class="price-item"><span>M</span>8,50</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**tonno**</u></em></div></div>
+    </div>
+  </div>
+
+  <div id="classici" class="menu-section">
+    <div class="section-header">
+      <h1>🍕 I Grandi Classici della Locanda</h1>
+      <p>I pilastri intramontabili della tradizione, le ricette storiche e i nostri calzoni</p>
+    </div>
+    <div class="pizza-grid">
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Calzone del Pizzaiolo</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>—</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto, <em><u>**salamino**</u></em>, <em><u>**ricotta**</u></em>, olio piccante</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Calzone Special</div><div class="pizza-prices"><div class="price-item"><span>P</span>10,00</div><div class="price-item"><span>M</span>11,00</div><div class="price-item"><span>T</span>—</div></div></div><div class="pizza-ingredients">Farcitura a scelta, pomodoro fuori cottura, <em><u>**grana**</u></em>, olio di oliva</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">4 Formaggi</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>17,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**formaggi misti**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Calzone Farcito</div><div class="pizza-prices"><div class="price-item"><span>P</span>9,00</div><div class="price-item"><span>M</span>10,00</div><div class="price-item"><span>T</span>—</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto, funghi, carciofi</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">4 Stagioni</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto, funghi, carciofi, olive</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Capricciosa</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto, funghi, carciofi</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Diavola</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, cipolle, <em><u>**salamino piccante**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Napoli</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, olive, capperi, <em><u>**acciughe**</u></em>, origano</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Calzone Liscio</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>—</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Saltimbocca</div><div class="pizza-prices"><div class="price-item"><span>P</span>8,00</div><div class="price-item"><span>M</span>9,00</div><div class="price-item"><span>T</span>15,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, carciofi, <em><u>**salamino**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Prosciutto e Funghi</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,50</div><div class="price-item"><span>M</span>8,50</div><div class="price-item"><span>T</span>14,50</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto, funghi</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Marinara Speciale</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,50</div><div class="price-item"><span>M</span>8,50</div><div class="price-item"><span>T</span>13,50</div></div></div><div class="pizza-ingredients">Pomodoro, aglio, origano, salame, <em><u>**grana**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Prosciutto</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>13,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, prosciutto cotto</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pugliese</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>13,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, cipolla</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Romana</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>13,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**acciughe**</u></em>, origano</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Salamino</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>13,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**salamino**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Pizza Salame Dolce</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>13,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, salame dolce</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Bolognese</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>13,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, mortadella</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Würstel</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>13,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, würstel</div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Zola</div><div class="pizza-prices"><div class="price-item"><span>P</span>7,00</div><div class="price-item"><span>M</span>8,00</div><div class="price-item"><span>T</span>14,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em>, <em><u>**gorgonzola**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Margherita</div><div class="pizza-prices"><div class="price-item"><span>P</span>6,00</div><div class="price-item"><span>M</span>7,00</div><div class="price-item"><span>T</span>10,00</div></div></div><div class="pizza-ingredients">Pomodoro, <em><u>**mozzarella fiordilatte**</u></em></div></div>
+      <div class="pizza-card"><div class="pizza-main"><div class="pizza-name">Marinara</div><div class="pizza-prices"><div class="price-item"><span>P</span>5,00</div><div class="price-item"><span>M</span>6,00</div><div class="price-item"><span>T</span>9,00</div></div></div><div class="pizza-ingredients">Pomodoro, aglio, origano</div></div>
+    </div>
+  </div>
+
+  <script>
+    function openCategory(evt, categoryId) {
+      var i, menuSection, tabBtn;
+      menuSection = document.getElementsByClassName("menu-section");
+      for (i = 0; i < menuSection.length; i++) {
+        menuSection[i].style.display = "none";
+      }
+      tabBtn = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tabBtn.length; i++) {
+        tabBtn[i].className = tabBtn[i].className.replace(" active", "");
+      }
+      document.getElementById(categoryId).style.display = "block";
+      if (evt) {
+        evt.currentTarget.className += " active";
+        
+        // SBLOCCO MOBILE VITALA: Sposta lo schermo direttamente all'inizio delle pizze 
+        // saltando il banner fisso per non far perdere tempo al cliente
+        document.getElementById("nav-pizze").scrollIntoView({ behavior: 'smooth' });
+      } else {
+        for (i = 0; i < tabBtn.length; i++) {
+          if (tabBtn[i].getAttribute("onclick").includes(categoryId)) {
+            tabBtn[i].className += " active";
+          }
+        }
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const cat = urlParams.get('cat');
+    if (cat === 'bianche') openCategory(null, 'bianche');
+    else if (cat === 'ortomare') openCategory(null, 'ortomare');
+    else if (cat === 'classici') openCategory(null, 'classici');
+    else openCategory(null, 'chef');
+  </script>
+
+</body>
+</html>
