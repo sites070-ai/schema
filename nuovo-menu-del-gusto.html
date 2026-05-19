@@ -53,8 +53,8 @@ body{margin:0;padding:24px;font-family:"Inter",sans-serif;
 .qr-frame img{width:110px;height:110px;border-radius:10px;}
 
 /* TAB */
-.tab-nav-sticky{display:flex;gap:8px;overflow-x:auto;padding:10px 12px;scrollbar-width:none;justify-content:center;flex-wrap:wrap;position:sticky;top:0;z-index:100;background:rgba(10,10,8,0.97);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(230,196,99,0.2);margin:0 -22px 20px -22px;}
-.tab-nav-sticky::-webkit-scrollbar{display:none;} .tab-nav-sticky .tab-btn{flex-shrink:0;}
+.tab-nav{display:flex;gap:8px;margin:0 0 24px 0;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;justify-content:center;flex-wrap:wrap;}
+.tab-nav::-webkit-scrollbar{display:none;}
 .tab-btn{flex-shrink:0;padding:10px 18px;border-radius:30px;border:1px solid rgba(255,255,255,0.1);
   cursor:pointer;font-family:"Inter",sans-serif;font-size:0.85rem;font-weight:500;
   letter-spacing:0.06em;transition:all 0.25s;
@@ -180,29 +180,15 @@ body{margin:0;padding:24px;font-family:"Inter",sans-serif;
   </div>
 </div>
 
-<div class="proof-bar">
-  <span class="proof-item">🏆 Scelta dello chef</span>
-  <span class="proof-item">⭐ La più ordinata</span>
-  <span class="proof-item">🔥 Irresistibile</span>
-  <span class="proof-item">🌿 Vegetariana</span>
-  <span class="proof-item">🌊 Di mare</span>
-  <span class="proof-item">🍄 Tartufo</span>
-</div>
 
-<div id="tab-anchor"></div>
-<div class="tab-nav-sticky">
-  <button class="tab-btn active" id="btn-classiche" onclick="showTab('classiche',this)">🍕 Classiche</button>
-  <button class="tab-btn" id="btn-speciali" onclick="showTab('speciali',this)">⭐ Speciali</button>
-  <button class="tab-btn" id="btn-bianche" onclick="showTab('bianche',this)">🤍 Bianche</button>
-  <button class="tab-btn" id="btn-integrali" onclick="showTab('integrali',this)">🌾 Integrali</button>
-  <button class="tab-btn" id="btn-personalizza" onclick="showTab('personalizza',this)">✏️ Personalizza</button>
-</div>
+
+
 
 
 <!-- ═══════════════════════════════════════════
      TAB CLASSICHE
 ═══════════════════════════════════════════ -->
-<div id="tab-classiche" class="tab-panel active">
+
 
 <div class="two-columns">
   <div class="column-box">
@@ -215,13 +201,32 @@ body{margin:0;padding:24px;font-family:"Inter",sans-serif;
   </div>
   <div class="column-box">
     <h3 class="column-title">Comunicazione Allergeni</h3>
-    <p class="column-text">Ai sensi del <strong>Reg. UE 1169/2011</strong>, gli allergeni sono evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong>.</p>
+    <p class="column-text">Allergeni evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong> (Reg. UE 1169/2011).</p>
     <p class="column-text" style="margin-top:8px;"><strong>Nota:</strong> Tutti gli impasti contengono <strong><em><u>glutine</u></em></strong>.</p>
-    <div class="qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare" alt="QR Allergeni">
-    </div>
+    <div class="qr-frame"><img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare" alt="QR Allergeni"></div>
   </div>
 </div>
+
+<div class="proof-bar">
+  <span class="proof-item">🏆 Scelta dello chef</span>
+  <span class="proof-item">⭐ La più ordinata</span>
+  <span class="proof-item">🔥 Irresistibile</span>
+  <span class="proof-item">🌿 Vegetariana</span>
+  <span class="proof-item">🌊 Di mare</span>
+  <span class="proof-item">🍄 Tartufo</span>
+</div>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('classiche',this)">🍕 Classiche</button>
+  <button class="tab-btn" onclick="showTab('speciali',this)">⭐ Speciali</button>
+  <button class="tab-btn" onclick="showTab('bianche',this)">🤍 Bianche</button>
+  <button class="tab-btn" onclick="showTab('integrali',this)">🌾 Integrali</button>
+  <button class="tab-btn" onclick="showTab('personalizza',this)">✏️ Personalizza</button>
+</div>
+
+<div id="tab-classiche" class="tab-panel active">
+
+
 
 <div class="section-title-line"><span class="line"></span><span>PIZZE CLASSICHE</span><span class="line"></span></div>
 <div class="section-subline"></div>
@@ -420,21 +425,7 @@ body{margin:0;padding:24px;font-family:"Inter",sans-serif;
 ═══════════════════════════════════════════ -->
 <div id="tab-speciali" class="tab-panel">
 
-<div class="two-columns">
-  <div class="column-box">
-    <h3 class="column-title">Impasto Biologico</h3>
-    <div class="column-text">Farina Tipo 1 Biologica macinata a pietra · 60% idratazione · maturazione 48/72 ore.</div>
-    <div class="column-separator"></div>
-    <div class="formats-line"><strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong></div>
-  </div>
-  <div class="column-box">
-    <h3 class="column-title">Allergeni</h3>
-    <p class="column-text">Allergeni evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong> (Reg. UE 1169/2011).</p>
-    <div class="qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare" alt="QR Allergeni">
-    </div>
-  </div>
-</div>
+
 
 <div class="section-title-line"><span class="line"></span><span>LE SIGNATURE</span><span class="line"></span></div>
 <div class="section-subline"></div>
@@ -1040,21 +1031,7 @@ body{margin:0;padding:24px;font-family:"Inter",sans-serif;
 ═══════════════════════════════════════════ -->
 <div id="tab-bianche" class="tab-panel">
 
-<div class="two-columns">
-  <div class="column-box">
-    <h3 class="column-title">Impasto Biologico</h3>
-    <div class="column-text">Farina Tipo 1 Biologica · 60% idratazione · maturazione 48/72 ore. Niente pomodoro: il condimento è protagonista assoluto.</div>
-    <div class="column-separator"></div>
-    <div class="formats-line"><strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong></div>
-  </div>
-  <div class="column-box">
-    <h3 class="column-title">Allergeni</h3>
-    <p class="column-text">Allergeni evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong> (Reg. UE 1169/2011).</p>
-    <div class="qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare" alt="QR Allergeni">
-    </div>
-  </div>
-</div>
+
 
 <div class="section-title-line"><span class="line"></span><span>PIZZE BIANCHE</span><span class="line"></span></div>
 <div class="section-subline"></div>
@@ -1275,21 +1252,7 @@ body{margin:0;padding:24px;font-family:"Inter",sans-serif;
 ═══════════════════════════════════════════ -->
 <div id="tab-integrali" class="tab-panel">
 
-<div class="two-columns">
-  <div class="column-box">
-    <h3 class="column-title">Impasto Integrale Biologico</h3>
-    <div class="column-text">Farina Integrale Biologica macinata a pietra · 60% idratazione · maturazione 48/72 ore. Ricca di fibre, dal profilo aromatico rustico e naturale.</div>
-    <div class="column-separator"></div>
-    <div class="formats-line"><strong>Piccola 32 cm</strong> · <strong>Media 36 cm</strong> · <strong>Tagliere 50 cm</strong></div>
-  </div>
-  <div class="column-box">
-    <h3 class="column-title">Allergeni</h3>
-    <p class="column-text">Tutti gli impasti contengono <strong><em><u>glutine</u></em></strong> (farina integrale biologica). Allergeni evidenziati in <strong><em><u>grassetto, corsivo e sottolineato</u></em></strong>.</p>
-    <div class="qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sites.google.com/view/locandadelcontadino/sicurezza-alimentare" alt="QR Allergeni">
-    </div>
-  </div>
-</div>
+
 
 <div class="section-title-line"><span class="line"></span><span>SPECIALITÀ INTEGRALI GOURMET</span><span class="line"></span></div>
 <div class="section-subline"></div>
@@ -1571,11 +1534,12 @@ body{margin:0;padding:24px;font-family:"Inter",sans-serif;
 
 <script>
 function showTab(id, btn) {
+  var scrollY = window.scrollY || window.pageYOffset;
   document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
-
+  window.scrollTo(0, scrollY);
 }
 
 </script>
